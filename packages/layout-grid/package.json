@@ -1,0 +1,22 @@
+{
+  "name": "@mcw/layout-grid",
+  "version": "0.0.0",
+  "repository": "https://github.com/linkux-it/react-mcw",
+  "description": "The Material Components for the web layout grid component",
+  "license": "MIT",
+  "keywords": [
+    "material components",
+    "material design",
+    "grid",
+    "layout"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@material/layout-grid": "^0.4.2",
+    "classnames": "^2.2.5",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {}
+}
