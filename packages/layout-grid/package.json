@@ -1,7 +1,8 @@
 {
   "name": "@mcw/layout-grid",
   "version": "0.0.0",
-  "repository": "https://github.com/linkux-it/react-mcw",
+  "repository": "https://github.com/carlitux/react-mcw",
+  "author": "Luis Carlos Cruz Carballo",
   "description": "The Material Components for the web layout grid component",
   "license": "MIT",
   "keywords": [
@@ -17,6 +18,5 @@
     "@material/layout-grid": "^0.4.2",
     "classnames": "^2.2.5",
     "react": "^15.6.1"
-  },
-  "devDependencies": {}
+  }
 }

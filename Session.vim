@@ -18,13 +18,12 @@ badd +8 packages/layout-grid/Inner.js
 badd +40 packages/layout-grid/Cell.js
 badd +14 ~/.config/UltiSnips/javascript.snippets
 badd +0 public/index.html
-badd +14 package.json
+badd +6 package.json
 badd +1 lerna.json
-badd +3 packages/layout-grid/package.json
-badd +0 .gitignore
+badd +6 packages/layout-grid/package.json
 argglobal
 silent! argdel *
-edit .gitignore
+edit package.json
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit

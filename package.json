@@ -2,8 +2,8 @@
   "name": "react-mcw",
   "version": "0.1.0",
   "description": "Material Design Components for React",
-  "repository": "https://github.com/linkux-it/react-mcw",
-  "author": "Linkux IT",
+  "repository": "https://github.com/carlitux/react-mcw",
+  "author": "Luis Carlos Cruz Carballo",
   "license": "MIT",
   "flow": "flow",
   "dependencies": {
