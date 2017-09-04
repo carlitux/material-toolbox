@@ -1,6 +1,6 @@
 {
   "name": "@mcw/layout-grid",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repository": "https://github.com/carlitux/react-mcw",
   "author": "Luis Carlos Cruz Carballo",
   "description": "Layout grid integration for The Material Components for the web",
