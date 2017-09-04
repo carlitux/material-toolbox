@@ -1,22 +1,21 @@
 {
-  "name": "@mcw/layout-grid",
-  "version": "1.1.0",
+  "name": "@mcw/typography",
+  "version": "0.0.0",
   "repository": "https://github.com/carlitux/react-mcw",
   "author": "Luis Carlos Cruz Carballo",
-  "description": "Layout grid integration for The Material Components for the web",
+  "description": "Typography integration for The Material Components for the web",
   "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
     "material components",
     "material design",
-    "grid",
-    "layout"
+    "typography"
   ],
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@material/layout-grid": "^0.4.2",
+    "@material/typography": "^0.3.0",
     "classnames": "^2.2.5",
     "react": "^15.6.1"
   },

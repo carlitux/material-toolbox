@@ -1,22 +1,21 @@
 {
-  "name": "@mcw/layout-grid",
-  "version": "1.1.0",
+  "name": "@mcw/toolbar",
+  "version": "0.0.0",
   "repository": "https://github.com/carlitux/react-mcw",
   "author": "Luis Carlos Cruz Carballo",
-  "description": "Layout grid integration for The Material Components for the web",
+  "description": "Toolbar integration for The Material Components for the web",
   "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
     "material components",
     "material design",
-    "grid",
-    "layout"
+    "toolbar"
   ],
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@material/layout-grid": "^0.4.2",
+    "@material/toolbar": "^0.4.7",
     "classnames": "^2.2.5",
     "react": "^15.6.1"
   },

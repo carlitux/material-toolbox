@@ -3,26 +3,33 @@
   "version": "0.1.0",
   "description": "Material Design Components for React",
   "repository": "https://github.com/carlitux/react-mcw",
-  "author": "Luis Carlos Cruz Carballo",
   "author": "Linkux IT",
   "license": "MIT",
   "flow": "flow",
   "dependencies": {
+    "npm-watch": "^0.2.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "prepublish": "npm run prepublish",
+  "watch": {
+    "build": "packages/**/src/*.{js,scss}"
+  },
   "scripts": {
     "prepublish": "npm-run-all clean build",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --content-base public --inline --hot --host 0.0.0.0",
-    "clean": "lerna run clean --no-sort --concurrency=10",
+    "dev": "npm-run-all --parallel dev:webpack dev:watch",
+    "dev:webpack": "cross-env NODE_ENV=development webpack-dev-server --progress --content-base public --inline --hot --host 0.0.0.0",
+    "dev:watch": "npm-watch",
+    "clean": "del-cli build/**",
     "build": "lerna run build --stream --concurrency=5",
     "lint": "lerna run lint --no-sort --concurrency=5",
     "test": "lerna run test",
     "test:watch": "jest --watchAll",
     "buildApp": "mkdirp build && webpack --progress --colors",
-    "buildApp:min": "mkdirp build && cross-env NODE_ENV=production webpack -p --progress --colors",
-    "clean": "del-cli build/**"
+    "buildApp:min": "mkdirp build && cross-env NODE_ENV=production webpack -p --progress --colors"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -43,7 +50,7 @@
     "del-cli": "^1.1.0",
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^15.1.0",
-    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-config-airbnb-base": "^11.3.2",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "^2.7.0",
@@ -56,9 +63,9 @@
     "glob": "^7.1.2",
     "lerna": "^2.0.0",
     "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
     "postcss-loader": "^2.0.6",
     "prettier": "^1.5.3",
-    "react-hot-loader": "next",
     "react-transform-catch-errors": "^1.0.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
