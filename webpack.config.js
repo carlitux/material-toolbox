@@ -43,7 +43,7 @@ const CSS_LOADER_CONFIG = [
     loader: 'css-loader',
     options: {
       // localIdentName: '[local]___[hash:base64:5]',
-      localIdentName: '[local]',
+      // localIdentName: '[local]',
       sourceMap: GENERATE_SOURCE_MAPS,
       importLoaders: 2,
       modules: true,

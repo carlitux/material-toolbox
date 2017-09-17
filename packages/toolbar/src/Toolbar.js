@@ -37,11 +37,11 @@ export default class Toolbar extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    // NOTE.- Still not sure if we have to wait for next tick to get computed
+    // NOTE.- Still not sure if we have to wait for sometime to get computed
     // values of dom element on foundation
     setTimeout(() => {
       this.foundation.init();
-    });
+    }, 200);
   }
 
   componentWillUnmount() {

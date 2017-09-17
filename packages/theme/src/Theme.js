@@ -55,7 +55,6 @@ const Theme = ({
     }),
   };
 
-  console.log(props);
   if (children == null || Array.isArray(children)) {
     return React.Children.map(children, child =>
       React.cloneElement(child, props),
