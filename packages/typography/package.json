@@ -1,6 +1,6 @@
 {
   "name": "@mcw/typography",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/carlitux/react-mcw",
   "author": "Luis Carlos Cruz Carballo",
   "description": "Typography integration for The Material Components for the web",

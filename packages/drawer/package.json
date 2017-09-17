@@ -1,6 +1,6 @@
 {
   "name": "@mcw/drawer",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repository": "https://github.com/carlitux/react-mcw",
   "author": "Luis Carlos Cruz Carballo",
   "description": "Drawer integration for The Material Components for the web",
