@@ -62,7 +62,8 @@ const CSS_LOADER_CONFIG = [
       sourceMap: GENERATE_SOURCE_MAPS,
       includePaths: glob
         .sync('packages/*/node_modules')
-        .map(d => path.join(__dirname, d)),
+        .map(d => path.join(__dirname, d))
+        .concat(['node_modules']),
     },
   },
 ];

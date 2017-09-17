@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import classnames from 'classnames';
+import styles from 'styles.scss';
 
 type Props = {
   className: string,
@@ -23,31 +24,33 @@ const Theme = ({
   const props = {
     ...rest,
     className: classnames(className, {
-      'mdc-theme--primary': textStyle === 'primary' && !textVariant && !theme,
-      'mdc-theme--primary-light':
+      [styles['mdc-theme--primary']]:
+        textStyle === 'primary' && !textVariant && !theme,
+      [styles['mdc-theme--primary-light']]:
         textStyle === 'primary' && textVariant === 'light',
-      'mdc-theme--primary-dark':
+      [styles['mdc-theme--primary-dark']]:
         textStyle === 'primary' && textVariant === 'dark',
-      'mdc-theme--secondary':
+      [styles['mdc-theme--secondary']]:
         textStyle === 'secondary' && !textVariant && !theme,
-      'mdc-theme--secondary-light':
+      [styles['mdc-theme--secondary-light']]:
         textStyle === 'secondary' && textVariant === 'light',
-      'mdc-theme--secondary-dark':
+      [styles['mdc-theme--secondary-dark']]:
         textStyle === 'secondary' && textVariant === 'dark',
-      'mdc-theme--background': theme === 'background',
-      'mdc-theme--primary-bg': theme === 'primary' && !themeVariant,
-      'mdc-theme--primary-light-bg':
+      [styles['mdc-theme--background']]: theme === 'background',
+      [styles['mdc-theme--primary-bg']]: theme === 'primary' && !themeVariant,
+      [styles['mdc-theme--primary-light-bg']]:
         theme === 'primary' && themeVariant === 'light',
-      'mdc-theme--primary-dark-bg':
+      [styles['mdc-theme--primary-dark-bg']]:
         theme === 'primary' && themeVariant === 'dark',
-      'mdc-theme--secondary-bg': theme === 'secondary' && !themeVariant,
-      'mdc-theme--secondary-light-bg':
+      [styles['mdc-theme--secondary-bg']]:
+        theme === 'secondary' && !themeVariant,
+      [styles['mdc-theme--secondary-light-bg']]:
         theme === 'secondary' && themeVariant === 'light',
-      'mdc-theme--secondary-dark-bg':
+      [styles['mdc-theme--secondary-dark-bg']]:
         theme === 'secondary' && themeVariant === 'dark',
-      [`mdc-theme--text-${textStyle || ''}-on-${theme || ''}`]:
+      [styles[`mdc-theme--text-${textStyle || ''}-on-${theme || ''}`]]:
         theme && textStyle && !themeVariant,
-      [`mdc-theme--text-${textStyle || ''}-on-${themeVariant || ''}`]:
+      [styles[`mdc-theme--text-${textStyle || ''}-on-${themeVariant || ''}`]]:
         theme && textStyle && themeVariant,
     }),
   };

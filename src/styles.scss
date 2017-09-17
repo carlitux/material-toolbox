@@ -1,4 +1,10 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+$mdc-theme-primary: #212121;
+$mdc-theme-secondary: #b0bec5;
+$mdc-theme-background: #fff; // White
+
+// @import '@mcw/theme/lib/styles.scss';
 
 // .demo-content {
 //   display: inline-flex;
@@ -17,3 +23,4 @@
 //   min-height: 100%;
 //   width: 100%;
 // }
+
