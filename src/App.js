@@ -6,6 +6,7 @@ import Route from 'react-router/Route';
 import { LayoutGrid, LayoutInner, LayoutCell } from '@mcw/layout-grid';
 import { TypographyWrapper, TypographyElement } from '@mcw/typography';
 import { TemporaryDrawer, DrawerHeader, DrawerContent } from '@mcw/drawer';
+import Theme from '@mcw/theme';
 import {
   ToolbarTitle,
   ToolbarIcon,
@@ -60,7 +61,11 @@ export default class App extends React.PureComponent<{}, State> {
         <TemporaryDrawer
           open={this.state.drawerIsOpen}
           onClose={this.handleCloseDrawer}>
-          <DrawerHeader type="temporary">Header content goes here</DrawerHeader>
+          <Theme theme="primary" textStyle="primary">
+            <DrawerHeader type="temporary">
+              Header content goes here
+            </DrawerHeader>
+          </Theme>
           <DrawerContent type="temporary">
             <div>Content here</div>
           </DrawerContent>

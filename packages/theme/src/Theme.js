@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import classnames from 'classnames';
-import styles from 'styles.scss';
+import styles from './styles.scss';
 
 type Props = {
   className: string,
@@ -55,6 +55,7 @@ const Theme = ({
     }),
   };
 
+  console.log(props);
   if (children == null || Array.isArray(children)) {
     return React.Children.map(children, child =>
       React.cloneElement(child, props),
