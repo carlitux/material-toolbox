@@ -1,0 +1,33 @@
+{
+  "name": "@mcw/theme",
+  "version": "0.0.0",
+  "repository": "https://github.com/carlitux/react-mcw",
+  "author": "Luis Carlos Cruz Carballo",
+  "description": "Toolbar integration for The Material Components for the web",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "material components",
+    "material design",
+    "theme"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@material/theme": "^0.3.0",
+    "classnames": "^2.2.5",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production babel src --out-dir lib --copy-files",
+    "prepublish": "npm run build",
+    "clean": "shx rm -rf lib/",
+    "lint": "eslint .",
+    "test": "jest"
+  }
+}
