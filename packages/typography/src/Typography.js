@@ -9,7 +9,7 @@ type Props = {
   className: string,
 };
 
-const Typography = ({ children, className, ...rest }: Props) => {
+const Typography = ({ children, className }: Props) => {
   const composedClassName = classnames(
     styles['mdc-typography'],
     className,
@@ -17,7 +17,6 @@ const Typography = ({ children, className, ...rest }: Props) => {
   );
 
   return React.cloneElement(children, {
-    ...rest,
     className: composedClassName,
   });
 };
