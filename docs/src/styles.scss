@@ -1,0 +1,59 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+$mdc-theme-primary: #212121;
+$mdc-theme-secondary: #b0bec5;
+$mdc-theme-background: #fff; // White
+
+@import '@mcw/theme/lib/styles.scss';
+@import '@mcw/typography/lib/styles.scss';
+@import 'highlight.js/styles/monokai';
+
+html, body {
+  @include mdc-typography-base;
+}
+
+p, table, code {
+  @include mdc-typography(body1);
+}
+
+p code {
+  background: rgba(0,0,0,.1);
+}
+
+.demo-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+.demo-content {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.table-doc {
+  display: inline-block;
+  overflow-x: auto;
+  margin: 8px 0 32px;
+  max-width: 100%;
+  border: 1px solid #eee;
+
+  th {
+    background: #fafafa;
+    border-top: none;
+    color: rgba(0,0,0,.54);
+    font-weight: 500;
+    text-align: left;
+  }
+
+  td, th {
+    border: 1px solid #eee;
+    padding: 12px 12px 12px 24px;
+  }
+}
+

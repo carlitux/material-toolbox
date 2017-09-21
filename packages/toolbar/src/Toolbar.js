@@ -8,6 +8,7 @@ import ToolbarRow from './Row';
 import styles from './styles.scss';
 
 type Props = {
+  waitFor: number,
   children: React.ChildrenArray<React.Element<typeof ToolbarRow>>,
   fixed: boolean,
   waterfall: boolean,
@@ -41,7 +42,7 @@ export default class Toolbar extends React.Component<Props, State> {
     // values of dom element on foundation
     setTimeout(() => {
       this.foundation.init();
-    }, 200);
+    }, this.props.waitFor);
   }
 
   componentWillUnmount() {

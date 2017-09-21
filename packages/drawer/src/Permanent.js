@@ -13,13 +13,7 @@ const PermanentDrawer = ({ children }: Props) => {
     styles['mdc-permanent-drawer'],
     styles['mdc-typography'],
   );
-  return (
-    <nav className={className}>
-      <div className={styles['mdc-permanent-drawer__content']}>
-        {children}
-      </div>
-    </nav>
-  );
+  return <nav className={className}>{children}</nav>;
 };
 
 export default PermanentDrawer;

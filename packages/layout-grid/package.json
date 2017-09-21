@@ -16,7 +16,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@material/layout-grid": "^0.4.2",
+    "@material/layout-grid": "^0.4.4",
     "classnames": "^2.2.5",
     "react": "^15.6.1"
   },

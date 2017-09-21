@@ -7,7 +7,6 @@
     "publish": {
       "ignore": [
         "docs/*",
-        "*.md",
         "src/"
       ]
     }

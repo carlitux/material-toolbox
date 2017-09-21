@@ -1,2 +1,2 @@
-export { default as TypographyWrapper } from './Wrapper';
-export { default as TypographyElement } from './Element';
+export { default as Typography } from './Typography';
+export { default as Text } from './Text';

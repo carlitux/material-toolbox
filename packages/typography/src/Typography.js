@@ -9,8 +9,12 @@ type Props = {
   className: string,
 };
 
-const TypographyWrapper = ({ children, className, ...rest }: Props) => {
-  const composedClassName = classnames(styles['mdc-typography'], className);
+const Typography = ({ children, className, ...rest }: Props) => {
+  const composedClassName = classnames(
+    styles['mdc-typography'],
+    className,
+    children ? children.props.className : '',
+  );
 
   return React.cloneElement(children, {
     ...rest,
@@ -18,4 +22,4 @@ const TypographyWrapper = ({ children, className, ...rest }: Props) => {
   });
 };
 
-export default TypographyWrapper;
+export default Typography;

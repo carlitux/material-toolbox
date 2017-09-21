@@ -9,14 +9,15 @@ type Props = {
   className: string,
 };
 
-const ToolbarFixedAdjust = ({ children, className, ...rest }: Props) => {
+const ToolbarFixedAdjust = ({ children, className }: Props) => {
   const composedClassName = classnames(
     styles['mdc-toolbar-fixed-adjust'],
     className,
+    children ? children.props.className : '',
   );
 
   return React.cloneElement(children, {
-    ...rest,
+    ...children.props,
     className: composedClassName,
   });
 };

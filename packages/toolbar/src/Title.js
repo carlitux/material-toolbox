@@ -5,11 +5,21 @@ import styles from './styles.scss';
 
 type Props = {
   label: string,
+  component: React.Element<any>,
 };
 
-const ToolbarTitle = ({ label, ...rest }: Props) =>
-  <span {...rest} className={styles['mdc-toolbar__title']}>
-    {label}
-  </span>;
+const ToolbarTitle = ({ label, component, ...rest }: Props) =>
+  React.createElement(
+    component,
+    {
+      ...rest,
+      className: styles['mdc-toolbar__title'],
+    },
+    label,
+  );
+
+ToolbarTitle.defaultProps = {
+  component: 'span',
+};
 
 export default ToolbarTitle;

@@ -21,14 +21,12 @@ type Props = {
     | 'body1'
     | 'caption'
     | 'button',
+  rest: {
+    className: string,
+  },
 };
 
-const TypographyElement = ({
-  component,
-  mdcStyle,
-  adjustMargin,
-  ...rest
-}: Props) => {
+const Text = ({ component, mdcStyle, adjustMargin, ...rest }: Props) => {
   const className = classnames(
     styles[`mdc-typography--${mdcStyle}`],
     rest.className,
@@ -39,8 +37,8 @@ const TypographyElement = ({
   return React.createElement(component, { ...rest, className });
 };
 
-TypographyElement.defaultProps = {
+Text.defaultProps = {
   component: 'span',
 };
 
-export default TypographyElement;
+export default Text;

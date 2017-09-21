@@ -1,6 +1,6 @@
 {
-  "name": "@mcw/theme",
-  "version": "1.0.0",
+  "name": "@mcw/list",
+  "version": "0.0.0",
   "repository": "https://github.com/carlitux/react-mcw",
   "author": "Luis Carlos Cruz Carballo",
   "description": "Toolbar integration for The Material Components for the web",
@@ -9,13 +9,13 @@
   "keywords": [
     "material components",
     "material design",
-    "theme"
+    "list"
   ],
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@material/theme": "^0.3.1",
+    "@material/list": "^0.2.18",
     "classnames": "^2.2.5",
     "react": "^15.6.1"
   },

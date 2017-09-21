@@ -8,9 +8,8 @@ type Props = {
   type: 'temporary' | 'persistent' | 'permanent',
 };
 
-const DrawerToolbarSpacer = ({ type, children }: Props) =>
-  <div className={styles[`mdc-${type}-drawer__toolbar-spacer`]}>
-    {children}
-  </div>;
+const DrawerToolbarSpacer = ({ type, children }: Props) => (
+  <div className={styles[`mdc-${type}-drawer__toolbar-spacer`]}>{children}</div>
+);
 
 export default DrawerToolbarSpacer;
