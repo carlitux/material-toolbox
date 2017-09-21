@@ -93,7 +93,7 @@ const createCssExtractTextPlugin = () =>
       allChunks: true
     });
 
-const appEntry = IS_PROD
+const appEntry = IS_DEV
   ? ['react-hot-loader/patch', path.resolve('./src/index.js')]
   : [path.resolve('./src/index.js')];
 
