@@ -1,8 +1,8 @@
 // @flow
+/* eslint-disable */
 import * as React from 'react';
 import Highlight from 'react-highlight';
 
-/* eslint-disable */
 import { LayoutCell } from '@mcw/layout-grid';
 import { Text } from '@mcw/typography';
 import Theme from '@mcw/theme';
@@ -20,6 +20,48 @@ html, body {
 p {
   @include mdc-typography(body1);
 }
+`;
+
+const textStyles = `
+  <Typography>
+    <Text mdcStyle="display4" component="h1">Display 4</Text>
+    <Text mdcStyle="display3" component="h2">Display 3</Text>
+    <Text mdcStyle="display2" component="h3">Display 2</Text>
+    <Text mdcStyle="display1" component="h4">Display 1</Text>
+    <Text mdcStyle="headline" component="h1">Headline</Text>
+    <Text mdcStyle="title" component="h2">
+      Title <Text mdcStyle="caption" component="span">Caption</Text>
+    </Text>
+    <Text mdcStyle="subheading2" component="h2">Subheading 2</Text>
+    <Text mdcStyle="subheading1" component="h3">Subheading 1</Text>
+    <Text mdcStyle="body1" component="p">
+      Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </Text>
+    <Text mdcStyle="body2" component="p">
+      Body 2 text, calling something out.
+    </Text>
+  </Typography>
+`;
+
+const textStylesAdjust = `
+  <Typography>
+    <Text mdcStyle="display4" component="h1" adjustMargin>Display 4</Text>
+    <Text mdcStyle="display3" component="h2" adjustMargin>Display 3</Text>
+    <Text mdcStyle="display2" component="h3" adjustMargin>Display 2</Text>
+    <Text mdcStyle="display1" component="h4" adjustMargin>Display 1</Text>
+    <Text mdcStyle="headline" component="h1" adjustMargin>Headline</Text>
+    <Text mdcStyle="title" component="h2" adjustMargin>
+      Title <Text mdcStyle="caption" component="span" adjustMargin>Caption</Text>
+    </Text>
+    <Text mdcStyle="subheading2" component="h2" adjustMargin>Subheading 2</Text>
+    <Text mdcStyle="subheading1" component="h3" adjustMargin>Subheading 1</Text>
+    <Text mdcStyle="body1" component="p" adjustMargin>
+      Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </Text>
+    <Text mdcStyle="body2" component="p" adjustMargin>
+      Body 2 text, calling something out.
+    </Text>
+  </Typography>
 `;
 
 export default class TypographyPage extends React.Component<{}> {
@@ -215,7 +257,172 @@ export default class TypographyPage extends React.Component<{}> {
           React components
         </Text>
 
+        <Text component="h4" mdcStyle="subheading2">
+          Typography
+        </Text>
 
+        <p>
+          HOC container of typography components. Every typography texts should
+          be included in this component.
+        </p>
+
+        <table className={styles['table-doc']}>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>className</td>
+              <td>String</td>
+              <td />
+              <td />
+              <td>classname of component</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <Text component="h4" mdcStyle="subheading2">
+          Text
+        </Text>
+
+        <p>HOC container that sets the correct style</p>
+
+        <table className={styles['table-doc']}>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>mdcStyle</td>
+              <td>
+                String value: display4, display3, display2, display1, headline,
+                title, subheading2, subheading1, body2, body1, caption, button
+              </td>
+              <td />
+              <td>✔</td>
+              <td>Style of text component.</td>
+            </tr>
+            <tr>
+              <td>adjustMargin</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td />
+              <td>Enable adjustment of margin.</td>
+            </tr>
+            <tr>
+              <td>className</td>
+              <td>String</td>
+              <td />
+              <td />
+              <td>classname of component</td>
+            </tr>
+            <tr>
+              <td>component</td>
+              <td>{'React.ElementType<any>'}</td>
+              <td>span</td>
+              <td />
+              <td>classname of component</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <Text mdcStyle="display2" component="h4">
+          Styles
+        </Text>
+
+        <Highlight>{textStyles}</Highlight>
+
+        <div>
+          <Text mdcStyle="display4" component="h1">
+            Display 4
+          </Text>
+          <Text mdcStyle="display3" component="h2">
+            Display 3
+          </Text>
+          <Text mdcStyle="display2" component="h3">
+            Display 2
+          </Text>
+          <Text mdcStyle="display1" component="h4">
+            Display 1
+          </Text>
+          <Text mdcStyle="headline" component="h1">
+            Headline
+          </Text>
+          <Text mdcStyle="title" component="h2">
+            Title{' '}
+            <Text mdcStyle="caption" component="span">
+              Caption
+            </Text>
+          </Text>
+          <Text mdcStyle="subheading2" component="h2">
+            Subheading 2
+          </Text>
+          <Text mdcStyle="subheading1" component="h3">
+            Subheading 1
+          </Text>
+          <Text mdcStyle="body1" component="p">
+            Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit
+          </Text>
+          <Text mdcStyle="body2" component="p">
+            Body 2 text, calling something out.
+          </Text>
+        </div>
+
+        <Text mdcStyle="display2" component="h4">
+          Styles with margin adjustments
+        </Text>
+
+        <Highlight>{textStylesAdjust}</Highlight>
+
+        <div>
+          <Text mdcStyle="display4" component="h1" adjustMargin>
+            Display 4
+          </Text>
+          <Text mdcStyle="display3" component="h2" adjustMargin>
+            Display 3
+          </Text>
+          <Text mdcStyle="display2" component="h3" adjustMargin>
+            Display 2
+          </Text>
+          <Text mdcStyle="display1" component="h4" adjustMargin>
+            Display 1
+          </Text>
+          <Text mdcStyle="headline" component="h1" adjustMargin>
+            Headline
+          </Text>
+          <Text mdcStyle="title" component="h2" adjustMargin>
+            Title{' '}
+            <Text mdcStyle="caption" component="span" adjustMargin>
+              Caption
+            </Text>
+          </Text>
+          <Text mdcStyle="subheading2" component="h2" adjustMargin>
+            Subheading 2
+          </Text>
+          <Text mdcStyle="subheading1" component="h3" adjustMargin>
+            Subheading 1
+          </Text>
+          <Text mdcStyle="body1" component="p" adjustMargin>
+            Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit
+          </Text>
+          <Text mdcStyle="body2" component="p" adjustMargin>
+            Body 2 text, calling something out.
+          </Text>
+        </div>
       </LayoutCell>
     );
   }

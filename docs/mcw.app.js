@@ -69950,12 +69950,13 @@ var Text = function Text(_ref) {
   var component = _ref.component,
       mdcStyle = _ref.mdcStyle,
       adjustMargin = _ref.adjustMargin,
-      rest = _objectWithoutProperties(_ref, ['component', 'mdcStyle', 'adjustMargin']);
+      className = _ref.className,
+      rest = _objectWithoutProperties(_ref, ['component', 'mdcStyle', 'adjustMargin', 'className']);
 
-  var className = (0, _classnames2.default)(_styles2.default['mdc-typography--' + mdcStyle], rest.className, {
+  var rootClassName = (0, _classnames2.default)(_styles2.default['mdc-typography--' + mdcStyle], className, {
     'mdc-typography--adjust-margin': adjustMargin
   });
-  return React.createElement(component, _extends({}, rest, { className: className }));
+  return React.createElement(component, _extends({}, rest, { className: rootClassName }));
 };
 
 Text.defaultProps = {
@@ -70069,12 +70070,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 /* eslint-disable */
 
 /* eslint-enable */
 
 var sassExample = '@import \'@mcw/typography/lib/styles.scss\';\n\nhtml, body {\n  @include mdc-typography-base;\n}\n\np {\n  @include mdc-typography(body1);\n}\n';
+
+var textStyles = '\n  <Typography>\n    <Text mdcStyle="display4" component="h1">Display 4</Text>\n    <Text mdcStyle="display3" component="h2">Display 3</Text>\n    <Text mdcStyle="display2" component="h3">Display 2</Text>\n    <Text mdcStyle="display1" component="h4">Display 1</Text>\n    <Text mdcStyle="headline" component="h1">Headline</Text>\n    <Text mdcStyle="title" component="h2">\n      Title <Text mdcStyle="caption" component="span">Caption</Text>\n    </Text>\n    <Text mdcStyle="subheading2" component="h2">Subheading 2</Text>\n    <Text mdcStyle="subheading1" component="h3">Subheading 1</Text>\n    <Text mdcStyle="body1" component="p">\n      Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing elit\n    </Text>\n    <Text mdcStyle="body2" component="p">\n      Body 2 text, calling something out.\n    </Text>\n  </Typography>\n';
+
+var textStylesAdjust = '\n  <Typography>\n    <Text mdcStyle="display4" component="h1" adjustMargin>Display 4</Text>\n    <Text mdcStyle="display3" component="h2" adjustMargin>Display 3</Text>\n    <Text mdcStyle="display2" component="h3" adjustMargin>Display 2</Text>\n    <Text mdcStyle="display1" component="h4" adjustMargin>Display 1</Text>\n    <Text mdcStyle="headline" component="h1" adjustMargin>Headline</Text>\n    <Text mdcStyle="title" component="h2" adjustMargin>\n      Title <Text mdcStyle="caption" component="span" adjustMargin>Caption</Text>\n    </Text>\n    <Text mdcStyle="subheading2" component="h2" adjustMargin>Subheading 2</Text>\n    <Text mdcStyle="subheading1" component="h3" adjustMargin>Subheading 1</Text>\n    <Text mdcStyle="body1" component="p" adjustMargin>\n      Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing elit\n    </Text>\n    <Text mdcStyle="body2" component="p" adjustMargin>\n      Body 2 text, calling something out.\n    </Text>\n  </Typography>\n';
 
 var TypographyPage = function (_React$Component) {
   _inherits(TypographyPage, _React$Component);
@@ -70553,6 +70557,365 @@ var TypographyPage = function (_React$Component) {
           _typography.Text,
           { component: 'h4', mdcStyle: 'subheading1' },
           'React components'
+        ),
+        React.createElement(
+          _typography.Text,
+          { component: 'h4', mdcStyle: 'subheading2' },
+          'Typography'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'HOC container of typography components. Every typography texts should be included in this component.'
+        ),
+        React.createElement(
+          'table',
+          { className: _styles2.default['table-doc'] },
+          React.createElement(
+            'thead',
+            null,
+            React.createElement(
+              'tr',
+              null,
+              React.createElement(
+                'th',
+                null,
+                'Property'
+              ),
+              React.createElement(
+                'th',
+                null,
+                'Type'
+              ),
+              React.createElement(
+                'th',
+                null,
+                'Default'
+              ),
+              React.createElement(
+                'th',
+                null,
+                'Required'
+              ),
+              React.createElement(
+                'th',
+                null,
+                'Description'
+              )
+            )
+          ),
+          React.createElement(
+            'tbody',
+            null,
+            React.createElement(
+              'tr',
+              null,
+              React.createElement(
+                'td',
+                null,
+                'className'
+              ),
+              React.createElement(
+                'td',
+                null,
+                'String'
+              ),
+              React.createElement('td', null),
+              React.createElement('td', null),
+              React.createElement(
+                'td',
+                null,
+                'classname of component'
+              )
+            )
+          )
+        ),
+        React.createElement(
+          _typography.Text,
+          { component: 'h4', mdcStyle: 'subheading2' },
+          'Text'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'HOC container that sets the correct style'
+        ),
+        React.createElement(
+          'table',
+          { className: _styles2.default['table-doc'] },
+          React.createElement(
+            'thead',
+            null,
+            React.createElement(
+              'tr',
+              null,
+              React.createElement(
+                'th',
+                null,
+                'Property'
+              ),
+              React.createElement(
+                'th',
+                null,
+                'Type'
+              ),
+              React.createElement(
+                'th',
+                null,
+                'Default'
+              ),
+              React.createElement(
+                'th',
+                null,
+                'Required'
+              ),
+              React.createElement(
+                'th',
+                null,
+                'Description'
+              )
+            )
+          ),
+          React.createElement(
+            'tbody',
+            null,
+            React.createElement(
+              'tr',
+              null,
+              React.createElement(
+                'td',
+                null,
+                'mdcStyle'
+              ),
+              React.createElement(
+                'td',
+                null,
+                'String value: display4, display3, display2, display1, headline, title, subheading2, subheading1, body2, body1, caption, button'
+              ),
+              React.createElement('td', null),
+              React.createElement(
+                'td',
+                null,
+                '\u2714'
+              ),
+              React.createElement(
+                'td',
+                null,
+                'Style of text component.'
+              )
+            ),
+            React.createElement(
+              'tr',
+              null,
+              React.createElement(
+                'td',
+                null,
+                'adjustMargin'
+              ),
+              React.createElement(
+                'td',
+                null,
+                'boolean'
+              ),
+              React.createElement(
+                'td',
+                null,
+                'false'
+              ),
+              React.createElement('td', null),
+              React.createElement(
+                'td',
+                null,
+                'Enable adjustment of margin.'
+              )
+            ),
+            React.createElement(
+              'tr',
+              null,
+              React.createElement(
+                'td',
+                null,
+                'className'
+              ),
+              React.createElement(
+                'td',
+                null,
+                'String'
+              ),
+              React.createElement('td', null),
+              React.createElement('td', null),
+              React.createElement(
+                'td',
+                null,
+                'classname of component'
+              )
+            ),
+            React.createElement(
+              'tr',
+              null,
+              React.createElement(
+                'td',
+                null,
+                'component'
+              ),
+              React.createElement(
+                'td',
+                null,
+                'React.ElementType<any>'
+              ),
+              React.createElement(
+                'td',
+                null,
+                'span'
+              ),
+              React.createElement('td', null),
+              React.createElement(
+                'td',
+                null,
+                'classname of component'
+              )
+            )
+          )
+        ),
+        React.createElement(
+          _typography.Text,
+          { mdcStyle: 'display2', component: 'h4' },
+          'Styles'
+        ),
+        React.createElement(
+          _reactHighlight2.default,
+          null,
+          textStyles
+        ),
+        React.createElement(
+          'div',
+          null,
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'display4', component: 'h1' },
+            'Display 4'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'display3', component: 'h2' },
+            'Display 3'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'display2', component: 'h3' },
+            'Display 2'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'display1', component: 'h4' },
+            'Display 1'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'headline', component: 'h1' },
+            'Headline'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'title', component: 'h2' },
+            'Title',
+            ' ',
+            React.createElement(
+              _typography.Text,
+              { mdcStyle: 'caption', component: 'span' },
+              'Caption'
+            )
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'subheading2', component: 'h2' },
+            'Subheading 2'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'subheading1', component: 'h3' },
+            'Subheading 1'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'body1', component: 'p' },
+            'Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'body2', component: 'p' },
+            'Body 2 text, calling something out.'
+          )
+        ),
+        React.createElement(
+          _typography.Text,
+          { mdcStyle: 'display2', component: 'h4' },
+          'Styles with margin adjustments'
+        ),
+        React.createElement(
+          _reactHighlight2.default,
+          null,
+          textStylesAdjust
+        ),
+        React.createElement(
+          'div',
+          null,
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'display4', component: 'h1', adjustMargin: true },
+            'Display 4'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'display3', component: 'h2', adjustMargin: true },
+            'Display 3'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'display2', component: 'h3', adjustMargin: true },
+            'Display 2'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'display1', component: 'h4', adjustMargin: true },
+            'Display 1'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'headline', component: 'h1', adjustMargin: true },
+            'Headline'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'title', component: 'h2', adjustMargin: true },
+            'Title',
+            ' ',
+            React.createElement(
+              _typography.Text,
+              { mdcStyle: 'caption', component: 'span', adjustMargin: true },
+              'Caption'
+            )
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'subheading2', component: 'h2', adjustMargin: true },
+            'Subheading 2'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'subheading1', component: 'h3', adjustMargin: true },
+            'Subheading 1'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'body1', component: 'p', adjustMargin: true },
+            'Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+          ),
+          React.createElement(
+            _typography.Text,
+            { mdcStyle: 'body2', component: 'p', adjustMargin: true },
+            'Body 2 text, calling something out.'
+          )
         )
       );
     }

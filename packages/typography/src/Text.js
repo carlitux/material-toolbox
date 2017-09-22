@@ -7,6 +7,7 @@ import styles from './styles.scss';
 
 type Props = {
   component: React.ComponentType<any>,
+  className: string,
   adjustMargin: boolean,
   mdcStyle:
     | 'display4'
@@ -21,20 +22,23 @@ type Props = {
     | 'body1'
     | 'caption'
     | 'button',
-  rest: {
-    className: string,
-  },
 };
 
-const Text = ({ component, mdcStyle, adjustMargin, ...rest }: Props) => {
-  const className = classnames(
+const Text = ({
+  component,
+  mdcStyle,
+  adjustMargin,
+  className,
+  ...rest
+}: Props) => {
+  const rootClassName = classnames(
     styles[`mdc-typography--${mdcStyle}`],
-    rest.className,
+    className,
     {
       'mdc-typography--adjust-margin': adjustMargin,
     },
   );
-  return React.createElement(component, { ...rest, className });
+  return React.createElement(component, { ...rest, className: rootClassName });
 };
 
 Text.defaultProps = {
