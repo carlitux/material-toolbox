@@ -45519,7 +45519,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var Hero = function Hero() {
   return React.createElement(
     _theme2.default,
-    { theme: 'primary', textStyle: 'primary' },
+    { theme: 'primary', textStyle: 'primary', textOn: 'primary' },
     React.createElement(
       'header',
       null,

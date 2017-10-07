@@ -8,7 +8,7 @@ import { Text } from 'react-mcw/typography';
 /* eslint-enable */
 
 const Hero = () => (
-  <Theme theme="primary" textStyle="primary">
+  <Theme theme="primary" textStyle="primary" textOn="primary">
     <header>
       <LayoutGrid>
         <LayoutInner>
