@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import classnames from 'classnames';
-import styles from '@material/theme/mdc-theme.scss';
 
 type Props = {
   children: React.Node,
@@ -37,21 +36,20 @@ const Theme = ({
     ...rest,
     className: classnames(className, {
       // Background classes
-      [styles['mdc-theme--background']]: theme === 'background',
-      [styles[`mdc-theme--${theme || ''}-bg`]]:
+      'mdc-theme--background': theme === 'background',
+      [`mdc-theme--${theme || ''}-bg`]:
         theme && theme !== 'background' && !themeVariant,
-      [styles[`mdc-theme--${theme || ''}-${themeVariant || ''}-bg`]]:
+      [`mdc-theme--${theme || ''}-${themeVariant || ''}-bg`]:
         theme && themeVariant && theme !== 'background',
       // Text primary and secondary with variants
-      [styles[`mdc-theme--${textStyle || ''}`]]:
-        textStyle && !textVariant && !textOn,
-      [styles[`mdc-theme--${textStyle || ''}-${textVariant || ''}`]]:
+      [`mdc-theme--${textStyle || ''}`]: textStyle && !textVariant && !textOn,
+      [`mdc-theme--${textStyle || ''}-${textVariant || ''}`]:
         textStyle &&
         textVariant &&
         !textOn &&
         (textStyle === 'primary' || textStyle === 'secondary'),
       // Text on some background
-      [styles[`mdc-theme--text-${textStyle || ''}-on-${textOn || ''}`]]:
+      [`mdc-theme--text-${textStyle || ''}-on-${textOn || ''}`]:
         textStyle && textOn,
     }),
   };

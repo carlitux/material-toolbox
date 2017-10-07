@@ -22,6 +22,7 @@ import AnimationPage from './AnimationPage';
 import TypographyPage from './TypographyPage';
 import ThemePage from './ThemePage';
 import Hero from './Hero';
+import ListsPage from './ListsPage';
 import styles from './styles.scss';
 
 type State = {
@@ -99,7 +100,9 @@ export default class App extends React.Component<{}, State> {
                   <ListItem disabled>Text Fields</ListItem>
                   <ListItem disabled>Layout Grids</ListItem>
                   <ListItem disabled>Linear Progress</ListItem>
-                  <ListItem disabled>Lists</ListItem>
+                  <ListItem to="/lists" component={Link}>
+                    Lists
+                  </ListItem>
                   <ListItem disabled>Menus</ListItem>
                   <ListItem disabled>Ripples</ListItem>
                   <ListItem disabled>RTL</ListItem>
@@ -123,6 +126,7 @@ export default class App extends React.Component<{}, State> {
                   <Route path="/animation" component={AnimationPage} />
                   <Route path="/typography" component={TypographyPage} />
                   <Route path="/theme" component={ThemePage} />
+                  <Route path="/lists" component={ListsPage} />
                 </LayoutInner>
               </LayoutGrid>
             </div>

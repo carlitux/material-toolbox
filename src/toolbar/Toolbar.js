@@ -3,7 +3,6 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { MDCToolbarFoundation } from '@material/toolbar';
 import * as util from '@material/toolbar/util';
-import styles from '@material/toolbar/mdc-toolbar.scss';
 
 import ToolbarRow from './Row';
 
@@ -55,19 +54,19 @@ export default class Toolbar extends React.Component<Props, State> {
   foundation = new MDCToolbarFoundation({
     addClass: className =>
       this.setState(prevState => {
-        prevState.classes.add(styles[className] || className);
+        prevState.classes.add(className);
         return {
           classes: prevState.classes,
         };
       }),
     removeClass: className =>
       this.setState(prevState => {
-        prevState.classes.delete(styles[className] || className);
+        prevState.classes.delete(className);
         return {
           classes: prevState.classes,
         };
       }),
-    hasClass: className => this.allClasses.has(styles[className] || className),
+    hasClass: className => this.allClasses.has(className),
     registerScrollHandler: handler =>
       window.addEventListener('scroll', handler, util.applyPassive()),
     deregisterScrollHandler: handler =>
@@ -132,15 +131,13 @@ export default class Toolbar extends React.Component<Props, State> {
   props: Props;
 
   render() {
-    const className = classnames(styles['mdc-toolbar'], ...this.state.classes, {
-      [styles['mdc-toolbar--flexible']]: this.props.flexible,
-      [styles['mdc-toolbar--flexible-default-behavior']]:
+    const className = classnames('mdc-toolbar', ...this.state.classes, {
+      'mdc-toolbar--flexible': this.props.flexible,
+      'mdc-toolbar--flexible-default-behavior':
         this.props.flexible && this.props.flexibleDefault,
-      [styles['mdc-toolbar--fixed']]: this.props.fixed,
-      [styles['mdc-toolbar--fixed-lastrow-only']]:
-        this.props.fixed && this.props.lastRow,
-      [styles['mdc-toolbar--waterfall']]:
-        this.props.fixed && this.props.waterfall,
+      'mdc-toolbar--fixed': this.props.fixed,
+      'mdc-toolbar--fixed-lastrow-only': this.props.fixed && this.props.lastRow,
+      'mdc-toolbar--waterfall': this.props.fixed && this.props.waterfall,
     });
 
     this.allClasses = new Set(className.split(' '));

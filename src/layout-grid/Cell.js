@@ -2,8 +2,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import styles from '@material/layout-grid/mdc-layout-grid.scss';
-
 type phoneCols = null | 1 | 2 | 3 | 4;
 type tabletCols = phoneCols | 5 | 6 | 7 | 8;
 type desktopCols = tabletCols | 9 | 10 | 11 | 12;
@@ -32,14 +30,14 @@ const Cell = ({
 }: Props) => (
   <div
     className={classnames(
-      styles[BASE],
+      BASE,
       {
-        [styles[`${BASE}--span-${span || ''}`]]: span,
-        [styles[`${BASE}--span-${tablet || ''}-tablet`]]: tablet,
-        [styles[`${BASE}--span-${phone || ''}-phone`]]: phone,
-        [styles[`${BASE}--span-${desktop || ''}-desktop`]]: desktop,
-        [styles[`${BASE}--order-${order || ''}`]]: order,
-        [styles[`${BASE}--align-${align || ''}`]]: align,
+        [`${BASE}--span-${span || ''}`]: span,
+        [`${BASE}--span-${tablet || ''}-tablet`]: tablet,
+        [`${BASE}--span-${phone || ''}-phone`]: phone,
+        [`${BASE}--span-${desktop || ''}-desktop`]: desktop,
+        [`${BASE}--order-${order || ''}`]: order,
+        [`${BASE}--align-${align || ''}`]: align,
       },
       className,
     )}

@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import styles from '@material/toolbar/mdc-toolbar.scss';
 
 import ToolbarSection from './Section';
 
@@ -9,7 +8,7 @@ type Props = {
 };
 
 const ToolbarRow = ({ children, ...rest }: Props) => (
-  <div {...rest} className={styles['mdc-toolbar__row']}>
+  <div {...rest} className="mdc-toolbar__row">
     {children}
   </div>
 );

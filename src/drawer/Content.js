@@ -1,8 +1,5 @@
 // @flow
 import * as React from 'react';
-import classnames from 'classnames';
-
-import styles from '@material/drawer/mdc-drawer.scss';
 
 type Props = {
   children: React.Element<any>,
@@ -10,7 +7,7 @@ type Props = {
 };
 
 const DrawerContent = ({ type, children, ...rest }: Props) => {
-  const composedClassName = classnames(styles[`mdc-${type}-drawer__content`]);
+  const composedClassName = `mdc-${type}-drawer__content`;
 
   return React.cloneElement(children, {
     ...rest,

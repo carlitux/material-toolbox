@@ -5,8 +5,6 @@ import classnames from 'classnames';
 import { MDCPersistentDrawerFoundation, util } from '@material/drawer';
 import { FOCUSABLE_ELEMENTS } from '@material/drawer/persistent/constants';
 
-import styles from '@material/drawer/mdc-drawer.scss';
-
 type Props = {
   onOpen: () => void,
   onClose: () => void,
@@ -54,19 +52,19 @@ export default class PersistentDrawer extends React.Component<Props, State> {
   foundation = new MDCPersistentDrawerFoundation({
     addClass: className =>
       this.setState(prevState => {
-        prevState.classes.add(styles[className] || className);
+        prevState.classes.add(className);
         return {
           classes: prevState.classes,
         };
       }),
     removeClass: className =>
       this.setState(prevState => {
-        prevState.classes.delete(styles[className] || className);
+        prevState.classes.delete(className);
         return {
           classes: prevState.classes,
         };
       }),
-    hasClass: className => this.allClasses.has(styles[className] || className),
+    hasClass: className => this.allClasses.has(className),
     hasNecessaryDom: () => Boolean(this.drawer),
     registerInteractionHandler: (evt, handler) =>
       this.root &&
@@ -126,8 +124,8 @@ export default class PersistentDrawer extends React.Component<Props, State> {
 
   render() {
     const className = classnames(
-      styles['mdc-persistent-drawer'],
-      styles['mdc-typography'],
+      'mdc-persistent-drawer',
+      'mdc-typography',
       ...this.state.classes,
     );
 
@@ -143,7 +141,7 @@ export default class PersistentDrawer extends React.Component<Props, State> {
           ref={drawer => {
             this.drawer = drawer;
           }}
-          className={styles['mdc-persistent-drawer__drawer']}>
+          className="mdc-persistent-drawer__drawer">
           {this.props.children}
         </nav>
       </aside>

@@ -2,8 +2,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import styles from '@material/list/mdc-list.scss';
-
 type Props = {
   children: React.Node,
   type: 'primary' | 'secondary',
@@ -13,8 +11,8 @@ type Props = {
 
 const ListText = ({ label, children, className, type, ...rest }: Props) => {
   const classname = classnames(className, {
-    [styles['mdc-list-item__text']]: type === 'primary',
-    [styles['mdc-list-item__text__secondary']]: type === 'secondary',
+    'mdc-list-item__text': type === 'primary',
+    'mdc-list-item__text__secondary': type === 'secondary',
   });
 
   return (

@@ -2,7 +2,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import styles from '@material/toolbar/mdc-toolbar.scss';
 
 type Props = {
   children: React.Element<any>,
@@ -11,7 +10,7 @@ type Props = {
 
 const ToolbarFixedAdjust = ({ children, className }: Props) => {
   const composedClassName = classnames(
-    styles['mdc-toolbar-fixed-adjust'],
+    'mdc-toolbar-fixed-adjust',
     className,
     children ? children.props.className : '',
   );

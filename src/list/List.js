@@ -2,8 +2,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import styles from '@material/list/mdc-list.scss';
-
 type Props = {
   children: React.Node,
   dark: boolean,
@@ -20,10 +18,10 @@ const List = ({
   component,
   ...rest
 }: Props) => {
-  const rootClassName = classnames(styles['mdc-list'], {
-    [styles['mdc-list--theme-dark']]: dark,
-    [styles['mdc-list--dense']]: dense,
-    [styles['mdc-list--two-line']]: twoLines,
+  const rootClassName = classnames('mdc-list', {
+    'mdc-list--theme-dark': dark,
+    'mdc-list--dense': dense,
+    'mdc-list--two-line': twoLines,
   });
 
   return React.createElement(

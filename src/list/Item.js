@@ -1,8 +1,6 @@
 // @flow
 import * as React from 'react';
 
-import styles from '@material/list/mdc-list.scss';
-
 type Props = {
   children: React.Node,
   component: React.ComponentType<any>,
@@ -13,7 +11,7 @@ const ListItem = ({ children, component, ...rest }: Props) =>
     component,
     {
       ...rest,
-      className: styles['mdc-list-item'],
+      className: 'mdc-list-item',
     },
     children,
   );

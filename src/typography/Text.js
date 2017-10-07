@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import classnames from 'classnames';
-import styles from '@material/typography/mdc-typography.scss';
 
 type Props = {
   component: React.ComponentType<any>,
@@ -29,13 +28,9 @@ const Text = ({
   className,
   ...rest
 }: Props) => {
-  const rootClassName = classnames(
-    styles[`mdc-typography--${textStyle}`],
-    className,
-    {
-      'mdc-typography--adjust-margin': adjustMargin,
-    },
-  );
+  const rootClassName = classnames(`mdc-typography--${textStyle}`, className, {
+    'mdc-typography--adjust-margin': adjustMargin,
+  });
   return React.createElement(component, { ...rest, className: rootClassName });
 };
 

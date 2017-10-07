@@ -41,7 +41,6 @@ const CSS_LOADER_CONFIG = [
   {
     loader: 'css-loader',
     options: {
-      // localIdentName: '[local]___[hash:base64:5]',
       localIdentName: '[local]',
       sourceMap: GENERATE_SOURCE_MAPS,
       importLoaders: 2,
@@ -68,11 +67,6 @@ const CSS_LOADER_CONFIG = [
 // In development, stylesheets are emitted as JS files to facilitate hot module replacement.
 // In all other cases, ExtractTextPlugin is used to generate the final CSS, so these files are
 // given a dummy ".js-entry" extension.
-const CSS_JS_FILENAME_OUTPUT_PATTERN = `[name]${IS_PROD
-  ? '.min'
-  : ''}.css${IS_DEV ? '.js' : '.js-entry'}`;
-const CSS_FILENAME_OUTPUT_PATTERN = `[name].css`;
-
 const createCssLoaderConfig = () =>
   WRAP_CSS_IN_JS
     ? [{ loader: 'style-loader' }].concat(CSS_LOADER_CONFIG)
@@ -83,12 +77,10 @@ const createCssLoaderConfig = () =>
 
 const createCssExtractTextPlugin = () =>
   new ExtractTextPlugin(
-    IS_DEV
-      ? CSS_FILENAME_OUTPUT_PATTERN
-      : {
-          filename: 'mcw.[name].css',
-          disable: false,
-          allChunks: true,
+    {
+      filename: 'mcw.[name].css',
+      disable: false,
+      allChunks: true,
       } // eslint-disable-line
   );
 
@@ -123,41 +115,55 @@ module.exports = [
         },
         {
           test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
-          },
+          include: [
+            path.resolve('./src'),
+            // path.resolve('../src'),
+            path.resolve('../node_modules/@material'),
+          ],
+          // exclude: /node_modules/,
+          use: IS_PROD
+            ? [{ loader: 'babel-loader', options: { cacheDirectory: true } }]
+            : [
+                'react-hot-loader/webpack',
+                { loader: 'babel-loader', options: { cacheDirectory: true } },
+              ],
+          // options: {
+          //   cacheDirectory: true,
+          // },
         },
       ],
     },
-    plugins: [createCssExtractTextPlugin(), createBannerPlugin()],
+    plugins: IS_DEV
+      ? [createCssExtractTextPlugin(), createBannerPlugin()]
+      : [createCssExtractTextPlugin(), createBannerPlugin()],
   },
 ];
 
-if (IS_DEV) {
-  module.exports.push({
-    name: 'app',
-    entry: {
-      'demo-styles': path.resolve('./src/styles.scss'),
-    },
-    output: {
-      path: OUT_PATH,
-      publicPath: PUBLIC_PATH,
-      filename: CSS_JS_FILENAME_OUTPUT_PATTERN,
-    },
-    devServer: {
-      disableHostCheck: true,
-    },
-    devtool: DEVTOOL,
-    module: {
-      rules: [
-        {
-          test: /\.scss$/,
-          use: createCssLoaderConfig(),
-        },
-      ],
-    },
-    plugins: [createCssExtractTextPlugin(), createBannerPlugin()],
-  });
-}
+// if (IS_DEV) {
+//   const CSS_JS_FILENAME_OUTPUT_PATTERN = `mcw.[name].css`;
+//
+//   module.exports.push({
+//     name: 'app',
+//     entry: {
+//       'demo-styles': path.resolve('./src/styles.scss'),
+//     },
+//     output: {
+//       path: OUT_PATH,
+//       publicPath: PUBLIC_PATH,
+//       filename: CSS_JS_FILENAME_OUTPUT_PATTERN,
+//     },
+//     devServer: {
+//       disableHostCheck: true,
+//     },
+//     devtool: DEVTOOL,
+//     module: {
+//       rules: [
+//         {
+//           test: /\.scss$/,
+//           use: createCssLoaderConfig(),
+//         },
+//       ],
+//     },
+//     plugins: [createCssExtractTextPlugin(), createBannerPlugin()],
+//   });
+// }

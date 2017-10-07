@@ -8,8 +8,6 @@ import {
   OPACITY_VAR_NAME,
 } from '@material/drawer/temporary/constants';
 
-import styles from '@material/drawer/mdc-drawer.scss';
-
 type Props = {
   onOpen: () => void,
   onClose: () => void,
@@ -53,19 +51,19 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
   foundation = new MDCTemporaryDrawerFoundation({
     addClass: className =>
       this.setState(prevState => {
-        prevState.classes.add(styles[className] || className);
+        prevState.classes.add(className);
         return {
           classes: prevState.classes,
         };
       }),
     removeClass: className =>
       this.setState(prevState => {
-        prevState.classes.delete(styles[className] || className);
+        prevState.classes.delete(className);
         return {
           classes: prevState.classes,
         };
       }),
-    hasClass: className => this.allClasses.has(styles[className] || className),
+    hasClass: className => this.allClasses.has(className),
     addBodyClass: className =>
       document.body && document.body.classList.add(className),
     removeBodyClass: className =>
@@ -135,8 +133,8 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
 
   render() {
     const className = classnames(
-      styles['mdc-temporary-drawer'],
-      styles['mdc-typography'],
+      'mdc-temporary-drawer',
+      'mdc-typography',
       ...this.state.classes,
     );
 
@@ -152,7 +150,7 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
           ref={drawer => {
             this.drawer = drawer;
           }}
-          className={styles['mdc-temporary-drawer__drawer']}>
+          className="mdc-temporary-drawer__drawer">
           {this.props.children}
         </nav>
       </aside>

@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import styles from '@material/layout-grid/mdc-layout-grid.scss';
 
 import Cell from './Cell';
 
@@ -9,7 +8,7 @@ type Props = {
 };
 
 const Inner = ({ children }: Props) => (
-  <div className={styles['mdc-layout-grid__inner']}>{children}</div>
+  <div className="mdc-layout-grid__inner">{children}</div>
 );
 
 export default Inner;

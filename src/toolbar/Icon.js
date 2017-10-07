@@ -2,8 +2,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import styles from '@material/toolbar/mdc-toolbar.scss';
-
 type Props = {
   tag: 'a' | 'span' | 'button',
   icon: string,
@@ -12,8 +10,8 @@ type Props = {
 
 const ToolbarIcon = ({ tag, icon, isMenu, ...rest }: Props) => {
   const className = classnames('material-icons', {
-    [styles['mdc-toolbar__icon--menu']]: isMenu,
-    [styles['mdc-toolbar__icon']]: !isMenu,
+    'mdc-toolbar__icon--menu': isMenu,
+    'mdc-toolbar__icon': !isMenu,
   });
 
   return React.createElement(tag, { ...rest, className }, icon);

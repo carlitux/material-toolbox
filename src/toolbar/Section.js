@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import classnames from 'classnames';
-import styles from '@material/toolbar/mdc-toolbar.scss';
 
 type Props = {
   children: React.Node,
@@ -12,9 +11,9 @@ type Props = {
 const BASE = 'mdc-toolbar__section';
 
 const ToolbarSection = ({ children, align, shrink, ...rest }: Props) => {
-  const className = classnames(styles[BASE], {
-    [styles[`${BASE}--align-${align || ''}`]]: align,
-    [styles['mdc-toolbar__section--shrink-to-fit']]: shrink,
+  const className = classnames(BASE, {
+    [`${BASE}--align-${align || ''}`]: align,
+    'mdc-toolbar__section--shrink-to-fit': shrink,
   });
 
   return (

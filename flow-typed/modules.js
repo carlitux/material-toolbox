@@ -51,30 +51,6 @@ declare module '@material/drawer/persistent/constants' {
   declare var FOCUSABLE_ELEMENTS: string;
 }
 
-declare module '@material/layout-grid/mdc-layout-grid.scss' {
-  declare export default { [any]: any }
-}
-
-declare module '@material/list/mdc-list.scss' {
-  declare export default { [any]: any }
-}
-
-declare module '@material/typography/mdc-typography.scss' {
-  declare export default { [any]: any }
-}
-
-declare module '@material/toolbar/mdc-toolbar.scss' {
-  declare export default { [any]: any }
-}
-
-declare module '@material/theme/mdc-theme.scss' {
-  declare export default { [any]: any }
-}
-
-declare module '@material/drawer/mdc-drawer.scss' {
-  declare export default { [any]: any }
-}
-
 declare module '@material/drawer/temporary/constants' {
   declare var FOCUSABLE_ELEMENTS: string;
   declare var OPACITY_VAR_NAME: string;
