@@ -4,11 +4,15 @@ declare module 'classnames' {
   declare var exports: typeof classnames;
 }
 
+declare module 'react-syntax-highlighter/dist/styles' {
+  declare var monokai: any;
+}
+
 declare module '@material/toolbar' {
   declare class MDCToolbarFoundation {
-    constructor(handler: any): MDCToolbarFoundation,
-    init(): void,
-    destroy(): void,
+    constructor(handler: any): MDCToolbarFoundation;
+    init(): void;
+    destroy(): void;
   }
 }
 
@@ -18,19 +22,19 @@ declare module '@material/toolbar/util' {
 
 declare module '@material/drawer' {
   declare class MDCPersistentDrawerFoundation {
-    constructor(handler: any): MDCPersistentDrawerFoundation,
-    init(): void,
-    destroy(): void,
-    open(): void,
-    close(): void,
+    constructor(handler: any): MDCPersistentDrawerFoundation;
+    init(): void;
+    destroy(): void;
+    open(): void;
+    close(): void;
   }
 
   declare class MDCTemporaryDrawerFoundation {
-    constructor(handler: any): MDCTemporaryDrawerFoundation,
-    init(): void,
-    destroy(): void,
-    open(): void,
-    close(): void,
+    constructor(handler: any): MDCTemporaryDrawerFoundation;
+    init(): void;
+    destroy(): void;
+    open(): void;
+    close(): void;
   }
 
   declare var util: {
@@ -45,6 +49,30 @@ declare module '@material/drawer' {
 
 declare module '@material/drawer/persistent/constants' {
   declare var FOCUSABLE_ELEMENTS: string;
+}
+
+declare module '@material/layout-grid/mdc-layout-grid.scss' {
+  declare export default { [any]: any }
+}
+
+declare module '@material/list/mdc-list.scss' {
+  declare export default { [any]: any }
+}
+
+declare module '@material/typography/mdc-typography.scss' {
+  declare export default { [any]: any }
+}
+
+declare module '@material/toolbar/mdc-toolbar.scss' {
+  declare export default { [any]: any }
+}
+
+declare module '@material/theme/mdc-theme.scss' {
+  declare export default { [any]: any }
+}
+
+declare module '@material/drawer/mdc-drawer.scss' {
+  declare export default { [any]: any }
 }
 
 declare module '@material/drawer/temporary/constants' {

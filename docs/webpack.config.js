@@ -1,5 +1,4 @@
 const path = require('path');
-const glob = require('glob');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -53,6 +52,7 @@ const CSS_LOADER_CONFIG = [
     loader: 'postcss-loader',
     options: {
       sourceMap: GENERATE_SOURCE_MAPS,
+      // eslint-disable-next-line
       plugins: () => [require('autoprefixer')({ grid: false })],
     },
   },
@@ -60,10 +60,7 @@ const CSS_LOADER_CONFIG = [
     loader: 'sass-loader',
     options: {
       sourceMap: GENERATE_SOURCE_MAPS,
-      includePaths: glob
-        .sync('../packages/*/node_modules')
-        .map(d => path.join(__dirname, d))
-      .concat(['./node_modules']),
+      includePaths: ['../node_modules'],
     },
   },
 ];
@@ -85,13 +82,15 @@ const createCssLoaderConfig = () =>
       });
 
 const createCssExtractTextPlugin = () =>
-  new ExtractTextPlugin(IS_DEV
-    ? CSS_FILENAME_OUTPUT_PATTERN
-  : {
-      filename: 'mcw.[name].css',
-      disable: false,
-      allChunks: true
-    });
+  new ExtractTextPlugin(
+    IS_DEV
+      ? CSS_FILENAME_OUTPUT_PATTERN
+      : {
+          filename: 'mcw.[name].css',
+          disable: false,
+          allChunks: true,
+      } // eslint-disable-line
+  );
 
 const appEntry = IS_DEV
   ? ['react-hot-loader/patch', path.resolve('./src/index.js')]

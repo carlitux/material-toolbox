@@ -1,12 +1,12 @@
 // @flow
+/* eslint-disable */
 import * as React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-/* eslint-disable */
-import { LayoutGrid, LayoutInner, LayoutCell } from '@mcw/layout-grid';
-import { PermanentDrawer, DrawerHeader, DrawerContent } from '@mcw/drawer';
-import { List, ListItem } from '@mcw/list';
-import Theme from '@mcw/theme';
+import { LayoutGrid, LayoutInner, LayoutCell } from 'react-mcw/layout-grid';
+import { PermanentDrawer, DrawerHeader, DrawerContent } from 'react-mcw/drawer';
+import { List, ListItem } from 'react-mcw/list';
+import Theme from 'react-mcw/theme';
 import {
   ToolbarTitle,
   ToolbarIcon,
@@ -14,12 +14,13 @@ import {
   ToolbarSection,
   ToolbarFixedAdjust,
   Toolbar,
-} from '@mcw/toolbar';
+} from 'react-mcw/toolbar';
 /* eslint-enable */
 
 import HomePage from './HomePage';
 import AnimationPage from './AnimationPage';
 import TypographyPage from './TypographyPage';
+import ThemePage from './ThemePage';
 import Hero from './Hero';
 import styles from './styles.scss';
 
@@ -104,7 +105,9 @@ export default class App extends React.Component<{}, State> {
                   <ListItem disabled>RTL</ListItem>
                   <ListItem disabled>Snackbars</ListItem>
                   <ListItem disabled>Tabs</ListItem>
-                  <ListItem disabled>Theme</ListItem>
+                  <ListItem to="/theme" component={Link}>
+                    Theme
+                  </ListItem>
                   <ListItem disabled>Toolbars</ListItem>
                   <ListItem to="/typography" component={Link}>
                     Typography
@@ -119,6 +122,7 @@ export default class App extends React.Component<{}, State> {
                   <Route exact path="/" component={HomePage} />
                   <Route path="/animation" component={AnimationPage} />
                   <Route path="/typography" component={TypographyPage} />
+                  <Route path="/theme" component={ThemePage} />
                 </LayoutInner>
               </LayoutGrid>
             </div>

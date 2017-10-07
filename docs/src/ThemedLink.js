@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 /* eslint-disable */
-import Theme from '@mcw/theme';
+import Theme from 'react-mcw/theme';
 /* eslint-enable */
 
 type Props = { to: string, children: React.Node };

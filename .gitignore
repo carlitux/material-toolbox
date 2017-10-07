@@ -24,3 +24,11 @@ Session.vim
 .tags
 .tern-port
 codeit.sh
+
+# exclude compiled directories
+/drawer
+/layout-grid
+/list
+/theme
+/toolbar
+/typography

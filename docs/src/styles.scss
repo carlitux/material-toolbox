@@ -1,12 +1,11 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
 
 $mdc-theme-primary: #212121;
-$mdc-theme-secondary: #b0bec5;
+$mdc-theme-secondary: #00b8d4;
 $mdc-theme-background: #fff; // White
 
-@import '@mcw/theme/lib/styles.scss';
-@import '@mcw/typography/lib/styles.scss';
-@import 'highlight.js/styles/monokai';
+@import '@material/theme/mdc-theme';
+@import '@material/typography/mdc-typography';
 
 html, body {
   @include mdc-typography-base;
@@ -55,5 +54,47 @@ p code {
     border: 1px solid #eee;
     padding: 12px 12px 12px 24px;
   }
+
+  th:first-child {
+    width: 15%;
+  }
+  th:nth-child(2) {
+    width: 25%;
+  }
+  th:nth-child(3) {
+    width: 10%;
+  }
+  th:nth-child(4) {
+    width: 10%;
+  }
 }
 
+.demo-theme__color {
+  display: inline-flex;
+  flex-direction: column;
+  margin-right: 24px;
+
+  .demo-theme__color__block {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 1px;
+  }
+}
+
+
+.demo-theme__text-styles {
+    display: inline-flex;
+    box-sizing: border-box;
+    padding: 16px;
+    border: 1px solid #f0f0f0;
+    align-items: center;
+
+    span {
+      padding: 0 16px;
+    }
+}

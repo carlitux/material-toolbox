@@ -1,11 +1,13 @@
 {
   "extends": [
     "airbnb",
+    "standard",
     "plugin:flowtype/recommended",
     "plugin:react/recommended",
     "prettier",
     "prettier/flowtype",
-    "prettier/react"
+    "prettier/react",
+    "prettier/standard"
   ],
   "env": {
     "browser": true,
@@ -27,11 +29,11 @@
     "no-underscore-dangle": [0],
   },
   "plugins": [
+    "import",
     "flowtype",
     "react",
-    "jsx-a11y",
-    "import",
-    "prettier"
+    "prettier",
+    "standard"
   ],
   "settings": {
     "ecmascript": 7,
