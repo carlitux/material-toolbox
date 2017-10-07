@@ -1,6 +1,6 @@
 // @flow
 
-declare module 'react-mcw/typography' {
+declare module 'material-toolbox/typography' {
   declare type TextProps = {
     component: React$ComponentType<*> | string,
     className?: string,
@@ -30,7 +30,7 @@ declare module 'react-mcw/typography' {
   declare export class Text extends React$Component<TextProps> {}
 }
 
-declare module 'react-mcw/theme' {
+declare module 'material-toolbox/theme' {
   declare type Props = {
     children: React$Node,
     className?: string,

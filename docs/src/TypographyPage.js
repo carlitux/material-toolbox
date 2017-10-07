@@ -3,9 +3,9 @@
 import * as React from 'react';
 import Highlighter from './Highlighter';
 
-import { LayoutCell } from 'react-mcw/layout-grid';
-import { Text } from 'react-mcw/typography';
-import Theme from 'react-mcw/theme';
+import { LayoutCell } from 'material-toolbox/layout-grid';
+import { Text } from 'material-toolbox/typography';
+import Theme from 'material-toolbox/theme';
 /* eslint-enable */
 
 import ThemedLink from './ThemedLink';
@@ -30,7 +30,7 @@ p {
 }
 `;
 
-const importComponents = `import { Typography, Text } from 'react-mcw/typography';`;
+const importComponents = `import { Typography, Text } from 'material-toolbox/typography';`;
 
 const textStyles = `<Typography>
     <Text textStyle="display4" component="h1">Display 4</Text>
@@ -205,7 +205,7 @@ export default class TypographyPage extends React.Component<{}> {
             </tr>
             <tr>
               <td>component</td>
-              <td>{'React.ElementType<any>'}</td>
+              <td>React.ElementType&lt;any&gt;</td>
               <td>span</td>
               <td />
               <td>Component that will be rendered</td>

@@ -2,9 +2,9 @@
 /* eslint-disable */
 import * as React from 'react';
 
-import Theme from 'react-mcw/theme';
-import { LayoutGrid, LayoutInner, LayoutCell } from 'react-mcw/layout-grid';
-import { Text } from 'react-mcw/typography';
+import Theme from 'material-toolbox/theme';
+import { LayoutGrid, LayoutInner, LayoutCell } from 'material-toolbox/layout-grid';
+import { Text } from 'material-toolbox/typography';
 /* eslint-enable */
 
 const Hero = () => (

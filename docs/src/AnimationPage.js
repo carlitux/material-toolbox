@@ -2,8 +2,8 @@
 /* eslint-disable */
 import * as React from 'react';
 
-import { LayoutCell } from 'react-mcw/layout-grid';
-import { Text } from 'react-mcw/typography';
+import { LayoutCell } from 'material-toolbox/layout-grid';
+import { Text } from 'material-toolbox/typography';
 
 import ThemedLink from './ThemedLink';
 /* eslint-enable */

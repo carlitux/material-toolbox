@@ -3,15 +3,15 @@
 import * as React from 'react';
 import Highlighter from './Highlighter';
 
-import { LayoutCell } from 'react-mcw/layout-grid';
-import { Text } from 'react-mcw/typography';
-import Theme from 'react-mcw/theme';
+import { LayoutCell } from 'material-toolbox/layout-grid';
+import { Text } from 'material-toolbox/typography';
+import Theme from 'material-toolbox/theme';
 /* eslint-enable */
 
 import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
 
-const importComponents = `import Theme from 'react-mcw/theme';`;
+const importComponents = `import Theme from 'material-toolbox/theme';`;
 const colorsAsText = `<div>
   <Theme textStyle="primary">
     <Text component="div" textStyle="body2">

@@ -4,8 +4,8 @@ import * as React from 'react';
 import Highlighter from './Highlighter';
 import ThemedLink from './ThemedLink';
 
-import { LayoutCell } from 'react-mcw/layout-grid';
-import { Text } from 'react-mcw/typography';
+import { LayoutCell } from 'material-toolbox/layout-grid';
+import { Text } from 'material-toolbox/typography';
 /* eslint-enable */
 
 const HomePage = () => (
@@ -31,7 +31,7 @@ const HomePage = () => (
     <Text component="p" textStyle="body1">
       Get up and running with React Material Components web
     </Text>
-    <Highlighter>$ npm install --save react-mcw</Highlighter>
+    <Highlighter>$ npm install --save material-toolbox</Highlighter>
   </LayoutCell>
 );
 

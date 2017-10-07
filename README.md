@@ -4,4 +4,4 @@ This is the [React](https://facebook.github.io/react/) integration of [Material 
 
 To use this package you have to use webpack and css modules.
 
-[Read the Documentation](https://carlitux.github.io/react-mcw)
+[Read the Documentation](https://carlitux.github.io/material-toolbox)

@@ -3,10 +3,10 @@
 import * as React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-import { LayoutGrid, LayoutInner, LayoutCell } from 'react-mcw/layout-grid';
-import { PermanentDrawer, DrawerHeader, DrawerContent } from 'react-mcw/drawer';
-import { List, ListItem } from 'react-mcw/list';
-import Theme from 'react-mcw/theme';
+import { LayoutGrid, LayoutInner, LayoutCell } from 'material-toolbox/layout-grid';
+import { PermanentDrawer, DrawerHeader, DrawerContent } from 'material-toolbox/drawer';
+import { List, ListItem } from 'material-toolbox/list';
+import Theme from 'material-toolbox/theme';
 import {
   ToolbarTitle,
   ToolbarIcon,
@@ -14,7 +14,7 @@ import {
   ToolbarSection,
   ToolbarFixedAdjust,
   Toolbar,
-} from 'react-mcw/toolbar';
+} from 'material-toolbox/toolbar';
 /* eslint-enable */
 
 import HomePage from './HomePage';
