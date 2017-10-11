@@ -135,8 +135,8 @@ export default class TypographyPage extends React.Component<{}> {
         </Text>
 
         <p>
-          HOC container of typography components. Every typography texts should
-          be included into this component.
+          Container of typography components. Every typography texts should be
+          included into this component.
         </p>
 
         <table className={styles['table-doc']}>
@@ -164,7 +164,7 @@ export default class TypographyPage extends React.Component<{}> {
           Text
         </Text>
 
-        <p>HOC container that sets the correct style</p>
+        <p>Container that sets the correct style</p>
 
         <table className={styles['table-doc']}>
           <thead>

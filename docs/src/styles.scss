@@ -10,6 +10,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/toolbar/mdc-toolbar';
 @import '@material/layout-grid/mdc-layout-grid';
 @import '@material/drawer/mdc-drawer';
+@import '@material/list/mdc-list';
 
 html, body {
   @include mdc-typography-base;
@@ -101,4 +102,16 @@ p code {
     span {
       padding: 0 16px;
     }
+}
+
+.list-demo-wrapper .mdc-list, .list-demo-wrapper .mdc-list-group {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mdc-list, .mdc-list-group {
+  max-width: 600px;
+}
+
+.mdc-theme--dark {
+  background-color: #303030;
 }

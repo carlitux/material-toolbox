@@ -196,7 +196,7 @@ export default class ThemePage extends React.Component<{}> {
         </Text>
 
         <p>
-          HOC container of theme components. Every typography texts should be
+          Container of theme components. Every typography texts should be
           included in this component.
         </p>
 

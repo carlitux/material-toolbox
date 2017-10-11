@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 type Props = {
   children: React.Node,
-  type: 'primary' | 'secondary',
+  type?: 'primary' | 'secondary',
   label: string,
   className: string,
 };

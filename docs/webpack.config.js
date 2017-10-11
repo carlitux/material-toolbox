@@ -135,7 +135,16 @@ module.exports = [
     },
     plugins: IS_DEV
       ? [createCssExtractTextPlugin(), createBannerPlugin()]
-      : [createCssExtractTextPlugin(), createBannerPlugin()],
+      : [
+          createCssExtractTextPlugin(),
+          createBannerPlugin(),
+          new webpack.DefinePlugin({
+            'process.env': {
+              NODE_ENV: JSON.stringify('production'),
+            },
+          }),
+          new webpack.optimize.UglifyJsPlugin(),
+        ],
   },
 ];
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 
 type Props = {
   children: React.Node,
-  component: React.ComponentType<any>,
+  component?: React.ComponentType<any>,
 };
 
 const ListItem = ({ children, component, ...rest }: Props) =>
@@ -17,7 +17,7 @@ const ListItem = ({ children, component, ...rest }: Props) =>
   );
 
 ListItem.defaultProps = {
-  component: 'ul',
+  component: 'li',
 };
 
 export default ListItem;
