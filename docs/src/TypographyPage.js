@@ -32,46 +32,6 @@ p {
 
 const importComponents = `import { Typography, Text } from 'material-toolbox/typography';`;
 
-const textStyles = `<Typography>
-    <Text textStyle="display4" component="h1">Display 4</Text>
-    <Text textStyle="display3" component="h2">Display 3</Text>
-    <Text textStyle="display2" component="h3">Display 2</Text>
-    <Text textStyle="display1" component="h4">Display 1</Text>
-    <Text textStyle="headline" component="h1">Headline</Text>
-    <Text textStyle="title" component="h2">
-      Title <Text textStyle="caption" component="span">Caption</Text>
-    </Text>
-    <Text textStyle="subheading2" component="h2">Subheading 2</Text>
-    <Text textStyle="subheading1" component="h3">Subheading 1</Text>
-    <Text textStyle="body1" component="p">
-      Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </Text>
-    <Text textStyle="body2" component="p">
-      Body 2 text, calling something out.
-    </Text>
-  </Typography>
-`;
-
-const textStylesAdjust = `<Typography>
-    <Text textStyle="display4" component="h1" adjustMargin>Display 4</Text>
-    <Text textStyle="display3" component="h2" adjustMargin>Display 3</Text>
-    <Text textStyle="display2" component="h3" adjustMargin>Display 2</Text>
-    <Text textStyle="display1" component="h4" adjustMargin>Display 1</Text>
-    <Text textStyle="headline" component="h1" adjustMargin>Headline</Text>
-    <Text textStyle="title" component="h2" adjustMargin>
-      Title <Text textStyle="caption" component="span" adjustMargin>Caption</Text>
-    </Text>
-    <Text textStyle="subheading2" component="h2" adjustMargin>Subheading 2</Text>
-    <Text textStyle="subheading1" component="h3" adjustMargin>Subheading 1</Text>
-    <Text textStyle="body1" component="p" adjustMargin>
-      Body1 paragrapah. Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </Text>
-    <Text textStyle="body2" component="p" adjustMargin>
-      Body 2 text, calling something out.
-    </Text>
-  </Typography>
-`;
-
 export default class TypographyPage extends React.Component<{}> {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -217,8 +177,6 @@ export default class TypographyPage extends React.Component<{}> {
           Styles
         </Text>
 
-        <Highlighter language="html">{textStyles}</Highlighter>
-
         <div>
           <Text textStyle="display4" component="h1">
             Display 4
@@ -259,8 +217,6 @@ export default class TypographyPage extends React.Component<{}> {
         <Text textStyle="title" component="h2">
           Styles with margin adjustments
         </Text>
-
-        <Highlighter language="html">{textStylesAdjust}</Highlighter>
 
         <div>
           <Text textStyle="display4" component="h1" adjustMargin>

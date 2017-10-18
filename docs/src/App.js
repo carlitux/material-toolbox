@@ -6,6 +6,7 @@ import { Link, Route } from 'react-router-dom';
 import { LayoutGrid, LayoutInner, LayoutCell } from 'material-toolbox/layout-grid';
 import { PermanentDrawer, DrawerHeader, DrawerContent } from 'material-toolbox/drawer';
 import { List, ListItem } from 'material-toolbox/list';
+import Ripple from 'material-toolbox/ripple';
 import Theme from 'material-toolbox/theme';
 import {
   ToolbarTitle,
@@ -24,6 +25,8 @@ import ThemePage from './ThemePage';
 import Hero from './Hero';
 import ListsPage from './ListsPage';
 import styles from './styles.scss';
+
+const ListItemRippled = Ripple(ListItem);
 
 type State = {
   adjustFixedStyle: { [string]: any },
@@ -78,12 +81,12 @@ export default class App extends React.Component<{}, State> {
               onClose={this.handleCloseDrawer}>
               <DrawerContent type="permanent">
                 <List component="nav">
-                  <ListItem to="/" component={Link}>
+                  <ListItemRippled to="/" component={Link}>
                     Home
-                  </ListItem>
-                  <ListItem to="/animation" component={Link}>
+                  </ListItemRippled>
+                  <ListItemRippled to="/animation" component={Link}>
                     Animation
-                  </ListItem>
+                  </ListItemRippled>
                   <ListItem disabled>Floating Action Buttons</ListItem>
                   <ListItem disabled>Icon toggle Buttons</ListItem>
                   <ListItem disabled>Cards</ListItem>
@@ -100,21 +103,21 @@ export default class App extends React.Component<{}, State> {
                   <ListItem disabled>Text Fields</ListItem>
                   <ListItem disabled>Layout Grids</ListItem>
                   <ListItem disabled>Linear Progress</ListItem>
-                  <ListItem to="/lists" component={Link}>
+                  <ListItemRippled to="/lists" component={Link}>
                     Lists
-                  </ListItem>
+                  </ListItemRippled>
                   <ListItem disabled>Menus</ListItem>
                   <ListItem disabled>Ripples</ListItem>
                   <ListItem disabled>RTL</ListItem>
                   <ListItem disabled>Snackbars</ListItem>
                   <ListItem disabled>Tabs</ListItem>
-                  <ListItem to="/theme" component={Link}>
+                  <ListItemRippled to="/theme" component={Link}>
                     Theme
-                  </ListItem>
+                  </ListItemRippled>
                   <ListItem disabled>Toolbars</ListItem>
-                  <ListItem to="/typography" component={Link}>
+                  <ListItemRippled to="/typography" component={Link}>
                     Typography
-                  </ListItem>
+                  </ListItemRippled>
                 </List>
               </DrawerContent>
             </PermanentDrawer>

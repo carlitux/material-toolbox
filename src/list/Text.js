@@ -4,27 +4,32 @@ import classnames from 'classnames';
 
 type Props = {
   children: React.Node,
-  type?: 'primary' | 'secondary',
-  label: string,
+  secondary: boolean,
   className: string,
+  component: React.ComponentType<any>,
 };
 
-const ListText = ({ label, children, className, type, ...rest }: Props) => {
+const ListText = ({
+  children,
+  className,
+  secondary,
+  component: Component,
+  ...rest
+}: Props) => {
   const classname = classnames(className, {
-    'mdc-list-item__text': type === 'primary',
-    'mdc-list-item__text__secondary': type === 'secondary',
+    'mdc-list-item__text': !secondary,
+    'mdc-list-item__text__secondary': secondary,
   });
 
   return (
-    <span {...rest} className={classname}>
-      {label}
+    <Component {...rest} className={classname}>
       {children}
-    </span>
+    </Component>
   );
 };
 
 ListText.defaultProps = {
-  type: 'primary',
+  component: 'span', // eslint-disable-line
 };
 
 export default ListText;

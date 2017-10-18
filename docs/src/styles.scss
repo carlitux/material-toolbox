@@ -11,6 +11,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/layout-grid/mdc-layout-grid';
 @import '@material/drawer/mdc-drawer';
 @import '@material/list/mdc-list';
+@import '@material/ripple/mdc-ripple';
 
 html, body {
   @include mdc-typography-base;
@@ -108,10 +109,50 @@ p code {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.list-demo-wrapper .mdc-list-group .mdc-list,
+.list-demo-wrapper .mdc-theme--dark .mdc-list,
+.list-demo-wrapper .mdc-theme--dark .mdc-list-group {
+  border: none;
+}
+
 .mdc-list, .mdc-list-group {
   max-width: 600px;
 }
 
 .mdc-theme--dark {
   background-color: #303030;
+}
+
+.grey-bg {
+  background: rgba(0, 0, 0, .26);
+}
+
+.avatar-text-icon-demo-list .mdc-list-item__end-detail {
+  text-decoration: none;
+  color: #ff4081;
+}
+
+.two-line-avatar-text-icon-demo {
+  .mdc-list-item__start-detail {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  .mdc-list-item__end-detail {
+    color: rgba(0, 0, 0, .26);
+    text-decoration: none;
+  }
+}
+
+.mdc-theme--dark {
+  .two-line-avatar-text-icon-demo {
+    .mdc-list-item__start-detail {
+      background-color: rgba(255, 255, 255, .7);
+      color: #303030;
+    }
+    .mdc-list-item__end-detail {
+      color: rgba(255, 255, 255, .7);
+    }
+  }
 }

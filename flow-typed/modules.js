@@ -8,44 +8,58 @@ declare module 'react-syntax-highlighter/dist/styles' {
   declare var monokai: any;
 }
 
-declare module '@material/toolbar' {
-  declare class MDCToolbarFoundation {
-    constructor(handler: any): MDCToolbarFoundation;
-    init(): void;
-    destroy(): void;
-  }
-}
+// declare module '@material/toolbar' {
+//   declare class MDCToolbarFoundation {
+//     constructor(handler: any): MDCToolbarFoundation;
+//     init(): void;
+//     destroy(): void;
+//   }
+// }
 
 declare module '@material/toolbar/util' {
   declare function applyPassive(): any;
 }
 
-declare module '@material/drawer' {
-  declare class MDCPersistentDrawerFoundation {
-    constructor(handler: any): MDCPersistentDrawerFoundation;
-    init(): void;
-    destroy(): void;
-    open(): void;
-    close(): void;
-  }
-
-  declare class MDCTemporaryDrawerFoundation {
-    constructor(handler: any): MDCTemporaryDrawerFoundation;
-    init(): void;
-    destroy(): void;
-    open(): void;
-    close(): void;
-  }
-
-  declare var util: {
-    applyPassive(): any,
-    remapEvent(evt: Event): any,
-    getTransformPropertyName(): any,
-    saveElementTabState(el: HTMLElement): any,
-    restoreElementTabState(el: HTMLElement): any,
-    supportsCssCustomProperties(): boolean,
-  };
+declare module '@material/ripple/util' {
+  declare function applyPassive(): any;
+  declare function supportsCssVariables(window: any): any;
+  declare function getMatchesProperty(element: any): string;
 }
+
+declare module '@material/ripple/foundation' {
+  declare class MDCRippleFoundation {
+    constructor(handler: any): MDCRippleFoundation;
+    init(): void;
+    destroy(): void;
+  }
+}
+
+// declare module '@material/drawer' {
+//   declare class MDCPersistentDrawerFoundation {
+//     constructor(handler: any): MDCPersistentDrawerFoundation;
+//     init(): void;
+//     destroy(): void;
+//     open(): void;
+//     close(): void;
+//   }
+//
+//   declare class MDCTemporaryDrawerFoundation {
+//     constructor(handler: any): MDCTemporaryDrawerFoundation;
+//     init(): void;
+//     destroy(): void;
+//     open(): void;
+//     close(): void;
+//   }
+//
+//   declare var util: {
+//     applyPassive(): any,
+//     remapEvent(evt: Event): any,
+//     getTransformPropertyName(): any,
+//     saveElementTabState(el: HTMLElement): any,
+//     restoreElementTabState(el: HTMLElement): any,
+//     supportsCssCustomProperties(): boolean,
+//   };
+// }
 
 declare module '@material/drawer/persistent/constants' {
   declare var FOCUSABLE_ELEMENTS: string;

@@ -43,7 +43,6 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
     this.foundation.destroy();
   }
 
-  props: Props;
   allClasses: Set<string>;
   drawer: ?HTMLElement;
   root: ?HTMLElement;

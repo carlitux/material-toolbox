@@ -41,6 +41,14 @@ const HomePage = () => (
       into your scss or the css as needed.
     </Text>
     <Highlighter language="css">{importCode}</Highlighter>
+    <Text component="h3" textStyle="title">
+      All source code of example can be found on each page{' '}
+      <ThemedLink
+        to="https://github.com/carlitux/material-toolbox/tree/master/docs/src"
+        target="_blank">
+        here
+      </ThemedLink>
+    </Text>
   </LayoutCell>
 );
 

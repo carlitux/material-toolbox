@@ -12,138 +12,6 @@ import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
 
 const importComponents = `import Theme from 'material-toolbox/theme';`;
-const colorsAsText = `<div>
-  <Theme textStyle="primary">
-    <Text component="div" textStyle="body2">
-      Primary
-    </Text>
-  </Theme>
-  <Theme textStyle="primary" textVariant="light">
-    <Text component="div" textStyle="body2">
-      Primary Light
-    </Text>
-  </Theme>
-  <Theme textStyle="primary" textVariant="dark">
-    <Text component="div" textStyle="body2">
-      Primary Dark
-    </Text>
-  </Theme>
-</div>
-<div>
-  <Theme textStyle="secondary">
-    <Text component="div" textStyle="body2">
-      Secondary
-    </Text>
-  </Theme>
-  <Theme textStyle="secondary" textVariant="light">
-    <Text component="div" textStyle="body2">
-      Secondary Light
-    </Text>
-  </Theme>
-  <Theme textStyle="secondary" textVariant="dark">
-    <Text component="div" textStyle="body2">
-      Secondary Dark
-    </Text>
-  </Theme>
-</div>`;
-const colorsAsBackground = `<div>
-  <Theme theme="primary" textStyle="primary" textOn="primary">
-    <Text component="div" textStyle="body2">
-      Primary
-    </Text>
-  </Theme>
-  <Theme theme="primary" themeVariant="light" textStyle="primary" textOn="primary-light">
-    <Text component="div" textStyle="body2" >
-      Primary Light
-    </Text>
-  </Theme>
-  <Theme theme="primary" themeVariant="dark" textStyle="primary" textOn="primary-dark">
-    <Text component="div" textStyle="body2">
-      Primary Dark
-    </Text>
-  </Theme>
-</div>
-<div>
-  <Theme textStyle="primary" theme="secondary" textOn="secondary">
-    <Text component="div" textStyle="body2">
-      Secondary
-    </Text>
-  </Theme>
-  <Theme textStyle="primary" theme="secondary" themeVariant="light" textOn="secondary-light">
-    <Text component="div" textStyle="body2">
-      Secondary Light
-    </Text>
-  </Theme>
-  <Theme textStyle="primary" theme="secondary" themeVariant="dark" textOn="secondary-dark">
-    <Text component="div" textStyle="body2">
-      Secondary Dark
-    </Text>
-  </Theme>
-</div>
-<div>
-  <Theme textStyle="primary" theme="background" textOn="background">
-    <Text component="div" textStyle="body2">
-      Background
-    </Text>
-  </Theme>
-</div>`;
-const textOnBackground = `<Theme theme="background">
-  <Text component="div" textStyle="body2">
-    <Theme textOn="background" textStyle="primary">
-      <span>Primary</span>
-    </Theme>
-    <Theme textOn="background" textStyle="secondary">
-      <span>Secondary</span>
-    </Theme>
-    <Theme textOn="background" textStyle="hint">
-      <span>Hint</span>
-    </Theme>
-    <Theme textOn="background" textStyle="disabled">
-      <span>Disabled</span>
-    </Theme>
-    <Theme textOn="background" textStyle="icon">
-      <span className="material-icons">favorite</span>
-    </Theme>
-  </Text>
-</Theme>`;
-const textOnPrimary = `<Theme theme="primary">
-  <Text component="div" textStyle="body2">
-    <Theme textOn="primary" textStyle="primary">
-      <span>Primary</span>
-    </Theme>
-    <Theme textOn="primary" textStyle="secondary">
-      <span>Secondary</span>
-    </Theme>
-    <Theme textOn="primary" textStyle="hint">
-      <span>Hint</span>
-    </Theme>
-    <Theme textOn="primary" textStyle="disabled">
-      <span>Disabled</span>
-    </Theme>
-    <Theme textOn="primary" textStyle="icon">
-      <span className="material-icons">favorite</span>
-    </Theme>
-  </Text>
-</Theme>`;
-const textOnSecondary = `<Theme theme="secondary">
-  <Text component="div" textStyle="body2">
-    <Theme textOn="secondary" textStyle="primary">
-      <span>Primary</span>
-    </Theme>
-    <Theme textOn="secondary" textStyle="secondary">
-      <span>Secondary</span>
-    </Theme>
-    <Theme textOn="secondary" textStyle="hint">
-      <span>Hint</span>
-    </Theme>
-    <Theme textOn="secondary" textStyle="disabled">
-      <span>Disabled</span>
-    </Theme>
-    <Theme textOn="secondary" textStyle="icon">
-      <span className="material-icons">favorite</span>
-    </Theme>
-  </Text>
-</Theme>`;
 
 export default class ThemePage extends React.Component<{}> {
   componentDidMount() {
@@ -268,8 +136,6 @@ export default class ThemePage extends React.Component<{}> {
             Theme colors as text
           </Text>
 
-          <Highlighter language="html">{colorsAsText}</Highlighter>
-
           <div className={styles['demo-theme__color']}>
             <Theme textStyle="primary">
               <Text
@@ -328,8 +194,6 @@ export default class ThemePage extends React.Component<{}> {
           <Text component="h2" textStyle="title">
             Theme colors as background
           </Text>
-
-          <Highlighter language="html">{colorsAsBackground}</Highlighter>
 
           <div className={styles['demo-theme__color']}>
             <Theme theme="primary" textStyle="primary" textOn="primary">
@@ -419,7 +283,7 @@ export default class ThemePage extends React.Component<{}> {
           <Text component="h3" textStyle="title">
             Text on background
           </Text>
-          <Highlighter language="html">{textOnBackground}</Highlighter>
+
           <Theme theme="background">
             <Text
               component="div"
@@ -445,7 +309,7 @@ export default class ThemePage extends React.Component<{}> {
           <Text component="h3" textStyle="title">
             Text on primary
           </Text>
-          <Highlighter language="html">{textOnPrimary}</Highlighter>
+
           <Theme theme="primary">
             <Text
               component="div"
@@ -471,7 +335,7 @@ export default class ThemePage extends React.Component<{}> {
           <Text component="h3" textStyle="title">
             Text on secondary
           </Text>
-          <Highlighter language="html">{textOnSecondary}</Highlighter>
+
           <Theme theme="secondary">
             <Text
               component="div"

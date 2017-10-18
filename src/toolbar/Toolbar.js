@@ -128,8 +128,6 @@ export default class Toolbar extends React.Component<Props, State> {
     },
   });
 
-  props: Props;
-
   render() {
     const className = classnames('mdc-toolbar', ...this.state.classes, {
       'mdc-toolbar--flexible': this.props.flexible,

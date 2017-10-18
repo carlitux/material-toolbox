@@ -22,7 +22,7 @@ type Props = {
 };
 
 const Text = ({
-  component,
+  component: Component,
   textStyle,
   adjustMargin,
   className,
@@ -31,11 +31,11 @@ const Text = ({
   const rootClassName = classnames(`mdc-typography--${textStyle}`, className, {
     'mdc-typography--adjust-margin': adjustMargin,
   });
-  return React.createElement(component, { ...rest, className: rootClassName });
+  return <Component {...rest} className={rootClassName} />;
 };
 
 Text.defaultProps = {
-  component: 'span',
+  component: 'span', // eslint-disable-line
 };
 
 export default Text;

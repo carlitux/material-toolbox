@@ -30,41 +30,37 @@ const Theme = ({
   textStyle,
   textVariant,
   textOn,
-  ...rest
 }: Props) => {
-  const props = {
-    ...rest,
-    className: classnames(className, {
-      // Background classes
-      'mdc-theme--background': theme === 'background',
-      [`mdc-theme--${theme || ''}-bg`]:
-        theme && theme !== 'background' && !themeVariant,
-      [`mdc-theme--${theme || ''}-${themeVariant || ''}-bg`]:
-        theme && themeVariant && theme !== 'background',
-      // Text primary and secondary with variants
-      [`mdc-theme--${textStyle || ''}`]: textStyle && !textVariant && !textOn,
-      [`mdc-theme--${textStyle || ''}-${textVariant || ''}`]:
-        textStyle &&
-        textVariant &&
-        !textOn &&
-        (textStyle === 'primary' || textStyle === 'secondary'),
-      // Text on some background
-      [`mdc-theme--text-${textStyle || ''}-on-${textOn || ''}`]:
-        textStyle && textOn,
-    }),
-  };
+  const composedClassName = classnames(className, {
+    // Background classes
+    'mdc-theme--background': theme === 'background',
+    [`mdc-theme--${theme || ''}-bg`]:
+      theme && theme !== 'background' && !themeVariant,
+    [`mdc-theme--${theme || ''}-${themeVariant || ''}-bg`]:
+      theme && themeVariant && theme !== 'background',
+    // Text primary and secondary with variants
+    [`mdc-theme--${textStyle || ''}`]: textStyle && !textVariant && !textOn,
+    [`mdc-theme--${textStyle || ''}-${textVariant || ''}`]:
+      textStyle &&
+      textVariant &&
+      !textOn &&
+      (textStyle === 'primary' || textStyle === 'secondary'),
+    // Text on some background
+    [`mdc-theme--text-${textStyle || ''}-on-${textOn || ''}`]:
+      textStyle && textOn,
+  });
 
   if (children == null || Array.isArray(children)) {
     return React.Children.map(children, child => {
-      const newClassName = classnames(props.className, child.props.className);
-      return React.cloneElement(child, { ...props, className: newClassName });
+      const newClassName = classnames(composedClassName, child.props.className);
+      return <child.type {...child.props} className={newClassName} />;
     });
   }
 
   // $FlowFixMe
-  const newClassName = classnames(props.className, children.props.className);
+  const newClassName = classnames(composedClassName, children.props.className);
   // $FlowFixMe
-  return React.cloneElement(children, { ...props, className: newClassName });
+  return <children.type {...children.props} className={newClassName} />;
 };
 
 export default Theme;
