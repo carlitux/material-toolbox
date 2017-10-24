@@ -14,7 +14,7 @@ src
 # esproposal.decorators=ignore
 
 [ignore]
-.*node_modules.*
+.*/node_modules/.*
 .*data.*
 .*dist.*
 .*\.tmp.*

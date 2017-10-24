@@ -113,31 +113,36 @@ declare module 'material-toolbox/list' {
 }
 
 declare module 'material-toolbox/layout-grid' {
-  declare type TextProps = {
-    component: React$ComponentType<any> | string,
+  declare type phoneCols = 1 | 2 | 3 | 4;
+  declare type tabletCols = phoneCols | 5 | 6 | 7 | 8;
+  declare type desktopCols = tabletCols | 9 | 10 | 11 | 12;
+
+  declare type CellProps = {
+    align?: 'top' | 'middle' | 'bottom',
     className?: string,
-    adjustMargin?: boolean,
-    textStyle:
-      | 'display4'
-      | 'display3'
-      | 'display2'
-      | 'display1'
-      | 'headline'
-      | 'title'
-      | 'subheading2'
-      | 'subheading1'
-      | 'body2'
-      | 'body1'
-      | 'caption'
-      | 'button',
+    span?: desktopCols,
+    order?: desktopCols,
+    phone?: phoneCols,
+    tablet?: tabletCols,
+    desktop?: desktopCols,
   };
 
-  declare type TypographyProps = {
-    children: React$Element<any>,
+  declare export class LayoutCell extends React$Component<CellProps> {}
+
+  declare type GridProps = {
     className?: string,
+    align?: 'left' | 'right',
+    fixed?: boolean,
   };
 
-  declare export class Typography extends React$Component<TypographyProps> {}
+  declare export class LayoutGrid extends React$Component<GridProps> {}
 
-  declare export class Text extends React$Component<TextProps> {}
+  declare export class LayoutInner extends React$Component<{}> {}
+}
+
+declare module 'material-toolbox/elevation' {
+  declare export default class Elevation extends React$Component<{
+    elevation: number,
+    transition?: boolean,
+  }> {}
 }

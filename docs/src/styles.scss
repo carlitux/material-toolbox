@@ -12,6 +12,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/drawer/mdc-drawer';
 @import '@material/list/mdc-list';
 @import '@material/ripple/mdc-ripple';
+@import '@material/elevation/mdc-elevation';
 
 html, body {
   @include mdc-typography-base;
@@ -26,12 +27,12 @@ p code {
 }
 
 .demo-body {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100%;
 }
 
 .demo-content {
@@ -64,12 +65,15 @@ p code {
   th:first-child {
     width: 15%;
   }
+
   th:nth-child(2) {
     width: 25%;
   }
+
   th:nth-child(3) {
     width: 10%;
   }
+
   th:nth-child(4) {
     width: 10%;
   }
@@ -94,15 +98,15 @@ p code {
 
 
 .demo-theme__text-styles {
-    display: inline-flex;
-    box-sizing: border-box;
-    padding: 16px;
-    border: 1px solid #f0f0f0;
-    align-items: center;
+  display: inline-flex;
+  box-sizing: border-box;
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+  align-items: center;
 
-    span {
-      padding: 0 16px;
-    }
+  span {
+    padding: 0 16px;
+  }
 }
 
 .list-demo-wrapper .mdc-list, .list-demo-wrapper .mdc-list-group {
@@ -139,6 +143,7 @@ p code {
     justify-content: center;
     color: white;
   }
+
   .mdc-list-item__end-detail {
     color: rgba(0, 0, 0, .26);
     text-decoration: none;
@@ -151,8 +156,77 @@ p code {
       background-color: rgba(255, 255, 255, .7);
       color: #303030;
     }
+
     .mdc-list-item__end-detail {
       color: rgba(255, 255, 255, .7);
     }
   }
+}
+
+.demo-grid {
+  background-color: #ddd;
+  margin-bottom: 32px;
+}
+
+.demo-cell {
+  box-sizing: border-box;
+  background-color: #666;
+  height: 200px;
+  padding: 8px;
+  color: white;
+  font-size: 1.5em;
+}
+
+.demo-child-cell {
+  position: relative;
+  > span {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    color: #ddd;
+  }
+}
+
+.demo-parent-cell {
+  position: relative;
+  background-color: #aaaaaa;
+  > span {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 1.5em;
+    color: white;
+  }
+}
+
+.demo-grid.max-width {
+  max-width: 1280px;
+}
+
+.elevation-demo-surface {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100px;
+  margin: 0 60px 80px;
+  border-radius: 3px;
+  font-size: .8em;
+  color: #9E9E9E;
+  background: white;
+}
+
+.elevations-demo-surfaces {
+  padding-top: 48px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#elevation-hover-el {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 4px;
 }

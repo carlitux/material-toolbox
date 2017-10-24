@@ -2,12 +2,11 @@
 import * as React from 'react';
 
 type Props = {
-  children: React.Node,
   type: 'temporary' | 'persistent' | 'permanent',
 };
 
-const DrawerToolbarSpacer = ({ type, children }: Props) => (
-  <div className={`mdc-${type}-drawer__toolbar-spacer`}>{children}</div>
+const DrawerToolbarSpacer = ({ type, ...rest }: Props) => (
+  <div {...rest} className={`mdc-${type}-drawer__toolbar-spacer`} />
 );
 
 export default DrawerToolbarSpacer;

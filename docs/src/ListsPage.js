@@ -29,7 +29,7 @@ export default class ThemePage extends React.Component<{}> {
         </Text>
 
         <Text component="h2" textStyle="headline">
-          List components are React wrappers of mdc-theme components.
+          List components are React wrappers of mdc-list components.
         </Text>
 
         <Text component="h3" textStyle="title">

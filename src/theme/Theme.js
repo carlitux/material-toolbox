@@ -50,17 +50,10 @@ const Theme = ({
       textStyle && textOn,
   });
 
-  if (children == null || Array.isArray(children)) {
-    return React.Children.map(children, child => {
-      const newClassName = classnames(composedClassName, child.props.className);
-      return <child.type {...child.props} className={newClassName} />;
-    });
-  }
-
-  // $FlowFixMe
-  const newClassName = classnames(composedClassName, children.props.className);
-  // $FlowFixMe
-  return <children.type {...children.props} className={newClassName} />;
+  return React.Children.map(children, child => {
+    const newClassName = classnames(composedClassName, child.props.className);
+    return <child.type {...child.props} className={newClassName} />;
+  });
 };
 
 export default Theme;

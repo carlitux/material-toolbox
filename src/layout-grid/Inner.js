@@ -1,10 +1,8 @@
 // @flow
 import * as React from 'react';
 
-import Cell from './Cell';
-
 type Props = {
-  children: React.ChildrenArray<React.Element<typeof Cell>>,
+  children: React.Node,
 };
 
 const Inner = ({ children }: Props) => (

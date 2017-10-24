@@ -32,6 +32,14 @@ const Ripple = (
       this.foundation.destroy();
     }
 
+    activate() {
+      this.foundation.activate();
+    }
+
+    deactivate() {
+      this.foundation.deactivate();
+    }
+
     foundation = new MDCRippleFoundation({
       browserSupportsCssVars: () => util.supportsCssVariables(window),
       isUnbounded: () => unbounded,
