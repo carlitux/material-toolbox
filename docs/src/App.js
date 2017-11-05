@@ -6,7 +6,7 @@ import { Link, Route } from 'react-router-dom';
 import { LayoutGrid, LayoutInner, LayoutCell } from 'material-toolbox/layout-grid';
 import { PermanentDrawer, DrawerHeader, DrawerContent } from 'material-toolbox/drawer';
 import { List, ListItem } from 'material-toolbox/list';
-import Ripple from 'material-toolbox/ripple';
+// import Ripple from 'material-toolbox/ripple';
 import Theme from 'material-toolbox/theme';
 import {
   ToolbarTitle,
@@ -29,7 +29,8 @@ import RipplesPage from './RipplesPage';
 import ElevationPage from './ElevationPage';
 import styles from './styles.scss';
 
-const ListItemRippled = Ripple(ListItem);
+// const ListItemRippled = Ripple(ListItem);
+const ListItemRippled = ListItem;
 
 type State = {
   adjustFixedStyle: { [string]: any },

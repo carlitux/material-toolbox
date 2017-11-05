@@ -27,7 +27,7 @@ declare module '@material/ripple/util' {
 }
 
 declare module '@material/ripple/foundation' {
-  declare class MDCRippleFoundation {
+  declare export default class MDCRippleFoundation {
     constructor(handler: any): MDCRippleFoundation;
     init(): void;
     destroy(): void;

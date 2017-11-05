@@ -13,7 +13,8 @@ import Ripple from 'material-toolbox/ripple';
 import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
 
-const ListItemRippled = Ripple(ListItem);
+// const ListItemRippled = Ripple(ListItem);
+const ListItemRippled = ListItem;
 const importComponents = `import { List, ListItem, ListDetail, ListText, ListGroup, ListSubheader } from 'material-toolbox/list';`;
 
 export default class ThemePage extends React.Component<{}> {

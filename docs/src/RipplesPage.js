@@ -1,18 +1,106 @@
 // @flow
 /* eslint-disable */
 import * as React from 'react';
+import classnames from 'classnames';
 import Highlighter from './Highlighter';
+import MDCRippleFoundation from '@material/ripple/foundation';
 
 import { LayoutCell, LayoutGrid, LayoutInner } from 'material-toolbox/layout-grid';
 import { Text } from 'material-toolbox/typography';
 import Theme from 'material-toolbox/theme';
+import createAdapter from 'material-toolbox/ripple';
+import Elevation from 'material-toolbox/elevation';
 /* eslint-enable */
 
 import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
 
-const importComponents = `import { LayoutGrid, LayoutCell, LayoutInner } from 'material-toolbox/layout-grid';`;
+const importComponents = `import createAdapter from 'material-toolbox/ripple';`;
 
+const Div = ({
+  component: Component,
+  ...rest
+}: {
+  component: React.ComponentType<any> | string,
+}) => (
+  <Elevation elevation={2}>
+    <Component {...rest} />
+  </Elevation>
+);
+
+Div.defaultProps = {
+  component: 'div', // eslint-disable-line
+};
+
+type RippleDivProps = {
+  children: React.Node,
+  elevation?: boolean,
+  unbounded?: boolean,
+  primary?: boolean,
+  accent?: boolean,
+  className: string,
+  component: React.ComponentType<any> | string,
+};
+
+type RippleDivState = {
+  classes: { [string]: boolean },
+  styles: { [string]: any },
+};
+
+class RippledDiv extends React.Component<RippleDivProps, RippleDivState> {
+  static defaultProps = {
+    component: 'div',
+  };
+
+  state = {
+    classes: {},
+    styles: {},
+  };
+
+  componentDidMount() {
+    this.ripple = this.initRipple();
+    setTimeout(() => {
+      this.ripple.init();
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    this.ripple.destroy();
+  }
+
+  initRipple() {
+    const adapter = createAdapter(this, this.rippledElement, {
+      unbounded: this.props.unbounded,
+      primary: this.props.primary,
+      accent: this.props.accent,
+    });
+    return new MDCRippleFoundation(adapter);
+  }
+
+  ripple: MDCRippleFoundation;
+  rippledElement: ?HTMLElement;
+
+  render() {
+    const className = classnames(this.props.className, this.state.classes);
+    const Component = this.props.component;
+
+    return (
+      <Elevation elevation={this.props.elevation ? 2 : 0}>
+        <Component
+          className={className}
+          style={this.state.styles}
+          ref={element => {
+            // $FlowFixMe
+            this.rippledElement = element;
+          }}>
+          {this.props.children}
+        </Component>
+      </Elevation>
+    );
+  }
+}
+
+// eslint-disable-next-line
 export default class ThemePage extends React.Component<{}> {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -26,7 +114,7 @@ export default class ThemePage extends React.Component<{}> {
         </Text>
 
         <Text component="h2" textStyle="headline">
-          Ripple component is a React wrapper of mdc-ripple component.
+          Ripple component is a function that create the adapter for element.
         </Text>
 
         <Text component="h3" textStyle="title">
@@ -42,7 +130,7 @@ export default class ThemePage extends React.Component<{}> {
         </p>
 
         <Text component="h1" textStyle="display1">
-          React components
+          MDC Adapter for react components
         </Text>
 
         <Text component="h3" textStyle="title">
@@ -52,19 +140,18 @@ export default class ThemePage extends React.Component<{}> {
         <Highlighter language="javascript">{importComponents}</Highlighter>
 
         <Text component="h2" textStyle="title">
-          LayoutGrid
+          createAdapter
         </Text>
 
         <p>
-          This is a react wrapper for mdc-layout-grid grid. This component can
-          contain any of component type but LayoutInner is the component to
-          follow the guidelines.
+          Function that create the adapter to pass to MDCRippleFoundation and
+          enable ripple effects.
         </p>
 
         <table className={styles['table-doc']}>
           <thead>
             <tr>
-              <th>Property</th>
+              <th>Param</th>
               <th>Type</th>
               <th>Default</th>
               <th>Required</th>
@@ -73,336 +160,127 @@ export default class ThemePage extends React.Component<{}> {
           </thead>
           <tbody>
             <tr>
-              <td>className</td>
-              <td>String</td>
+              <td>component</td>
+              <td>React.Component&lt;any&gt;</td>
               <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-            <tr>
-              <td>align</td>
-              <td>String values: left, right</td>
-              <td />
-              <td />
-              <td>How elements will be aligned</td>
-            </tr>
-            <tr>
-              <td>fixed</td>
-              <td>boolean</td>
-              <td>false</td>
-              <td />
-              <td>Will be a fixed width</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <Text component="h2" textStyle="title">
-          LayoutInner
-        </Text>
-
-        <p>
-          This is a react wrapper for mdc-layout-grid inner. This component can
-          contain any of component type but LayoutCell is the component to
-          follow the guidelines.
-        </p>
-
-        <Text component="h2" textStyle="title">
-          LayoutCell
-        </Text>
-
-        <p>
-          This is a react wrapper for mdc-layout-grid cell. It can contain any
-          React component.
-        </p>
-
-        <table className={styles['table-doc']}>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Required</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>align</td>
-              <td>String values: top, middle, bottom</td>
-              <td />
-              <td />
-              <td>How cell will be vertically aligned</td>
-            </tr>
-            <tr>
-              <td>className</td>
-              <td>string</td>
-              <td />
-              <td />
-              <td>className that will be added</td>
-            </tr>
-            <tr>
-              <td>span</td>
-              <td>number values: 1-12</td>
-              <td />
-              <td />
+              <td>✔</td>
               <td>
-                how many columns will be filled in row up to parent width.
+                Component instance where classes and styles attributes will be
+                added.
               </td>
             </tr>
             <tr>
-              <td>order</td>
-              <td>number values: 1-12</td>
+              <td>element</td>
+              <td>HTMLElement</td>
               <td />
-              <td />
-              <td>how the elements will be ordered</td>
+              <td>✔</td>
+              <td>HTMLElement instance used to calculate effects</td>
             </tr>
             <tr>
-              <td>phone</td>
-              <td>number values: 1-4</td>
+              <td>options</td>
+              <td>object</td>
               <td />
               <td />
-              <td>how many columns will be filled in phone row</td>
-            </tr>
-            <tr>
-              <td>tablet</td>
-              <td>number values: 1-8</td>
-              <td />
-              <td />
-              <td>how many columns will be filled in tablet row</td>
-            </tr>
-            <tr>
-              <td>desktop</td>
-              <td>number values: 1-12</td>
-              <td />
-              <td />
-              <td>how many columns will be filled in desktop row</td>
+              <td>unbounded, disabled, primary, accent boolean options</td>
             </tr>
           </tbody>
         </table>
 
-        <section>
-          <Text component="h1" textStyle="display1">
-            Layout grid (in fluid container)
-          </Text>
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid of default wide (4 columns) items
+        <section className="ripple-example">
+          <div>
+            <Text component="h1" textStyle="display1">
+              Bounded
             </Text>
-
-            <LayoutGrid className="demo-grid">
-              <LayoutInner>
-                <LayoutCell className="demo-cell">4</LayoutCell>
-                <LayoutCell className="demo-cell">4</LayoutCell>
-                <LayoutCell className="demo-cell">4</LayoutCell>
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid of 1 column wide items
+            <RippledDiv elevation className="ripple-demo-surface">
+              Interact with me!
+            </RippledDiv>
+          </div>
+          <div>
+            <Text component="h1" textStyle="display1">
+              Bounded - CSS Only
             </Text>
-
-            <LayoutGrid className="demo-grid">
-              <LayoutInner>
-                {[...Array(12).keys()].map(x => (
-                  <LayoutCell className="demo-cell" span={1} key={x}>
-                    1
-                  </LayoutCell>
-                ))}
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid of differently sized items
-            </Text>
-
-            <LayoutGrid className="demo-grid">
-              <LayoutInner>
-                <LayoutCell className="demo-cell" span={6}>
-                  6
-                </LayoutCell>
-                <LayoutCell className="demo-cell" span={4}>
-                  4
-                </LayoutCell>
-                <LayoutCell className="demo-cell" span={2}>
-                  2
-                </LayoutCell>
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid of items with tweaks at different screen sizes
-            </Text>
-
-            <LayoutGrid className="demo-grid">
-              <LayoutInner>
-                <LayoutCell className="demo-cell" span={6} tablet={8}>
-                  6 (8 tablet)
-                </LayoutCell>
-                <LayoutCell className="demo-cell" span={4} tablet={6}>
-                  4 (6 tablet)
-                </LayoutCell>
-                <LayoutCell className="demo-cell" span={2} tablet={4}>
-                  2 (4 phone)
-                </LayoutCell>
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
+            <Div className="ripple-demo-surface mdc-ripple-surface">
+              Interact with me!
+            </Div>
+          </div>
         </section>
 
-        <section>
-          <Text component="h1" textStyle="display1">
-            Layout grid (in fluid container)
-          </Text>
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid of default wide (4 columns) items
+        <section className="ripple-example">
+          <div>
+            <Text component="h1" textStyle="display1">
+              Bounded
             </Text>
-
-            <LayoutGrid className="demo-grid">
-              <LayoutInner>
-                <LayoutCell className="demo-cell">4</LayoutCell>
-                <LayoutCell className="demo-cell">4</LayoutCell>
-                <LayoutCell className="demo-cell">4</LayoutCell>
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid of 1 column wide items
+            <RippledDiv
+              className="ripple-demo-surface icon material-icons"
+              unbounded>
+              favorite
+            </RippledDiv>
+          </div>
+          <div>
+            <Text component="h1" textStyle="display1">
+              Bounded - CSS Only
             </Text>
-
-            <LayoutGrid className="demo-grid">
-              <LayoutInner>
-                {[...Array(12).keys()].map(x => (
-                  <LayoutCell className="demo-cell" span={1} key={x}>
-                    1
-                  </LayoutCell>
-                ))}
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid of differently sized items
-            </Text>
-
-            <LayoutGrid className="demo-grid">
-              <LayoutInner>
-                <LayoutCell className="demo-cell" span={6}>
-                  6
-                </LayoutCell>
-                <LayoutCell className="demo-cell" span={4}>
-                  4
-                </LayoutCell>
-                <LayoutCell className="demo-cell" span={2}>
-                  2
-                </LayoutCell>
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid of items with tweaks at different screen sizes
-            </Text>
-
-            <LayoutGrid className="demo-grid">
-              <LayoutInner>
-                <LayoutCell className="demo-parent-cell" span={4}>
-                  <LayoutInner>
-                    <LayoutCell className="demo-cell demo-child-cell" span={4}>
-                      <span>C4</span>
-                    </LayoutCell>
-                    <LayoutCell className="demo-cell demo-child-cell" span={4}>
-                      <span>C4</span>
-                    </LayoutCell>
-                    <LayoutCell className="demo-cell demo-child-cell" span={4}>
-                      <span>C4</span>
-                    </LayoutCell>
-                  </LayoutInner>
-                  <span>Parent 4</span>
-                </LayoutCell>
-                <LayoutCell className="demo-cell" span={4}>
-                  4
-                </LayoutCell>
-                <LayoutCell className="demo-cell" span={4}>
-                  4
-                </LayoutCell>
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-
-          <Text component="h2" textStyle="headline">
-            Grid with max width
-          </Text>
-
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid with max width (1280px) and center alignment by default
-            </Text>
-
-            <LayoutGrid className="demo-grid max-width">
-              <LayoutInner>
-                <LayoutCell className="demo-cell" span={4} />
-                <LayoutCell className="demo-cell" span={4} />
-                <LayoutCell className="demo-cell" span={4} />
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-
-          <section>
-            <Text component="h3" textStyle="title">
-              Grid with max width (1280px) and left alignment
-            </Text>
-
-            <LayoutGrid className="demo-grid max-width" align="left">
-              <LayoutInner>
-                <LayoutCell className="demo-cell" span={4} />
-                <LayoutCell className="demo-cell" span={4} />
-                <LayoutCell className="demo-cell" span={4} />
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
+            <div className="icon ripple-demo-surface mdc-ripple-surface material-icons">
+              favorite
+            </div>
+          </div>
         </section>
 
-        <section>
-          <Text component="h1" textStyle="display1">
-            Fixed column width layout grid
-          </Text>
-
-          <section>
-            <Text component="h3" textStyle="title">
-              Fixed column width layout grid and center alignment by default
+        <section className="ripple-example">
+          <div>
+            <Text component="h1" textStyle="display1">
+              Theme Styles
             </Text>
-
-            <LayoutGrid className="demo-grid" fixed>
-              <LayoutInner>
-                <LayoutCell className="demo-cell" span={1} />
-                <LayoutCell className="demo-cell" span={1} />
-                <LayoutCell className="demo-cell" span={1} />
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
-
-          <section>
-            <Text component="h3" textStyle="title">
-              Fixed column width layout grid and right alignment
+            <Theme textStyle="primary">
+              <RippledDiv elevation primary className="ripple-demo-surface">
+                Primary
+              </RippledDiv>
+            </Theme>
+            <Theme textStyle="secondary">
+              <RippledDiv elevation accent className="ripple-demo-surface">
+                Secondary
+              </RippledDiv>
+            </Theme>
+          </div>
+          <div>
+            <Text component="h1" textStyle="display1">
+              Theme Styles - CSS Only
             </Text>
-
-            <LayoutGrid className="demo-grid" align="right" fixed>
-              <LayoutInner>
-                <LayoutCell className="demo-cell" span={1} />
-                <LayoutCell className="demo-cell" span={1} />
-                <LayoutCell className="demo-cell" span={1} />
-              </LayoutInner>
-            </LayoutGrid>
-          </section>
+            <Theme textStyle="primary">
+              <Div className="ripple-demo-surface mdc-ripple-surface mdc-ripple-surface--primary">
+                Primary
+              </Div>
+            </Theme>
+            <Theme textStyle="secondary">
+              <Div className="ripple-demo-surface mdc-ripple-surface mdc-ripple-surface--accent">
+                Secondary
+              </Div>
+            </Theme>
+          </div>
+        </section>
+        <section className="ripple-example">
+          <div>
+            <Text component="h1" textStyle="display1">
+              Applied to &lt;button&gt; element
+            </Text>
+            <RippledDiv
+              elevation
+              primary
+              className="ripple-demo-surface"
+              component="button">
+              button
+            </RippledDiv>
+          </div>
+          <div>
+            <Text component="h1" textStyle="display1">
+              Applied to &lt;button&gt; element - CSS Only
+            </Text>
+            <Div
+              component="button"
+              className="ripple-demo-surface mdc-ripple-surface">
+              button
+            </Div>
+          </div>
         </section>
       </LayoutCell>
     );

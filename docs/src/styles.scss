@@ -230,3 +230,42 @@ p code {
   padding: 2rem;
   border-radius: 4px;
 }
+
+.ripple-demo-surface {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100px;
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &.icon {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    border-radius: 50%;
+  }
+}
+
+.ripple-example {
+  align-items: center;
+  display: flex;
+  & > div {
+    margin: 48px 0;
+    width: 400px;
+  }
+}
+
+button.ripple-demo-surface {
+  display: inline-block;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+

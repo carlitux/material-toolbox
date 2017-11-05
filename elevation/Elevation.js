@@ -27,8 +27,17 @@ var Elevation = function Elevation(_ref) {
   return React.Children.map(children, function (child) {
     var _classnames;
 
-    var newClassName = (0, _classnames3.default)(child.props.className, (_classnames = {}, _defineProperty(_classnames, 'mdc-elevation--z' + (elevation || ''), elevation >= 0), _defineProperty(_classnames, 'mdc-elevation-transition', transition), _classnames));
-    return React.createElement(child.type, _extends({}, child.props, { className: newClassName }));
+    var newClassName = (0, _classnames3.default)(child.props.className, (_classnames = {}, _defineProperty(_classnames, 'mdc-elevation--z' + elevation, elevation >= 0), _defineProperty(_classnames, 'mdc-elevation-transition', transition), _classnames));
+    return React.createElement(child.type, _extends({}, child.props, {
+      className: newClassName,
+      ref: function ref(node) {
+        var ref = child.ref;
+
+        if (typeof ref === 'function') {
+          ref(node);
+        }
+      }
+    }));
   });
 };
 
