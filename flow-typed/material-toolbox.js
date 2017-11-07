@@ -1,4 +1,16 @@
 // @flow
+declare module 'material-toolbox/ripple' {
+  declare export default function createAdapter(
+    component: React$Component<any, any>,
+    element: HTMLElement | Text | Element,
+    options: {
+      unbounded?: boolean,
+      disabled?: boolean,
+      primary?: boolean,
+      accent?: boolean,
+    },
+  ): { [any]: any };
+}
 
 declare module 'material-toolbox/typography' {
   declare type TextProps = {
@@ -77,7 +89,10 @@ declare module 'material-toolbox/list' {
     devider?: boolean,
     inset?: boolean,
     className?: string,
-    rippleRef?: React$Ref<any>,
+    ripple?: boolean,
+    disabled?: boolean,
+    primary?: boolean,
+    accent?: boolean,
   };
 
   declare export class ListItem extends React$Component<ItemProps> {}

@@ -60,28 +60,40 @@ class RippledDiv extends React.Component<RippleDivProps, RippleDivState> {
   componentDidMount() {
     this.ripple = this.initRipple();
     setTimeout(() => {
-      this.ripple.init();
+      if (this.ripple) {
+        this.ripple.init();
+      }
     }, 1000);
   }
 
   componentWillUnmount() {
-    this.ripple.destroy();
+    if (this.ripple) {
+      this.ripple.destroy();
+    }
   }
 
   initRipple() {
-    const adapter = createAdapter(this, this.rippledElement, {
-      unbounded: this.props.unbounded,
-      primary: this.props.primary,
-      accent: this.props.accent,
-    });
-    return new MDCRippleFoundation(adapter);
+    if (this.rippledElement) {
+      const adapter = createAdapter(this, this.rippledElement, {
+        unbounded: this.props.unbounded,
+        primary: this.props.primary,
+        accent: this.props.accent,
+      });
+      return new MDCRippleFoundation(adapter);
+    }
+
+    return null;
   }
 
-  ripple: MDCRippleFoundation;
+  ripple: ?MDCRippleFoundation;
   rippledElement: ?HTMLElement;
 
   render() {
-    const className = classnames(this.props.className, this.state.classes);
+    const className = classnames(
+      this.props.className,
+      'mdc-ripple-surface',
+      this.state.classes,
+    );
     const Component = this.props.component;
 
     return (
@@ -142,6 +154,12 @@ export default class ThemePage extends React.Component<{}> {
         <Text component="h2" textStyle="title">
           createAdapter
         </Text>
+
+        <p>
+          <strong>Important Note</strong>.- This funtion also defines a function{' '}
+          <code>componentRemoved</code> to notify that the component was removed
+          and no setState needed any more. Call it on componentWillUnmount.
+        </p>
 
         <p>
           Function that create the adapter to pass to MDCRippleFoundation and

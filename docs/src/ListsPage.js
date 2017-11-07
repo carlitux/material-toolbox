@@ -13,8 +13,6 @@ import Ripple from 'material-toolbox/ripple';
 import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
 
-// const ListItemRippled = Ripple(ListItem);
-const ListItemRippled = ListItem;
 const importComponents = `import { List, ListItem, ListDetail, ListText, ListGroup, ListSubheader } from 'material-toolbox/list';`;
 
 export default class ThemePage extends React.Component<{}> {
@@ -1641,7 +1639,8 @@ export default class ThemePage extends React.Component<{}> {
             </Text>
 
             <List component="nav">
-              <ListItemRippled
+              <ListItem
+                ripple
                 component="a"
                 href="#"
                 onClick={event => {
@@ -1650,8 +1649,9 @@ export default class ThemePage extends React.Component<{}> {
                 <ListDetail component="i" className="material-icons">
                   network_wifi
                 </ListDetail>Wi-Fi
-              </ListItemRippled>
-              <ListItemRippled
+              </ListItem>
+              <ListItem
+                ripple
                 component="a"
                 href="#"
                 onClick={event => {
@@ -1660,8 +1660,9 @@ export default class ThemePage extends React.Component<{}> {
                 <ListDetail component="i" className="material-icons">
                   bluetooth
                 </ListDetail>Bluetooth
-              </ListItemRippled>
-              <ListItemRippled
+              </ListItem>
+              <ListItem
+                ripple
                 component="a"
                 href="#"
                 onClick={event => {
@@ -1670,7 +1671,7 @@ export default class ThemePage extends React.Component<{}> {
                 <ListDetail component="i" className="material-icons">
                   data_usage
                 </ListDetail>Data Usage
-              </ListItemRippled>
+              </ListItem>
             </List>
           </section>
           <section className={styles['mdc-theme--dark']}>
@@ -1680,7 +1681,8 @@ export default class ThemePage extends React.Component<{}> {
               </Text>
             </Theme>
             <List component="nav">
-              <ListItemRippled
+              <ListItem
+                ripple
                 component="a"
                 href="#"
                 onClick={event => {
@@ -1692,8 +1694,9 @@ export default class ThemePage extends React.Component<{}> {
                   aria-hidden>
                   network_wifi
                 </ListDetail>Wi-Fi
-              </ListItemRippled>
-              <ListItemRippled
+              </ListItem>
+              <ListItem
+                ripple
                 component="a"
                 href="#"
                 onClick={event => {
@@ -1702,8 +1705,9 @@ export default class ThemePage extends React.Component<{}> {
                 <ListDetail component="i" className="material-icons">
                   bluetooth
                 </ListDetail>Bluetooth
-              </ListItemRippled>
-              <ListItemRippled
+              </ListItem>
+              <ListItem
+                ripple
                 component="a"
                 href="#"
                 onClick={event => {
@@ -1712,7 +1716,7 @@ export default class ThemePage extends React.Component<{}> {
                 <ListDetail component="i" className="material-icons">
                   data_usage
                 </ListDetail>Data Usage
-              </ListItemRippled>
+              </ListItem>
             </List>
           </section>
         </section>

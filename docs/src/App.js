@@ -27,10 +27,8 @@ import ListsPage from './ListsPage';
 import LayoutGridPage from './LayoutGridPage';
 import RipplesPage from './RipplesPage';
 import ElevationPage from './ElevationPage';
+import MainNav from './MainNav';
 import styles from './styles.scss';
-
-// const ListItemRippled = Ripple(ListItem);
-const ListItemRippled = ListItem;
 
 type State = {
   adjustFixedStyle: { [string]: any },
@@ -84,51 +82,7 @@ export default class App extends React.Component<{}, State> {
               open={this.state.drawerIsOpen}
               onClose={this.handleCloseDrawer}>
               <DrawerContent type="permanent">
-                <List component="nav">
-                  <ListItemRippled to="/" component={Link}>
-                    Home
-                  </ListItemRippled>
-                  <ListItemRippled to="/animation" component={Link}>
-                    Animation
-                  </ListItemRippled>
-                  <ListItem disabled>Floating Action Buttons</ListItem>
-                  <ListItem disabled>Icon toggle Buttons</ListItem>
-                  <ListItem disabled>Cards</ListItem>
-                  <ListItem disabled>Dialogs</ListItem>
-                  <ListItem disabled>Drawers</ListItem>
-                  <ListItemRippled to="/elevation" component={Link}>
-                    Elevations
-                  </ListItemRippled>
-                  <ListItem disabled>Grid List</ListItem>
-                  <ListItem disabled>Checkboxes</ListItem>
-                  <ListItem disabled>Form Fields</ListItem>
-                  <ListItem disabled>Radio Buttons</ListItem>
-                  <ListItem disabled>Select Menus</ListItem>
-                  <ListItem disabled>Sliders</ListItem>
-                  <ListItem disabled>Switches</ListItem>
-                  <ListItem disabled>Text Fields</ListItem>
-                  <ListItemRippled to="/layout-grid" component={Link}>
-                    Layout Grids
-                  </ListItemRippled>
-                  <ListItem disabled>Linear Progress</ListItem>
-                  <ListItemRippled to="/lists" component={Link}>
-                    Lists
-                  </ListItemRippled>
-                  <ListItem disabled>Menus</ListItem>
-                  <ListItemRippled to="/ripples" component={Link}>
-                    Ripples
-                  </ListItemRippled>
-                  <ListItem disabled>RTL</ListItem>
-                  <ListItem disabled>Snackbars</ListItem>
-                  <ListItem disabled>Tabs</ListItem>
-                  <ListItemRippled to="/theme" component={Link}>
-                    Theme
-                  </ListItemRippled>
-                  <ListItem disabled>Toolbars</ListItem>
-                  <ListItemRippled to="/typography" component={Link}>
-                    Typography
-                  </ListItemRippled>
-                </List>
+                <MainNav />
               </DrawerContent>
             </PermanentDrawer>
             <div>
