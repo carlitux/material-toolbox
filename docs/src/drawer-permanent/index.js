@@ -1,16 +1,13 @@
-/* eslint-disabled */
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { HashRouter } from 'react-router-dom';
-import App from './App';
 /* eslint-enable */
+import PermanentDrawerApp from './App';
 
 ReactDOM.render(
   <AppContainer>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <PermanentDrawerApp />
   </AppContainer>,
   document.getElementById('root'),
 );

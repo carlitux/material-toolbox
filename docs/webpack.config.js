@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+// const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const OUT_PATH = path.resolve('./');
 // Used with webpack-dev-server
@@ -89,11 +89,16 @@ const appEntry = IS_DEV
   ? ['react-hot-loader/patch', path.resolve('./src/index.js')]
   : [path.resolve('./src/index.js')];
 
+const permanentDrawerApp = IS_DEV
+  ? ['react-hot-loader/patch', path.resolve('./src/drawer-permanent/index.js')]
+  : [path.resolve('./src/drawer-permanent/index.js')];
+
 module.exports = [
   {
     name: 'js-components',
     entry: {
       app: appEntry,
+      permanentDrawer: permanentDrawerApp,
       // layoutGrid: [path.resolve('./packages/layout-grid/src/index.js')],
     },
     output: {
@@ -148,32 +153,3 @@ module.exports = [
         ],
   },
 ];
-
-// if (IS_DEV) {
-//   const CSS_JS_FILENAME_OUTPUT_PATTERN = `mcw.[name].css`;
-//
-//   module.exports.push({
-//     name: 'app',
-//     entry: {
-//       'demo-styles': path.resolve('./src/styles.scss'),
-//     },
-//     output: {
-//       path: OUT_PATH,
-//       publicPath: PUBLIC_PATH,
-//       filename: CSS_JS_FILENAME_OUTPUT_PATTERN,
-//     },
-//     devServer: {
-//       disableHostCheck: true,
-//     },
-//     devtool: DEVTOOL,
-//     module: {
-//       rules: [
-//         {
-//           test: /\.scss$/,
-//           use: createCssLoaderConfig(),
-//         },
-//       ],
-//     },
-//     plugins: [createCssExtractTextPlugin(), createBannerPlugin()],
-//   });
-// }

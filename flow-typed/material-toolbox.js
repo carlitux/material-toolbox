@@ -93,6 +93,7 @@ declare module 'material-toolbox/list' {
     disabled?: boolean,
     primary?: boolean,
     accent?: boolean,
+    style?: { [any]: any },
   };
 
   declare export class ListItem extends React$Component<ItemProps> {}
@@ -160,4 +161,18 @@ declare module 'material-toolbox/elevation' {
     elevation: number,
     transition?: boolean,
   }> {}
+}
+
+declare module 'material-toolbox/drawer' {
+  declare export class DrawerContent extends React$Component<{}> {}
+
+  declare type ContentType = React$Element<typeof DrawerContent>;
+
+  declare type PermanentDrawerProps = {
+    children: Array<ContentType> | ContentType,
+  };
+
+  declare export class PermanentDrawer extends React$Component<
+    PermanentDrawerProps,
+  > {}
 }

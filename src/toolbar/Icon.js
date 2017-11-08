@@ -10,7 +10,7 @@ type Props = {
 
 const ToolbarIcon = ({ tag, icon, isMenu, ...rest }: Props) => {
   const className = classnames('material-icons', {
-    'mdc-toolbar__icon--menu': isMenu,
+    'mdc-toolbar__menu-icon': isMenu,
     'mdc-toolbar__icon': !isMenu,
   });
 

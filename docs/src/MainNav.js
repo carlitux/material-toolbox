@@ -46,7 +46,7 @@ const rawNav = {
   drawers: {
     label: 'Drawers',
     to: '/drawers',
-    disabled: true,
+    disabled: false,
   },
   elevation: {
     label: 'Elevations',
