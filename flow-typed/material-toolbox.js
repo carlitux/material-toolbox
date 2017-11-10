@@ -164,15 +164,35 @@ declare module 'material-toolbox/elevation' {
 }
 
 declare module 'material-toolbox/drawer' {
-  declare export class DrawerContent extends React$Component<{}> {}
+  declare export class DrawerContent extends React$Component<{
+    className?: string,
+  }> {}
 
-  declare type ContentType = React$Element<typeof DrawerContent>;
+  declare export class DrawerToolbarSpacer extends React$Component<{
+    className?: string,
+  }> {}
+
+  declare type ContentType = React$Element<
+    typeof DrawerContent | typeof DrawerToolbarSpacer,
+  >;
 
   declare type PermanentDrawerProps = {
     children: Array<ContentType> | ContentType,
   };
 
+  declare type PersistentDrawerProps = {
+    children: Array<ContentType> | ContentType,
+    onOpen?: () => void,
+    onClose?: () => void,
+    open: boolean,
+    style?: { [any]: any },
+  };
+
   declare export class PermanentDrawer extends React$Component<
     PermanentDrawerProps,
+  > {}
+
+  declare export class PersistentDrawer extends React$Component<
+    PersistentDrawerProps,
   > {}
 }

@@ -2,23 +2,38 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import { MDCPersistentDrawerFoundation, util } from '@material/drawer';
+import MDCPersistentDrawerFoundation from '@material/drawer/persistent/foundation';
+import * as util from '@material/drawer/util';
 import { FOCUSABLE_ELEMENTS } from '@material/drawer/persistent/constants';
+
+import DrawerContent from './Content';
+import DrawerToolbarSpacer from './ToolbarSpacer';
+import DrawerHeader from './Header';
+
+type ContentType = React.Element<
+  typeof DrawerContent | typeof DrawerToolbarSpacer | typeof DrawerHeader,
+>;
 
 type Props = {
   onOpen: () => void,
   onClose: () => void,
   open: boolean,
-  children: React.Node,
+  children: React.ChildrenArray<ContentType> | ContentType,
+  style: { [any]: any },
 };
 
 type State = {
-  classes: Set<string>,
+  classes: { [string]: boolean },
+  styles: { [string]: any },
 };
 
 export default class PersistentDrawer extends React.Component<Props, State> {
   state = {
-    classes: new Set(),
+    classes: {
+      'mdc-persistent-drawer': true,
+      'mdc-typography': true,
+    },
+    styles: {},
   };
 
   componentDidMount() {
@@ -44,26 +59,19 @@ export default class PersistentDrawer extends React.Component<Props, State> {
     this.foundation.destroy();
   }
 
-  allClasses: Set<string>;
   drawer: ?HTMLElement;
   root: ?HTMLElement;
 
   foundation = new MDCPersistentDrawerFoundation({
     addClass: className =>
-      this.setState(prevState => {
-        prevState.classes.add(className);
-        return {
-          classes: prevState.classes,
-        };
-      }),
+      this.setState(state => ({
+        classes: { ...state.classes, [className]: true },
+      })),
     removeClass: className =>
-      this.setState(prevState => {
-        prevState.classes.delete(className);
-        return {
-          classes: prevState.classes,
-        };
-      }),
-    hasClass: className => this.allClasses.has(className),
+      this.setState(state => ({
+        classes: { ...state.classes, [className]: false },
+      })),
+    hasClass: className => this.state.classes[className],
     hasNecessaryDom: () => Boolean(this.drawer),
     registerInteractionHandler: (evt, handler) =>
       this.root &&
@@ -94,12 +102,14 @@ export default class PersistentDrawer extends React.Component<Props, State> {
     deregisterDocumentKeydownHandler: handler =>
       document.removeEventListener('keydown', handler),
     getDrawerWidth: () => this.drawer && this.drawer.offsetWidth,
-    setTranslateX: value =>
-      this.drawer &&
-      this.drawer.style.setProperty(
-        util.getTransformPropertyName(),
-        value === null ? null : `translateX(${value}px)`,
-      ),
+    setTranslateX: value => {
+      this.setState(state => ({
+        styles: {
+          ...state.styles,
+          [util.getTransformPropertyName()]: `translateX(${value}px)`,
+        },
+      }));
+    },
     getFocusableElements: () =>
       this.drawer && this.drawer.querySelectorAll(FOCUSABLE_ELEMENTS),
     saveElementTabState: el => util.saveElementTabState(el),
@@ -122,13 +132,7 @@ export default class PersistentDrawer extends React.Component<Props, State> {
   });
 
   render() {
-    const className = classnames(
-      'mdc-persistent-drawer',
-      'mdc-typography',
-      ...this.state.classes,
-    );
-
-    this.allClasses = new Set(className.split(' '));
+    const className = classnames(this.state.classes);
 
     return (
       <aside
@@ -140,8 +144,11 @@ export default class PersistentDrawer extends React.Component<Props, State> {
           ref={drawer => {
             this.drawer = drawer;
           }}
+          style={{ ...this.props.style, ...this.state.styles }}
           className="mdc-persistent-drawer__drawer">
-          {this.props.children}
+          {React.Children.map(this.props.children, child => (
+            <child.type {...child.props} type="persistent" />
+          ))}
         </nav>
       </aside>
     );

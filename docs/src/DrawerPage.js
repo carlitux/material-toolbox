@@ -152,6 +152,28 @@ export default class DrawerPage extends React.Component<{}> {
           title="Permanent Drawer Below Toolbar"
           frameBorder="0"
         />
+
+        <Text component="h3" textStyle="title">
+          Permanent Drawer Above Toolbar
+        </Text>
+
+        <iframe
+          className="full-width"
+          src="/permanent-drawer-above.html"
+          title="Permanent Drawer Above Toolbar"
+          frameBorder="0"
+        />
+
+        <Text component="h3" textStyle="title">
+          Persistent Drawer
+        </Text>
+
+        <iframe
+          className="full-width"
+          src="/persistent-drawer.html"
+          title="Persistent Drawer"
+          frameBorder="0"
+        />
       </LayoutCell>
     );
   }

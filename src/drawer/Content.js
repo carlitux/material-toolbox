@@ -1,18 +1,22 @@
 // @flow
 import * as React from 'react';
+import classnames from 'classnames';
 
 type Props = {
-  children: React.Element<any>,
+  children: React.Node,
+  className: string,
   type: 'temporary' | 'persistent' | 'permanent',
 };
 
-const DrawerContent = ({ type, children, ...rest }: Props) => {
-  const composedClassName = `mdc-${type}-drawer__content`;
+const DrawerContent = ({ type, children, className, ...rest }: Props) => {
+  const composedClassName = classnames(
+    className,
+    `mdc-${type}-drawer__content`,
+  );
 
-  return React.cloneElement(children, {
-    ...rest,
-    className: composedClassName,
-  });
+  return React.Children.map(children, child => (
+    <child.type {...child.props} className={composedClassName} />
+  ));
 };
 
 export default DrawerContent;

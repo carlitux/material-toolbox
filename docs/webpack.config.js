@@ -93,13 +93,27 @@ const permanentDrawerApp = IS_DEV
   ? ['react-hot-loader/patch', path.resolve('./src/drawer-permanent/index.js')]
   : [path.resolve('./src/drawer-permanent/index.js')];
 
+const permanentDrawerAboveApp = IS_DEV
+  ? [
+      'react-hot-loader/patch',
+      path.resolve('./src/drawer-permanent-above/index.js'),
+    ]
+  : [path.resolve('./src/drawer-permanent-above/index.js')];
+
+const persistentDrawerApp = IS_DEV
+  ? ['react-hot-loader/patch', path.resolve('./src/drawer-persistent/index.js')]
+  : [path.resolve('./src/drawer-persistent/index.js')];
+
 module.exports = [
   {
     name: 'js-components',
     entry: {
       app: appEntry,
+      // Drawer
       permanentDrawer: permanentDrawerApp,
-      // layoutGrid: [path.resolve('./packages/layout-grid/src/index.js')],
+      permanentDrawerAbove: permanentDrawerAboveApp,
+      persistentDrawer: persistentDrawerApp,
+      // Toolbar
     },
     output: {
       path: OUT_PATH,

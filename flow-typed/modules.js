@@ -34,15 +34,26 @@ declare module '@material/ripple/foundation' {
   }
 }
 
+declare module '@material/drawer/persistent/foundation' {
+  declare export default class MDCPersistentDrawerFoundation {
+    constructor(handler: any): MDCPersistentDrawerFoundation;
+    init(): void;
+    destroy(): void;
+    open(): void;
+    close(): void;
+  }
+}
+
+declare module '@material/drawer/util' {
+  declare function applyPassive(): any;
+  declare function remapEvent(evt: Event): any;
+  declare function getTransformPropertyName(): any;
+  declare function saveElementTabState(el: HTMLElement): any;
+  declare function restoreElementTabState(el: HTMLElement): any;
+  declare function supportsCssCustomProperties(): boolean;
+}
+
 // declare module '@material/drawer' {
-//   declare class MDCPersistentDrawerFoundation {
-//     constructor(handler: any): MDCPersistentDrawerFoundation;
-//     init(): void;
-//     destroy(): void;
-//     open(): void;
-//     close(): void;
-//   }
-//
 //   declare class MDCTemporaryDrawerFoundation {
 //     constructor(handler: any): MDCTemporaryDrawerFoundation;
 //     init(): void;
@@ -51,14 +62,6 @@ declare module '@material/ripple/foundation' {
 //     close(): void;
 //   }
 //
-//   declare var util: {
-//     applyPassive(): any,
-//     remapEvent(evt: Event): any,
-//     getTransformPropertyName(): any,
-//     saveElementTabState(el: HTMLElement): any,
-//     restoreElementTabState(el: HTMLElement): any,
-//     supportsCssCustomProperties(): boolean,
-//   };
 // }
 
 declare module '@material/drawer/persistent/constants' {
