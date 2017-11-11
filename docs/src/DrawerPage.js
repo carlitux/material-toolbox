@@ -253,7 +253,7 @@ export default class DrawerPage extends React.Component<{}> {
 
         <iframe
           className="full-width"
-          src="/permanent-drawer.html"
+          src="./permanent-drawer.html"
           title="Permanent Drawer Below Toolbar"
           frameBorder="0"
         />
@@ -264,7 +264,7 @@ export default class DrawerPage extends React.Component<{}> {
 
         <iframe
           className="full-width"
-          src="/permanent-drawer-above.html"
+          src="./permanent-drawer-above.html"
           title="Permanent Drawer Above Toolbar"
           frameBorder="0"
         />
@@ -275,7 +275,7 @@ export default class DrawerPage extends React.Component<{}> {
 
         <iframe
           className="full-width"
-          src="/persistent-drawer.html"
+          src="./persistent-drawer.html"
           title="Persistent Drawer"
           frameBorder="0"
         />
@@ -286,7 +286,7 @@ export default class DrawerPage extends React.Component<{}> {
 
         <iframe
           className="full-width"
-          src="/temporary-drawer.html"
+          src="./temporary-drawer.html"
           title="Temporary Drawer"
           frameBorder="0"
         />
