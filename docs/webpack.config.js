@@ -104,6 +104,10 @@ const persistentDrawerApp = IS_DEV
   ? ['react-hot-loader/patch', path.resolve('./src/drawer-persistent/index.js')]
   : [path.resolve('./src/drawer-persistent/index.js')];
 
+const temporaryDrawerApp = IS_DEV
+  ? ['react-hot-loader/patch', path.resolve('./src/drawer-temporary/index.js')]
+  : [path.resolve('./src/drawer-temporary/index.js')];
+
 module.exports = [
   {
     name: 'js-components',
@@ -113,6 +117,7 @@ module.exports = [
       permanentDrawer: permanentDrawerApp,
       permanentDrawerAbove: permanentDrawerAboveApp,
       persistentDrawer: persistentDrawerApp,
+      temporaryDrawer: temporaryDrawerApp,
       // Toolbar
     },
     output: {

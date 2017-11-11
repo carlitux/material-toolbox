@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import MDCPersistentDrawerFoundation from '@material/drawer/persistent/foundation';
 import * as util from '@material/drawer/util';
-import { FOCUSABLE_ELEMENTS } from '@material/drawer/persistent/constants';
+import { strings } from '@material/drawer/persistent/constants';
 
 import DrawerContent from './Content';
 import DrawerToolbarSpacer from './ToolbarSpacer';
@@ -111,7 +111,7 @@ export default class PersistentDrawer extends React.Component<Props, State> {
       }));
     },
     getFocusableElements: () =>
-      this.drawer && this.drawer.querySelectorAll(FOCUSABLE_ELEMENTS),
+      this.drawer && this.drawer.querySelectorAll(strings.FOCUSABLE_ELEMENTS),
     saveElementTabState: el => util.saveElementTabState(el),
     restoreElementTabState: el => util.restoreElementTabState(el),
     makeElementUntabbable: el => el.setAttribute('tabindex', -1),
@@ -136,6 +136,7 @@ export default class PersistentDrawer extends React.Component<Props, State> {
 
     return (
       <aside
+        style={this.props.style}
         ref={root => {
           this.root = root;
         }}
@@ -144,7 +145,7 @@ export default class PersistentDrawer extends React.Component<Props, State> {
           ref={drawer => {
             this.drawer = drawer;
           }}
-          style={{ ...this.props.style, ...this.state.styles }}
+          style={this.state.styles}
           className="mdc-persistent-drawer__drawer">
           {React.Children.map(this.props.children, child => (
             <child.type {...child.props} type="persistent" />

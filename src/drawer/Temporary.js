@@ -2,26 +2,40 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import { MDCTemporaryDrawerFoundation, util } from '@material/drawer';
-import {
-  FOCUSABLE_ELEMENTS,
-  OPACITY_VAR_NAME,
-} from '@material/drawer/temporary/constants';
+import MDCTemporaryDrawerFoundation from '@material/drawer/temporary/foundation';
+import * as util from '@material/drawer/util';
+import { strings } from '@material/drawer/temporary/constants';
+
+import DrawerContent from './Content';
+import DrawerToolbarSpacer from './ToolbarSpacer';
+import DrawerHeader from './Header';
+
+type ContentType = React.Element<
+  typeof DrawerContent | typeof DrawerToolbarSpacer | typeof DrawerHeader,
+>;
 
 type Props = {
   onOpen: () => void,
   onClose: () => void,
   open: boolean,
-  children: React.Node,
+  children: React.ChildrenArray<ContentType> | ContentType,
+  style: { [any]: any },
 };
 
 type State = {
-  classes: Set<string>,
+  classes: { [string]: boolean },
+  styles: { [string]: any },
+  rootStyles: { [string]: any },
 };
 
 export default class TemporaryDrawer extends React.Component<Props, State> {
   state = {
-    classes: new Set(),
+    classes: {
+      'mdc-temporary-drawer': true,
+      'mdc-typography': true,
+    },
+    styles: {},
+    rootStyles: {},
   };
 
   componentDidMount() {
@@ -43,26 +57,19 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
     this.foundation.destroy();
   }
 
-  allClasses: Set<string>;
   drawer: ?HTMLElement;
   root: ?HTMLElement;
 
   foundation = new MDCTemporaryDrawerFoundation({
     addClass: className =>
-      this.setState(prevState => {
-        prevState.classes.add(className);
-        return {
-          classes: prevState.classes,
-        };
-      }),
+      this.setState(state => ({
+        classes: { ...state.classes, [className]: true },
+      })),
     removeClass: className =>
-      this.setState(prevState => {
-        prevState.classes.delete(className);
-        return {
-          classes: prevState.classes,
-        };
-      }),
-    hasClass: className => this.allClasses.has(className),
+      this.setState(state => ({
+        classes: { ...state.classes, [className]: false },
+      })),
+    hasClass: className => this.state.classes[className],
     addBodyClass: className =>
       document.body && document.body.classList.add(className),
     removeBodyClass: className =>
@@ -97,20 +104,24 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
     deregisterDocumentKeydownHandler: handler =>
       document.removeEventListener('keydown', handler),
     getDrawerWidth: () => this.drawer && this.drawer.offsetWidth,
-    setTranslateX: value =>
-      this.drawer &&
-      this.drawer.style.setProperty(
-        util.getTransformPropertyName(),
-        value === null ? null : `translateX(${value}px)`,
-      ),
+    setTranslateX: value => {
+      this.setState(state => ({
+        styles: {
+          ...state.styles,
+          [util.getTransformPropertyName()]: `translateX(${value}px)`,
+        },
+      }));
+    },
     updateCssVariable: value => {
-      // TODO: move this to state
-      if (util.supportsCssCustomProperties() && this.root) {
-        this.root.style.setProperty(OPACITY_VAR_NAME, value);
-      }
+      this.setState(state => ({
+        rootStyles: {
+          ...state.rootStyles,
+          [strings.OPACITY_VAR_NAME]: value,
+        },
+      }));
     },
     getFocusableElements: () =>
-      this.drawer && this.drawer.querySelectorAll(FOCUSABLE_ELEMENTS),
+      this.drawer && this.drawer.querySelectorAll(strings.FOCUSABLE_ELEMENTS),
     saveElementTabState: el => util.saveElementTabState(el),
     restoreElementTabState: el => util.restoreElementTabState(el),
     makeElementUntabbable: el => el.setAttribute('tabindex', -1),
@@ -131,26 +142,24 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
   });
 
   render() {
-    const className = classnames(
-      'mdc-temporary-drawer',
-      'mdc-typography',
-      ...this.state.classes,
-    );
-
-    this.allClasses = new Set(className.split(' '));
+    const className = classnames(this.state.classes);
 
     return (
       <aside
         ref={root => {
           this.root = root;
         }}
+        style={{ ...this.props.style, ...this.state.rootStyles }}
         className={className}>
         <nav
           ref={drawer => {
             this.drawer = drawer;
           }}
+          style={this.state.styles}
           className="mdc-temporary-drawer__drawer">
-          {this.props.children}
+          {React.Children.map(this.props.children, child => (
+            <child.type {...child.props} type="temporary" />
+          ))}
         </nav>
       </aside>
     );

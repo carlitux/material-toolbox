@@ -1,4 +1,25 @@
 // @flow
+declare type ThemeProps = {
+  children: React$Node,
+  className?: string,
+  textStyle?: 'primary' | 'secondary' | 'hint' | 'disabled' | 'icon',
+  theme?: 'primary' | 'secondary' | 'background',
+  textVariant?: 'light' | 'dark',
+  themeVariant?: 'light' | 'dark',
+  textOn?:
+    | 'background'
+    | 'dark'
+    | 'light'
+    | 'primary'
+    | 'primary-light'
+    | 'primary-dark'
+    | 'secondary'
+    | 'secondary-light'
+    | 'secondary-dark',
+};
+
+declare class Theme extends React$Component<ThemeProps> {}
+
 declare module 'material-toolbox/ripple' {
   declare export default function createAdapter(
     component: React$Component<any, any>,
@@ -43,26 +64,7 @@ declare module 'material-toolbox/typography' {
 }
 
 declare module 'material-toolbox/theme' {
-  declare type Props = {
-    children: React$Node,
-    className?: string,
-    textStyle?: 'primary' | 'secondary' | 'hint' | 'disabled' | 'icon',
-    theme?: 'primary' | 'secondary' | 'background',
-    textVariant?: 'light' | 'dark',
-    themeVariant?: 'light' | 'dark',
-    textOn?:
-      | 'background'
-      | 'dark'
-      | 'light'
-      | 'primary'
-      | 'primary-light'
-      | 'primary-dark'
-      | 'secondary'
-      | 'secondary-light'
-      | 'secondary-dark',
-  };
-
-  declare export default class Theme extends React$Component<Props> {}
+  declare export default typeof Theme
 }
 
 declare module 'material-toolbox/list' {
@@ -172,8 +174,15 @@ declare module 'material-toolbox/drawer' {
     className?: string,
   }> {}
 
+  declare export class DrawerHeader extends React$Component<{
+    className?: string,
+  }> {}
+
   declare type ContentType = React$Element<
-    typeof DrawerContent | typeof DrawerToolbarSpacer,
+    | typeof DrawerContent
+    | typeof DrawerToolbarSpacer
+    | typeof DrawerHeader
+    | typeof Theme,
   >;
 
   declare type PermanentDrawerProps = {
@@ -188,11 +197,23 @@ declare module 'material-toolbox/drawer' {
     style?: { [any]: any },
   };
 
+  declare type TemporaryDrawerProps = {
+    children: Array<ContentType> | ContentType,
+    onOpen?: () => void,
+    onClose?: () => void,
+    open: boolean,
+    style?: { [any]: any },
+  };
+
   declare export class PermanentDrawer extends React$Component<
     PermanentDrawerProps,
   > {}
 
   declare export class PersistentDrawer extends React$Component<
     PersistentDrawerProps,
+  > {}
+
+  declare export class TemporaryDrawer extends React$Component<
+    TemporaryDrawerProps,
   > {}
 }

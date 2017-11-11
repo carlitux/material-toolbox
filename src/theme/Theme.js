@@ -30,6 +30,7 @@ const Theme = ({
   textStyle,
   textVariant,
   textOn,
+  ...rest
 }: Props) => {
   const composedClassName = classnames(className, {
     // Background classes
@@ -52,7 +53,7 @@ const Theme = ({
 
   return React.Children.map(children, child => {
     const newClassName = classnames(composedClassName, child.props.className);
-    return <child.type {...child.props} className={newClassName} />;
+    return <child.type {...child.props} {...rest} className={newClassName} />;
   });
 };
 

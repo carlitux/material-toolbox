@@ -11,7 +11,14 @@ import Theme from 'material-toolbox/theme';
 import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
 
-const importComponents = `import { Typography, Text } from 'material-toolbox/typography';`;
+const importComponents = `import {
+  PermanentDrawer,
+  PersistentDrawer,
+  TemporaryDrawer,
+  DrawerHeader,
+  DrawerToolbarSpacer,
+  DrawerContent,
+} from 'material-toolbox/drawer';`;
 
 export default class DrawerPage extends React.Component<{}> {
   componentDidMount() {
@@ -26,7 +33,7 @@ export default class DrawerPage extends React.Component<{}> {
         </Text>
 
         <Text component="h2" textStyle="headline">
-          Typography component is a React wrapper of mdc-typography component.
+          Drawer components are React wrappers of mdc-drawer component.
         </Text>
 
         <Text component="h3" textStyle="title">
@@ -35,15 +42,15 @@ export default class DrawerPage extends React.Component<{}> {
 
         <p>
           <ThemedLink
-            to="https://material.io/guidelines/style/typography.html"
+            to="https://material.io/guidelines/patterns/navigation-drawer.html"
             target="_blank">
-            Material Design guidelines: Typography
+            Material Design guidelines: Navigation drawer
           </ThemedLink>
         </p>
 
         <p>
           <ThemedLink
-            to="https://material.io/components/web/catalog/typography/"
+            to="https://material.io/components/web/catalog/drawers/"
             target="_blank">
             Material Components Web Css and Scss customization
           </ThemedLink>
@@ -60,13 +67,64 @@ export default class DrawerPage extends React.Component<{}> {
         <Highlighter language="javascript">{importComponents}</Highlighter>
 
         <Text component="h3" textStyle="title">
-          Typography
+          DrawerToolbarSpacer
         </Text>
 
-        <p>
-          Container of typography components. Every typography texts should be
-          included into this component.
-        </p>
+        <p>Drawer toolbar spacer used to fill same space as toolbar.</p>
+
+        <table className={styles['table-doc']}>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>className</td>
+              <td>String</td>
+              <td />
+              <td />
+              <td>classname of component</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <Text component="h3" textStyle="title">
+          DrawerHeader
+        </Text>
+
+        <p>Drawer header container that can contain any React component.</p>
+
+        <table className={styles['table-doc']}>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>className</td>
+              <td>String</td>
+              <td />
+              <td />
+              <td>classname of component</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <Text component="h3" textStyle="title">
+          DrawerContent
+        </Text>
+
+        <p>Drawer content container that can contain any React component.</p>
 
         <table className={styles['table-doc']}>
           <thead>
@@ -90,10 +148,27 @@ export default class DrawerPage extends React.Component<{}> {
         </table>
 
         <Text component="h2" textStyle="title">
-          Text
+          PermanentDrawer
         </Text>
 
-        <p>Container that sets the correct style</p>
+        <table className={styles['table-doc']}>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr />
+          </tbody>
+        </table>
+
+        <Text component="h3" textStyle="title">
+          PersistentDrawer
+        </Text>
 
         <table className={styles['table-doc']}>
           <thead>
@@ -107,37 +182,67 @@ export default class DrawerPage extends React.Component<{}> {
           </thead>
           <tbody>
             <tr>
-              <td>textStyle</td>
-              <td>
-                String value: display4, display3, display2, display1, headline,
-                title, subheading2, subheading1, body2, body1, caption, button
-              </td>
+              <td>onOpen</td>
+              <td>function: () =&gt; void</td>
               <td />
-              <td>✔</td>
-              <td>Style of text component.</td>
+              <td />
+              <td>called when the drawer is openned</td>
             </tr>
             <tr>
-              <td>adjustMargin</td>
+              <td>onClose</td>
+              <td>function: () =&gt; void</td>
+              <td />
+              <td />
+              <td>called when the drawer is closed</td>
+            </tr>
+            <tr>
+              <td>open</td>
               <td>boolean</td>
-              <td>false</td>
+              <td />
+              <td />
+              <td>will open or close the drawer</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <Text component="h3" textStyle="title">
+          TemporaryDrawer
+        </Text>
+
+        <table className={styles['table-doc']}>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>onOpen</td>
+              <td>function: () =&gt; void</td>
+              <td />
+              <td />
+              <td>called when the drawer is openned</td>
+            </tr>
+            <tr>
+              <td>onClose</td>
+              <td>function: () =&gt; void</td>
+              <td />
               <td />
               <td>
-                Positions text, used in conjunction with font classes above
+                called when the drawer is closed, should be used to sync open
+                field.
               </td>
             </tr>
             <tr>
-              <td>className</td>
-              <td>String</td>
+              <td>open</td>
+              <td>boolean</td>
               <td />
               <td />
-              <td>classname of component</td>
-            </tr>
-            <tr>
-              <td>component</td>
-              <td>React.ElementType&lt;any&gt;</td>
-              <td>span</td>
-              <td />
-              <td>Component that will be rendered</td>
+              <td>will open or close the drawer</td>
             </tr>
           </tbody>
         </table>
@@ -172,6 +277,17 @@ export default class DrawerPage extends React.Component<{}> {
           className="full-width"
           src="/persistent-drawer.html"
           title="Persistent Drawer"
+          frameBorder="0"
+        />
+
+        <Text component="h3" textStyle="title">
+          Temporary Drawer
+        </Text>
+
+        <iframe
+          className="full-width"
+          src="/temporary-drawer.html"
+          title="Temporary Drawer"
           frameBorder="0"
         />
       </LayoutCell>

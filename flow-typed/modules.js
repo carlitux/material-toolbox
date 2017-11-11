@@ -44,6 +44,16 @@ declare module '@material/drawer/persistent/foundation' {
   }
 }
 
+declare module '@material/drawer/temporary/foundation' {
+  declare export default class MDCTemporaryDrawerFoundation {
+    constructor(handler: any): MDCTemporaryDrawerFoundation;
+    init(): void;
+    destroy(): void;
+    open(): void;
+    close(): void;
+  }
+}
+
 declare module '@material/drawer/util' {
   declare function applyPassive(): any;
   declare function remapEvent(evt: Event): any;
@@ -65,10 +75,14 @@ declare module '@material/drawer/util' {
 // }
 
 declare module '@material/drawer/persistent/constants' {
-  declare var FOCUSABLE_ELEMENTS: string;
+  declare var strings: {
+    FOCUSABLE_ELEMENTS: string,
+  };
 }
 
 declare module '@material/drawer/temporary/constants' {
-  declare var FOCUSABLE_ELEMENTS: string;
-  declare var OPACITY_VAR_NAME: string;
+  declare var strings: {
+    FOCUSABLE_ELEMENTS: string,
+    OPACITY_VAR_NAME: string,
+  };
 }
