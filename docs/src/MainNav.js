@@ -24,12 +24,12 @@ const rawNav = {
       floating: {
         label: 'Floating Action Button',
         to: '/buttons/floating',
-        disabled: true,
+        disabled: false,
       },
       icons: {
         label: 'Icon Toggle Buttons',
         to: '/buttons/icons',
-        disabled: true,
+        disabled: false,
       },
     },
   },
@@ -166,7 +166,8 @@ export default class MainNav extends React.Component<{}, State> {
     selectedMenu: null,
   };
 
-  showSubmenu(menu: string) {
+  showSubmenu(menu: string, event: Event) {
+    event.preventDefault();
     this.setState({ selectedMenu: menu });
   }
 

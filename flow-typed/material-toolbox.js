@@ -235,3 +235,18 @@ declare module 'material-toolbox/button' {
     className?: string,
   }> {}
 }
+
+declare module 'material-toolbox/fab' {
+  declare export default class FAB extends React$Component<{
+    component?: 'button' | 'a',
+    ripple?: boolean,
+    disabled?: boolean,
+    primary?: boolean,
+    accent?: boolean,
+    className?: string,
+    mini?: boolean,
+    exited?: boolean,
+    style?: { [string]: any },
+    children: React$Node,
+  }> {}
+}
