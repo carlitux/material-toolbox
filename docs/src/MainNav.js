@@ -19,7 +19,7 @@ const rawNav = {
   buttons: {
     label: 'Buttons',
     to: '/buttons',
-    disabled: true,
+    disabled: false,
     children: {
       floating: {
         label: 'Floating Action Button',

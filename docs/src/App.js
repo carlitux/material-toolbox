@@ -29,6 +29,7 @@ import RipplesPage from './RipplesPage';
 import ElevationPage from './ElevationPage';
 import MainNav from './MainNav';
 import DrawerPage from './DrawerPage';
+import ButtonPage from './ButtonPage';
 import styles from './styles.scss';
 
 type State = {
@@ -91,6 +92,7 @@ export default class App extends React.Component<{}, State> {
                   <Route path="/ripples" component={RipplesPage} />
                   <Route path="/elevation" component={ElevationPage} />
                   <Route path="/drawers" component={DrawerPage} />
+                  <Route exact path="/buttons" component={ButtonPage} />
                 </LayoutInner>
               </LayoutGrid>
             </div>

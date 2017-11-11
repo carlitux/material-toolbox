@@ -19,7 +19,7 @@ const PermanentDrawer = ({ children, ...rest }: Props) => {
   return (
     <nav {...rest} className={className}>
       {React.Children.map(children, child => (
-        <child.type {...child.props} type="permanent" />
+        <child.type {...child.props} drawerType="permanent" />
       ))}
     </nav>
   );

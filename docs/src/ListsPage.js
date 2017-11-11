@@ -397,22 +397,16 @@ export default class ThemePage extends React.Component<{}> {
 
             <List>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
             </List>
           </section>
@@ -423,22 +417,16 @@ export default class ThemePage extends React.Component<{}> {
 
             <List dense>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
             </List>
           </section>
@@ -499,22 +487,16 @@ export default class ThemePage extends React.Component<{}> {
 
             <List withAvatar>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
             </List>
           </section>
@@ -525,22 +507,16 @@ export default class ThemePage extends React.Component<{}> {
 
             <List withAvatar dense>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item
               </ListItem>
             </List>
           </section>
@@ -804,9 +780,9 @@ export default class ThemePage extends React.Component<{}> {
             </List>
           </section>
           <section
-            className={`${styles['avatar-text-icon-demo-list']} ${styles[
-              'mdc-theme--dark'
-            ]}`}>
+            className={`${styles['avatar-text-icon-demo-list']} ${
+              styles['mdc-theme--dark']
+            }`}>
             <Theme textStyle="primary" textOn="primary">
               <Text component="h3" textStyle="title">
                 Example - Avatar with Text and icon (Dark)
@@ -1289,35 +1265,25 @@ export default class ThemePage extends React.Component<{}> {
 
             <List withAvatar>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item - section 1
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item - section 1
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item - section 1
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item - section 1
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item - section 1
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item - section 1
               </ListItem>
               <ListItem devider inset />
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item - section 2
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item - section 2
               </ListItem>
               <ListItem>
-                <ListDetail
-                  component="span"
-                  className={styles['grey-bg']}
-                />Single-line item - section 2
+                <ListDetail component="span" className={styles['grey-bg']} />Single-line
+                item - section 2
               </ListItem>
             </List>
           </section>

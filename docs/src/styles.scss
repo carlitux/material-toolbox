@@ -13,6 +13,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/list/mdc-list';
 @import '@material/ripple/mdc-ripple';
 @import '@material/elevation/mdc-elevation';
+@import '@material/button/mdc-button';
 
 html,
 body {
@@ -129,7 +130,7 @@ p code {
 }
 
 .mdc-theme--dark {
-  background-color: #303030;
+  background-color: #333;
 }
 
 .grey-bg {
@@ -280,4 +281,10 @@ iframe.full-width {
   width: 100%;
   height: 300px;
   border: 1px solid #eee;
+}
+
+.buttons-page {
+  .mdc-button {
+    margin: 16px;
+  }
 }

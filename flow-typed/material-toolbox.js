@@ -217,3 +217,21 @@ declare module 'material-toolbox/drawer' {
     TemporaryDrawerProps,
   > {}
 }
+
+declare module 'material-toolbox/button' {
+  declare export class Button extends React$Component<{
+    component?: 'button' | 'a',
+    ripple?: boolean,
+    disabled?: boolean,
+    primary?: boolean,
+    accent?: boolean,
+    className?: string,
+    buttonType?: 'compact' | 'dense',
+    buttonVariant?: 'raised' | 'unelevated' | 'stroked',
+    style?: { [string]: any },
+  }> {}
+
+  declare export class ButtonIcon extends React$Component<{
+    className?: string,
+  }> {}
+}

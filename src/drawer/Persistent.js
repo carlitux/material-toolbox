@@ -148,7 +148,7 @@ export default class PersistentDrawer extends React.Component<Props, State> {
           style={this.state.styles}
           className="mdc-persistent-drawer__drawer">
           {React.Children.map(this.props.children, child => (
-            <child.type {...child.props} type="persistent" />
+            <child.type {...child.props} drawerType="persistent" />
           ))}
         </nav>
       </aside>

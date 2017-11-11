@@ -158,7 +158,7 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
           style={this.state.styles}
           className="mdc-temporary-drawer__drawer">
           {React.Children.map(this.props.children, child => (
-            <child.type {...child.props} type="temporary" />
+            <child.type {...child.props} drawerType="temporary" />
           ))}
         </nav>
       </aside>

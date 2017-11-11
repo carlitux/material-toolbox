@@ -1,22 +1,20 @@
 // @flow
 import * as React from 'react';
-import ReactDom from 'react-dom';
 import classnames from 'classnames';
 import MDCRippleFoundation from '@material/ripple/foundation';
 
 import createAdapter from '../ripple';
 
 type Props = {
-  children: React.Node,
-  component: React.ComponentType<any>,
-  devider: boolean,
-  inset: boolean,
-  className: string,
+  component: 'button' | 'a',
   ripple: boolean,
   disabled: boolean,
   primary: boolean,
   accent: boolean,
-  style: { [any]: any },
+  className: string,
+  buttonType: 'compact' | 'dense',
+  buttonVariant: 'raised' | 'unelevated' | 'stroked',
+  style: { [string]: any },
 };
 
 type State = {
@@ -24,9 +22,9 @@ type State = {
   styles: { [string]: any },
 };
 
-export default class ListItem extends React.Component<Props, State> {
+export default class Button extends React.Component<Props, State> {
   static defaultProps = {
-    component: 'li',
+    component: 'button',
   };
 
   state = {
@@ -66,63 +64,50 @@ export default class ListItem extends React.Component<Props, State> {
     }
 
     if (this.ripple && props.ripple) {
-      // eslint-disable-next-line
-			const element = ReactDom.findDOMNode(this.ripple);
-      if (element) {
-        this.mdcRippleAdapter = createAdapter(this, element, {
-          primary: props.primary,
-          accent: props.accent,
-          disabled: props.disabled,
-        });
-        this.mdcRipple = new MDCRippleFoundation(this.mdcRippleAdapter);
-        this.mdcRipple.init();
-      }
+      this.mdcRippleAdapter = createAdapter(this, this.ripple, {
+        primary: props.primary,
+        accent: props.accent,
+        disabled: props.disabled,
+      });
+      this.mdcRipple = new MDCRippleFoundation(this.mdcRippleAdapter);
+      this.mdcRipple.init();
     }
   }
 
-  ripple: ?Element | ?React.Component<any, any>;
+  ripple: ?HTMLElement;
   mdcRipple: MDCRippleFoundation;
   mdcRippleAdapter: { [any]: any };
 
   render() {
     const {
       component: Component,
-      className,
-      devider,
-      inset,
-      children,
       ripple,
+      disabled,
       primary,
       accent,
+      className,
       style,
-      ...otherProps
+      buttonType,
+      buttonVariant,
+      ...rest
     } = this.props;
 
-    const cn = classnames(
-      className,
-      {
-        'mdc-list-item': !devider,
-        'mdc-list-divider': devider,
-        'mdc-list-divider--inset': devider && inset,
-      },
-      this.state.classes,
-    );
-
-    if (devider) {
-      return <Component {...otherProps} className={cn} role="separator" />;
-    }
+    const cn = classnames('mdc-button', className, this.state.classes, {
+      'mdc-button--compact': buttonType === 'compact',
+      'mdc-button--dense': buttonType === 'dense',
+      [`mdc-button--${buttonVariant || ''}`]: buttonVariant,
+    });
 
     return (
       <Component
-        {...otherProps}
+        {...rest}
         style={{ ...style, ...this.state.styles }}
-        ref={rippledElement => {
-          // eslint-disable-next-line
-					this.ripple = rippledElement;
+        disabled={disabled}
+        className={cn}
+        ref={element => {
+          this.ripple = element;
         }}
-        className={cn}>
-        {children}
-      </Component>
+      />
     );
   }
 }

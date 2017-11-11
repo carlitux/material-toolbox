@@ -3,14 +3,17 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 type Props = {
-  type: 'temporary' | 'persistent' | 'permanent',
+  drawerType: 'temporary' | 'persistent' | 'permanent',
   className: string,
 };
 
-const DrawerToolbarSpacer = ({ type, className, ...rest }: Props) => (
+const DrawerToolbarSpacer = ({ drawerType, className, ...rest }: Props) => (
   <div
     {...rest}
-    className={classnames(className, `mdc-${type}-drawer__toolbar-spacer`)}
+    className={classnames(
+      className,
+      `mdc-${drawerType}-drawer__toolbar-spacer`,
+    )}
   />
 );
 

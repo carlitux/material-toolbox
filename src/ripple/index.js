@@ -29,6 +29,7 @@ export default function createAdapter(
   component.setState(state => ({
     styles: {},
     classes: {
+      // 'mdc-ripple-surface': true,
       'mdc-ripple-surface--primary': primary,
       'mdc-ripple-surface--accent': accent,
     },

@@ -5,13 +5,13 @@ import classnames from 'classnames';
 type Props = {
   children: React.Node,
   className: string,
-  type: 'temporary' | 'persistent' | 'permanent',
+  drawerType: 'temporary' | 'persistent' | 'permanent',
 };
 
-const DrawerContent = ({ type, children, className, ...rest }: Props) => {
+const DrawerContent = ({ drawerType, children, className, ...rest }: Props) => {
   const composedClassName = classnames(
     className,
-    `mdc-${type}-drawer__content`,
+    `mdc-${drawerType}-drawer__content`,
   );
 
   return React.Children.map(children, child => (
