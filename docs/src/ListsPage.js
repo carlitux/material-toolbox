@@ -338,7 +338,7 @@ export default class ThemePage extends React.Component<{}> {
               it&#39;s a block element).
             </p>
           </aside>
-          <strong id="toogle-rtl">Checkbox should be created here</strong>
+          <strong id="toggle-rtl">Checkbox should be created here</strong>
           <label htmlFor="toggle-rtl" id="toggle-rtl-label">
             Toggle RTL
           </label>

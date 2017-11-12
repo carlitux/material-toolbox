@@ -250,3 +250,17 @@ declare module 'material-toolbox/fab' {
     children: React$Node,
   }> {}
 }
+
+declare module 'material-toolbox/icon-toggle' {
+  declare export default class IconToggle extends React$Component<{
+    disabled?: boolean,
+    pressed?: boolean,
+    primary?: boolean,
+    accent?: boolean,
+    className?: string,
+    on: { label: string, content?: string, cssClass?: string },
+    off: { label: string, content?: string, cssClass?: string },
+    children?: React$Node,
+    onChange?: (evtData: { isOn: boolean }) => void,
+  }> {}
+}

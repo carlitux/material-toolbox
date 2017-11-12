@@ -19,7 +19,7 @@ export default class PermanentDrawerApp extends React.Component<{}, State> {
     isDrawerOpen: false,
   };
 
-  toogleDrawer = () => {
+  toggleDrawer = () => {
     this.setState(state => ({
       isDrawerOpen: !state.isDrawerOpen,
     }));
@@ -105,7 +105,7 @@ export default class PermanentDrawerApp extends React.Component<{}, State> {
         <Toolbar>
           <ToolbarRow>
             <ToolbarSection align="start">
-              <ToolbarIcon icon="menu" isMenu onClick={this.toogleDrawer} />
+              <ToolbarIcon icon="menu" isMenu onClick={this.toggleDrawer} />
               <ToolbarTitle label="Persistent Drawer" />
             </ToolbarSection>
           </ToolbarRow>

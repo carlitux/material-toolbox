@@ -15,7 +15,6 @@ TODO
 
 Components
 ----------
-* [ ] Icon toogle
 * [ ] Cards
 * [ ] Dialogs
 * [ ] Grid Lists

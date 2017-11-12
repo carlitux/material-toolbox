@@ -24,13 +24,13 @@ export default class PermanentDrawerAboveApp extends React.Component<
     tall: false,
   };
 
-  toogleWide = () => {
+  toggleWide = () => {
     this.setState(state => ({
       wide: !state.wide,
     }));
   };
 
-  toogleTall = () => {
+  toggleTall = () => {
     this.setState(state => ({
       tall: !state.tall,
     }));
@@ -114,7 +114,7 @@ export default class PermanentDrawerAboveApp extends React.Component<
               It sits to the left of this content.
             </Text>
             <div className="extra-content-wrapper">
-              <button onClick={this.toogleWide}>
+              <button onClick={this.toggleWide}>
                 Toggle extra-tall content
               </button>
               {this.state.wide && (
@@ -124,7 +124,7 @@ export default class PermanentDrawerAboveApp extends React.Component<
               )}
             </div>
             <div className="extra-content-wrapper">
-              <button onClick={this.toogleTall}>
+              <button onClick={this.toggleTall}>
                 Toggle extra-tall content
               </button>
               {this.state.tall && (

@@ -15,6 +15,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/elevation/mdc-elevation';
 @import '@material/button/mdc-button';
 @import '@material/fab/mdc-fab';
+@import '@material/icon-toggle/mdc-icon-toggle';
 
 html,
 body {
@@ -349,4 +350,50 @@ iframe.full-width {
   bottom: 1rem;
   right: 1rem;
   z-index: 1;
+}
+
+.icon-toggle-example {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: left;
+  justify-content: left;
+
+  .toggle-example {
+    min-width: 240px;
+    padding: 24px;
+    margin: 24px;
+
+    .demo-wrapper {
+      margin-left: 1rem;
+    }
+  }
+
+  #demo-color-combos {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .demo-color-combo {
+    width: 250px;
+    padding: 1rem;
+    border-radius: 4px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
+
+  #light-on-bg {
+    background-color: #3e82f7;
+  }
+
+  #dark-on-bg {
+    background-color: #00bcd6;
+  }
+
+  #custom-on-dark .mdc-icon-toggle {
+    color: #de442c;
+  }
 }

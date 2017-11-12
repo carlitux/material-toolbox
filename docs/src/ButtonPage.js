@@ -220,7 +220,7 @@ export default class TypographyPage extends React.Component<
             <div className="mdc-form-field">
               <label htmlFor="toggle-dark">
                 <input
-                  id="toogle-dark"
+                  id="toggle-dark"
                   type="checkbox"
                   aria-labelledby="toggle-dark-label"
                   checked={this.state.dark}

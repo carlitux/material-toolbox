@@ -8,14 +8,6 @@ declare module 'react-syntax-highlighter/dist/styles' {
   declare var monokai: any;
 }
 
-// declare module '@material/toolbar' {
-//   declare class MDCToolbarFoundation {
-//     constructor(handler: any): MDCToolbarFoundation;
-//     init(): void;
-//     destroy(): void;
-//   }
-// }
-
 declare module '@material/toolbar/util' {
   declare function applyPassive(): any;
 }
@@ -63,17 +55,6 @@ declare module '@material/drawer/util' {
   declare function supportsCssCustomProperties(): boolean;
 }
 
-// declare module '@material/drawer' {
-//   declare class MDCTemporaryDrawerFoundation {
-//     constructor(handler: any): MDCTemporaryDrawerFoundation;
-//     init(): void;
-//     destroy(): void;
-//     open(): void;
-//     close(): void;
-//   }
-//
-// }
-
 declare module '@material/drawer/persistent/constants' {
   declare var strings: {
     FOCUSABLE_ELEMENTS: string,
@@ -85,4 +66,16 @@ declare module '@material/drawer/temporary/constants' {
     FOCUSABLE_ELEMENTS: string,
     OPACITY_VAR_NAME: string,
   };
+}
+
+declare module '@material/icon-toggle/foundation' {
+  declare export default class MDCIconToggleFoundation {
+    constructor(handler: any): MDCIconToggleFoundation;
+    init(): void;
+    destroy(): void;
+    refreshToggleData(): void;
+    isKeyboardActivated(): boolean;
+    toggle(isOn: boolean): void;
+    setDisabled(isDisabled: boolean): void;
+  }
 }
