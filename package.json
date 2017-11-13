@@ -58,6 +58,7 @@
   },
   "dependencies": {
     "@material/button": "^0.24.0",
+    "@material/card": "^0.24.0",
     "@material/drawer": "^0.24.0",
     "@material/elevation": "^0.1.13",
     "@material/fab": "^0.24.0",

@@ -36,7 +36,7 @@ const rawNav = {
   cards: {
     label: 'Cards',
     to: '/cards',
-    disabled: true,
+    disabled: false,
   },
   dialogs: {
     label: 'Dialogs',
