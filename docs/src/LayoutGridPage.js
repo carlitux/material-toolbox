@@ -82,13 +82,6 @@ export default class ThemePage extends React.Component<{}> {
           </thead>
           <tbody>
             <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-            <tr>
               <td>align</td>
               <td>String values: left, right</td>
               <td />
@@ -141,13 +134,6 @@ export default class ThemePage extends React.Component<{}> {
               <td />
               <td />
               <td>How cell will be vertically aligned</td>
-            </tr>
-            <tr>
-              <td>className</td>
-              <td>string</td>
-              <td />
-              <td />
-              <td>className that will be added</td>
             </tr>
             <tr>
               <td>span</td>

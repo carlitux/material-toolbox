@@ -1,7 +1,5 @@
 // @flow
 declare type ThemeProps = {
-  children: React$Node,
-  className?: string,
   textStyle?: 'primary' | 'secondary' | 'hint' | 'disabled' | 'icon',
   theme?: 'primary' | 'secondary' | 'background',
   textVariant?: 'light' | 'dark',
@@ -36,7 +34,6 @@ declare module 'material-toolbox/ripple' {
 declare module 'material-toolbox/typography' {
   declare type TextProps = {
     component: React$ComponentType<any> | string,
-    className?: string,
     adjustMargin?: boolean,
     textStyle:
       | 'display4'
@@ -55,7 +52,6 @@ declare module 'material-toolbox/typography' {
 
   declare type TypographyProps = {
     children: React$Element<any>,
-    className?: string,
   };
 
   declare export class Typography extends React$Component<TypographyProps> {}
@@ -69,8 +65,6 @@ declare module 'material-toolbox/theme' {
 
 declare module 'material-toolbox/list' {
   declare type DetailProps = {
-    children?: React$Node,
-    className?: string,
     component: React$ComponentType<any> | string,
     end?: boolean,
   };
@@ -78,24 +72,19 @@ declare module 'material-toolbox/list' {
   declare export class ListDetail extends React$Component<DetailProps> {}
 
   declare type TextProps = {
-    children: React$Node,
     secondary?: boolean,
-    className?: string,
   };
 
   declare export class ListText extends React$Component<TextProps> {}
 
   declare type ItemProps = {
-    children?: React$Node,
     component?: React$ComponentType<any> | string,
     devider?: boolean,
     inset?: boolean,
-    className?: string,
     ripple?: boolean,
     disabled?: boolean,
     primary?: boolean,
     accent?: boolean,
-    style?: { [any]: any },
   };
 
   declare export class ListItem extends React$Component<ItemProps> {}
@@ -115,13 +104,11 @@ declare module 'material-toolbox/list' {
     children: Array<
       React$Element<typeof List | typeof ListItem | typeof ListSubheader>,
     >,
-    className?: string,
   };
 
   declare export class ListGroup extends React$Component<ListGroupProps> {}
 
   declare type ListSubheaderProps = {
-    className?: string,
     component?: React$ComponentType<any> | string,
   };
 
@@ -137,7 +124,6 @@ declare module 'material-toolbox/layout-grid' {
 
   declare type CellProps = {
     align?: 'top' | 'middle' | 'bottom',
-    className?: string,
     span?: desktopCols,
     order?: desktopCols,
     phone?: phoneCols,
@@ -148,7 +134,6 @@ declare module 'material-toolbox/layout-grid' {
   declare export class LayoutCell extends React$Component<CellProps> {}
 
   declare type GridProps = {
-    className?: string,
     align?: 'left' | 'right',
     fixed?: boolean,
   };
@@ -166,17 +151,11 @@ declare module 'material-toolbox/elevation' {
 }
 
 declare module 'material-toolbox/drawer' {
-  declare export class DrawerContent extends React$Component<{
-    className?: string,
-  }> {}
+  declare export class DrawerContent extends React$Component<{}> {}
 
-  declare export class DrawerToolbarSpacer extends React$Component<{
-    className?: string,
-  }> {}
+  declare export class DrawerToolbarSpacer extends React$Component<{}> {}
 
-  declare export class DrawerHeader extends React$Component<{
-    className?: string,
-  }> {}
+  declare export class DrawerHeader extends React$Component<{}> {}
 
   declare type ContentType = React$Element<
     | typeof DrawerContent
@@ -194,7 +173,6 @@ declare module 'material-toolbox/drawer' {
     onOpen?: () => void,
     onClose?: () => void,
     open: boolean,
-    style?: { [any]: any },
   };
 
   declare type TemporaryDrawerProps = {
@@ -202,7 +180,6 @@ declare module 'material-toolbox/drawer' {
     onOpen?: () => void,
     onClose?: () => void,
     open: boolean,
-    style?: { [any]: any },
   };
 
   declare export class PermanentDrawer extends React$Component<
@@ -225,15 +202,11 @@ declare module 'material-toolbox/button' {
     disabled?: boolean,
     primary?: boolean,
     accent?: boolean,
-    className?: string,
     buttonType?: 'compact' | 'dense',
     buttonVariant?: 'raised' | 'unelevated' | 'stroked',
-    style?: { [string]: any },
   }> {}
 
-  declare export class ButtonIcon extends React$Component<{
-    className?: string,
-  }> {}
+  declare export class ButtonIcon extends React$Component<{}> {}
 }
 
 declare module 'material-toolbox/fab' {
@@ -243,11 +216,8 @@ declare module 'material-toolbox/fab' {
     disabled?: boolean,
     primary?: boolean,
     accent?: boolean,
-    className?: string,
     mini?: boolean,
     exited?: boolean,
-    style?: { [string]: any },
-    children: React$Node,
   }> {}
 }
 
@@ -257,10 +227,36 @@ declare module 'material-toolbox/icon-toggle' {
     pressed?: boolean,
     primary?: boolean,
     accent?: boolean,
-    className?: string,
     on: { label: string, content?: string, cssClass?: string },
     off: { label: string, content?: string, cssClass?: string },
-    children?: React$Node,
     onChange?: (evtData: { isOn: boolean }) => void,
+  }> {}
+}
+
+declare module 'material-toolbox/card' {
+  declare export class Card extends React$Component<{
+    dark?: boolean,
+    component?: React$Component<any> | string,
+  }> {}
+
+  declare export class CardActions extends React$Component<{
+    vertical?: boolean,
+  }> {}
+
+  declare export class CardMedia extends React$Component<{}> {}
+
+  declare export class CardMediaItem extends React$Component<{
+    size?: '1dot5x' | '2x' | '3x',
+  }> {}
+
+  declare export class CardSupportingText extends React$Component<{}> {}
+
+  declare export class CardHorizontalBlock extends React$Component<{}> {}
+
+  declare export class CardPrimary extends React$Component<{}> {}
+
+  declare export class CardText extends React$Component<{
+    isSubtitle?: boolean,
+    large?: boolean,
   }> {}
 }

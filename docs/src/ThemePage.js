@@ -80,13 +80,6 @@ export default class ThemePage extends React.Component<{}> {
           </thead>
           <tbody>
             <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-            <tr>
               <td>textStyle</td>
               <td>String value: primary, secondary, hint, disabled, icon</td>
               <td />

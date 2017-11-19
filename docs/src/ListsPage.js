@@ -119,13 +119,6 @@ export default class ThemePage extends React.Component<{}> {
               <td />
               <td>Change styles for ListDetail with the start option.</td>
             </tr>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
           </tbody>
         </table>
 
@@ -170,13 +163,6 @@ export default class ThemePage extends React.Component<{}> {
               <td />
               <td>Render as inset if this is a divider item.</td>
             </tr>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
           </tbody>
         </table>
 
@@ -213,13 +199,6 @@ export default class ThemePage extends React.Component<{}> {
               <td>false</td>
               <td />
               <td>Render text component as secondary text.</td>
-            </tr>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
             </tr>
           </tbody>
         </table>
@@ -258,13 +237,6 @@ export default class ThemePage extends React.Component<{}> {
               <td />
               <td>Render detail component as end detail.</td>
             </tr>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
           </tbody>
         </table>
 
@@ -276,27 +248,6 @@ export default class ThemePage extends React.Component<{}> {
           This is a react wrapper for mdc-list Group. It muat contain List,
           ListSubheader and ListItem components
         </p>
-
-        <table className={styles['table-doc']}>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Required</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-          </tbody>
-        </table>
 
         <Text component="h2" textStyle="title">
           ListSubheader

@@ -79,3 +79,7 @@ declare module '@material/icon-toggle/foundation' {
     setDisabled(isDisabled: boolean): void;
   }
 }
+
+declare module 'react-syntax-highlighter/dist/styles/hljs' {
+  declare var monokaiSublime: mixed;
+}

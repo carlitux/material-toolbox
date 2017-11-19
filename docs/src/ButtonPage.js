@@ -180,40 +180,12 @@ export default class TypographyPage extends React.Component<
               <td />
               <td>Modify the button appearance</td>
             </tr>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
           </tbody>
         </table>
 
         <Text component="h2" textStyle="title">
           ButtonIcon
         </Text>
-
-        <table className={styles['table-doc']}>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Required</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-          </tbody>
-        </table>
 
         <div className={this.state.dark ? 'mdc-theme--dark' : ''}>
           <div>

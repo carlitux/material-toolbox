@@ -131,13 +131,6 @@ export default class FABPage extends React.Component<
               <td />
               <td>If true creates a CSS transition effect</td>
             </tr>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
           </tbody>
         </table>
 

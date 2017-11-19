@@ -16,6 +16,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/button/mdc-button';
 @import '@material/fab/mdc-fab';
 @import '@material/icon-toggle/mdc-icon-toggle';
+@import '@material/card/mdc-card';
 
 html,
 body {
@@ -395,5 +396,66 @@ iframe.full-width {
 
   #custom-on-dark .mdc-icon-toggle {
     color: #de442c;
+  }
+}
+
+.demo-cards {
+  margin: 24px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: left;
+  justify-content: left;
+
+  .demo-card {
+    margin: 24px;
+    min-width: 270px;
+    max-width: 15.875rem;
+
+    .demo-card__16-9-media {
+      background-image: url(https://material-components-web.appspot.com/images/16-9.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 12.313rem;
+    }
+
+    &.demo-card--bg-demo {
+      height: 21.875rem;
+      background-image: url(https://material-components-web.appspot.com/images/1-1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      .mdc-card__primary,
+      .mdc-card__actions {
+        background: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &.demo-card--with-avatar {
+      .mdc-card__primary {
+        position: relative;
+      }
+
+      .mdc-card__subtitle,
+      .mdc-card__title {
+        margin-left: 56px;
+      }
+    }
+
+    .demo-card__avatar {
+      position: absolute;
+      background: #bdbdbd;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 50%;
+    }
+
+    &.demo-card--small {
+      .mdc-card__media {
+        background-image: url(https://material-components-web.appspot.com/images/1-1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 10.938rem;
+      }
+    }
   }
 }

@@ -2,7 +2,7 @@
 /* eslint-disable */
 import * as React from 'react';
 import Highlight  from 'react-syntax-highlighter';
-import { monokai } from 'react-syntax-highlighter/dist/styles';
+import { monokaiSublime as monokai } from 'react-syntax-highlighter/dist/styles/hljs';
 /* eslint-enable */
 
 type Props = {
@@ -17,7 +17,7 @@ const Highlighter = ({ children, language }: Props) => (
 );
 
 Highlighter.defaultProps = {
-  language: 'bash',
+  language: 'bash', // eslint-disable-line
 };
 
 export default Highlighter;

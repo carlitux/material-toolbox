@@ -99,27 +99,6 @@ export default class TypographyPage extends React.Component<{}> {
           included into this component.
         </p>
 
-        <table className={styles['table-doc']}>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Required</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-          </tbody>
-        </table>
-
         <Text component="h2" textStyle="title">
           Text
         </Text>
@@ -155,13 +134,6 @@ export default class TypographyPage extends React.Component<{}> {
               <td>
                 Positions text, used in conjunction with font classes above
               </td>
-            </tr>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
             </tr>
             <tr>
               <td>component</td>

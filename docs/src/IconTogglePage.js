@@ -146,13 +146,6 @@ export default class IconTogglePage extends React.Component<
               <td>✔</td>
               <td>Object used to update aria attributes.</td>
             </tr>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
           </tbody>
         </table>
 

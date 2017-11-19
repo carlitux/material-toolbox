@@ -72,53 +72,11 @@ export default class DrawerPage extends React.Component<{}> {
 
         <p>Drawer toolbar spacer used to fill same space as toolbar.</p>
 
-        <table className={styles['table-doc']}>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Required</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-          </tbody>
-        </table>
-
         <Text component="h3" textStyle="title">
           DrawerHeader
         </Text>
 
         <p>Drawer header container that can contain any React component.</p>
-
-        <table className={styles['table-doc']}>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Required</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-          </tbody>
-        </table>
 
         <Text component="h3" textStyle="title">
           DrawerContent
@@ -126,45 +84,9 @@ export default class DrawerPage extends React.Component<{}> {
 
         <p>Drawer content container that can contain any React component.</p>
 
-        <table className={styles['table-doc']}>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Required</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>className</td>
-              <td>String</td>
-              <td />
-              <td />
-              <td>classname of component</td>
-            </tr>
-          </tbody>
-        </table>
-
         <Text component="h2" textStyle="title">
           PermanentDrawer
         </Text>
-
-        <table className={styles['table-doc']}>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Required</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr />
-          </tbody>
-        </table>
 
         <Text component="h3" textStyle="title">
           PersistentDrawer

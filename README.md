@@ -13,9 +13,8 @@ TODO
 * Improve examples and docs
 * Ripple effect improve
 
-Components
+Pending implementation Components
 ----------
-* [ ] Cards
 * [ ] Dialogs
 * [ ] Grid Lists
 * [ ] Inputs and controls
