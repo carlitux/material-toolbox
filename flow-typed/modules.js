@@ -83,3 +83,16 @@ declare module '@material/icon-toggle/foundation' {
 declare module 'react-syntax-highlighter/dist/styles/hljs' {
   declare var monokaiSublime: mixed;
 }
+
+declare module '@material/dialog/foundation' {
+  declare export default class MDCDialogFoundation {
+    constructor(handler: any): MDCDialogFoundation;
+    init(): void;
+    destroy(): void;
+    open(): void;
+  }
+}
+
+declare module '@material/dialog/util' {
+  declare function createFocusTrapInstance(surface: any, button: any): any;
+}

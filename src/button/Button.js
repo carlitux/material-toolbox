@@ -78,6 +78,12 @@ export default class Button extends React.Component<Props, State> {
   mdcRipple: MDCRippleFoundation;
   mdcRippleAdapter: { [any]: any };
 
+  layout() {
+    if (this.mdcRipple) {
+      this.mdcRipple.layout();
+    }
+  }
+
   render() {
     const {
       component: Component,

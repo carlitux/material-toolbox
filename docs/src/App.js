@@ -33,6 +33,7 @@ import ButtonPage from './ButtonPage';
 import FABPage from './FABPage';
 import IconTogglePage from './IconTogglePage';
 import CardPage from './CardPage';
+import DialogPage from './DialogPage';
 import styles from './styles.scss';
 
 type State = {
@@ -99,6 +100,7 @@ export default class App extends React.Component<{}, State> {
                   <Route path="/buttons/floating" component={FABPage} />
                   <Route path="/buttons/icons" component={IconTogglePage} />
                   <Route path="/cards" component={CardPage} />
+                  <Route path="/dialogs" component={DialogPage} />
                 </LayoutInner>
               </LayoutGrid>
             </div>

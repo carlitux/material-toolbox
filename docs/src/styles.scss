@@ -17,6 +17,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/fab/mdc-fab';
 @import '@material/icon-toggle/mdc-icon-toggle';
 @import '@material/card/mdc-card';
+@import '@material/dialog/mdc-dialog';
 
 html,
 body {
@@ -458,4 +459,31 @@ iframe.full-width {
       }
     }
   }
+}
+
+.dialog-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .catalog-dialog-demo {
+    position: relative;
+    width: 320px;
+    z-index: auto;
+  }
+}
+
+.demo-dialog {
+	padding: 24px;
+
+  &.mdc-theme--dark,
+  &.section-dark-theme {
+    background: #262626;
+    color: white;
+  }
+}
+
+.mdc-button--theme-dark:not(:disabled),
+.mdc-theme--dark .mdc-button:not(:disabled) {
+  color: #b2ff59;
 }

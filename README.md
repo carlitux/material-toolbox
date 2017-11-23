@@ -15,12 +15,11 @@ TODO
 
 Pending implementation Components
 ----------
-* [ ] Dialogs
 * [ ] Grid Lists
-* [ ] Inputs and controls
 * [ ] Linear Progress
 * [ ] Menus
 * [ ] RTL
 * [ ] Snackbars
 * [ ] Tabs
 * [ ] Toolbars
+* [ ] Inputs and controls

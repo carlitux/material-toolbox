@@ -260,3 +260,23 @@ declare module 'material-toolbox/card' {
     large?: boolean,
   }> {}
 }
+
+declare module 'material-toolbox/dialog' {
+  declare export class Dialog extends React$Component<{
+    name: string,
+    dark?: boolean,
+    onAccept?: () => void,
+    onCancel?: () => void,
+    acceptLabel?: string,
+    cancelLabel?: string,
+    isAction?: 'accept' | 'cancel',
+  }> {}
+
+  declare export class DialogHeader extends React$Component<{}> {}
+
+  declare export class DialogTitle extends React$Component<{}> {}
+
+  declare export class DialogDescription extends React$Component<{
+    scrollable?: boolean,
+  }> {}
+}

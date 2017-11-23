@@ -41,7 +41,7 @@ const rawNav = {
   dialogs: {
     label: 'Dialogs',
     to: '/dialogs',
-    disabled: true,
+    disabled: false,
   },
   drawers: {
     label: 'Drawers',
