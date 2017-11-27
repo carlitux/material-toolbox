@@ -15,8 +15,6 @@ TODO
 
 Pending implementation Components
 ----------
-* [ ] Grid Lists
-* [ ] Linear Progress
 * [ ] Menus
 * [ ] RTL
 * [ ] Snackbars

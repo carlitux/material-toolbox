@@ -10,7 +10,6 @@ $mdc-theme-background: #fff; // White
 @import '@material/toolbar/mdc-toolbar';
 @import '@material/layout-grid/mdc-layout-grid';
 @import '@material/drawer/mdc-drawer';
-@import '@material/list/mdc-list';
 @import '@material/ripple/mdc-ripple';
 @import '@material/elevation/mdc-elevation';
 @import '@material/button/mdc-button';
@@ -19,6 +18,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/card/mdc-card';
 @import '@material/dialog/mdc-dialog';
 @import '@material/grid-list/mdc-grid-list';
+@import '@material/linear-progress/mdc-linear-progress';
 
 html,
 body {

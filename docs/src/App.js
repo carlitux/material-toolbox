@@ -34,6 +34,7 @@ import FABPage from './FABPage';
 import IconTogglePage from './IconTogglePage';
 import CardPage from './CardPage';
 import DialogPage from './DialogPage';
+import LinearProgressPage from './LinearProgressPage';
 import GridListPage from './GridListPage';
 // import
 import styles from './styles.scss';
@@ -104,6 +105,10 @@ export default class App extends React.Component<{}, State> {
                   <Route path="/cards" component={CardPage} />
                   <Route path="/dialogs" component={DialogPage} />
                   <Route path="/grid-lists" component={GridListPage} />
+                  <Route
+                    path="/linear-progress"
+                    component={LinearProgressPage}
+                  />
                 </LayoutInner>
               </LayoutGrid>
             </div>

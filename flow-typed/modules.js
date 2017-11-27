@@ -108,3 +108,13 @@ declare module '@material/grid-list/foundation' {
     destroy(): void;
   }
 }
+
+declare module '@material/linear-progress/foundation' {
+  declare export default class MDCLinearProgressFoundation {
+    constructor(handler: any): MDCLinearProgressFoundation;
+    init(): void;
+    destroy(): void;
+    setBuffer(value: number): void;
+    setProgress(value: number): void;
+  }
+}
