@@ -95,7 +95,7 @@ export default class ListItem extends React.Component<Props, State> {
       primary,
       accent,
       style,
-      ...otherProps
+      ...rest
     } = this.props;
 
     const cn = classnames(
@@ -109,12 +109,12 @@ export default class ListItem extends React.Component<Props, State> {
     );
 
     if (devider) {
-      return <Component {...otherProps} className={cn} role="separator" />;
+      return <Component {...rest} className={cn} role="separator" />;
     }
 
     return (
       <Component
-        {...otherProps}
+        {...rest}
         style={{ ...style, ...this.state.styles }}
         ref={rippledElement => {
           // eslint-disable-next-line

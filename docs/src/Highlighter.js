@@ -2,7 +2,7 @@
 /* eslint-disable */
 import * as React from 'react';
 import Highlight  from 'react-syntax-highlighter';
-import { monokaiSublime as monokai } from 'react-syntax-highlighter/dist/styles/hljs';
+import { monokaiSublime as monokai } from 'react-syntax-highlighter/styles/hljs';
 /* eslint-enable */
 
 type Props = {

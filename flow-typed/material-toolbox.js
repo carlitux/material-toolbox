@@ -280,3 +280,27 @@ declare module 'material-toolbox/dialog' {
     scrollable?: boolean,
   }> {}
 }
+
+declare module 'material-toolbox/grid-list' {
+  declare export class GridTileContainer extends React$Component<{
+    secondary?: boolean,
+  }> {}
+
+  declare export class GridTileIcon extends React$Component<{}> {}
+
+  declare export class GridTileText extends React$Component<{
+    support?: boolean,
+  }> {}
+
+  declare export class GridTile extends React$Component<{}> {}
+
+  declare export class GridTileContent extends React$Component<{}> {}
+
+  declare export class GridList extends React$Component<{
+    gutter?: boolean,
+    header?: boolean,
+    twoLines?: boolean,
+    withIcon?: 'start' | 'end',
+    ratio?: '1x1' | '2x3' | '3x2' | '3x4' | '4x3' | '16x9',
+  }> {}
+}

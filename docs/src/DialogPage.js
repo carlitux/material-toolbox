@@ -27,7 +27,7 @@ const importComponents = `import {
 } from 'material-toolbox/dialog';`;
 const cbSignature = '() => void';
 
-export default class CardPage extends React.Component<
+export default class DialogPage extends React.Component<
   {},
   {
     firstOpenned: boolean,
@@ -94,7 +94,7 @@ export default class CardPage extends React.Component<
 
         <p>
           <ThemedLink
-            to="https://material.io/components/web/catalog/dialogs/<Paste>"
+            to="https://material.io/components/web/catalog/dialogs/"
             target="_blank">
             Material Components Web Css and Scss customization
           </ThemedLink>

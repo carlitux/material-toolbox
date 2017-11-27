@@ -56,7 +56,7 @@ const rawNav = {
   gridList: {
     label: 'Grid Lists',
     to: '/grid-lists',
-    disabled: true,
+    disabled: false,
   },
   inputs: {
     label: 'Inputs and Controls',

@@ -80,7 +80,7 @@ declare module '@material/icon-toggle/foundation' {
   }
 }
 
-declare module 'react-syntax-highlighter/dist/styles/hljs' {
+declare module 'react-syntax-highlighter/styles/hljs' {
   declare var monokaiSublime: mixed;
 }
 
@@ -95,4 +95,16 @@ declare module '@material/dialog/foundation' {
 
 declare module '@material/dialog/util' {
   declare function createFocusTrapInstance(surface: any, button: any): any;
+}
+
+declare module '@material/grid-list/foundation' {
+  declare export default class MDCGridListFoundation {
+    static strings: {
+      TILE_SELECTOR: string,
+      TILES_SELECTOR: string,
+    };
+    constructor(handler: any): MDCGridListFoundation;
+    init(): void;
+    destroy(): void;
+  }
 }
