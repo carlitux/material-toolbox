@@ -36,6 +36,7 @@ import CardPage from './CardPage';
 import DialogPage from './DialogPage';
 import LinearProgressPage from './LinearProgressPage';
 import GridListPage from './GridListPage';
+import RTLPage from './RTLPage';
 // import
 import styles from './styles.scss';
 
@@ -105,6 +106,7 @@ export default class App extends React.Component<{}, State> {
                   <Route path="/cards" component={CardPage} />
                   <Route path="/dialogs" component={DialogPage} />
                   <Route path="/grid-lists" component={GridListPage} />
+                  <Route path="/rtl" component={RTLPage} />
                   <Route
                     path="/linear-progress"
                     component={LinearProgressPage}

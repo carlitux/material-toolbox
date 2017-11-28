@@ -16,7 +16,6 @@ TODO
 Pending implementation Components
 ----------
 * [ ] Menus
-* [ ] RTL
 * [ ] Snackbars
 * [ ] Tabs
 * [ ] Toolbars
