@@ -304,3 +304,12 @@ declare module 'material-toolbox/grid-list' {
     ratio?: '1x1' | '2x3' | '3x2' | '3x4' | '4x3' | '16x9',
   }> {}
 }
+
+declare module 'material-toolbox/menu/simple' {
+  declare export class SimpleMenu extends React$Component<{
+    show?: boolean,
+    onCancel: () => void,
+    onSelect: (index: number, item: HTMLLIElement) => void,
+  }> {}
+  declare export class SimpleMenuItem extends React$Component<{}> {}
+}

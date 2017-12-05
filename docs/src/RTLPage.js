@@ -8,7 +8,7 @@ import { Text } from 'material-toolbox/typography';
 import ThemedLink from './ThemedLink';
 /* eslint-enable */
 
-const AnimationPage = () => (
+const RTLPage = () => (
   <LayoutCell align="bottom" span={12}>
     <Text component="h1" textStyle="display1">
       RTL
@@ -30,4 +30,4 @@ const AnimationPage = () => (
   </LayoutCell>
 );
 
-export default AnimationPage;
+export default RTLPage;

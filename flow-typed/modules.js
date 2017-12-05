@@ -118,3 +118,17 @@ declare module '@material/linear-progress/foundation' {
     setProgress(value: number): void;
   }
 }
+
+declare module '@material/menu/simple/foundation' {
+  declare export default class MDCSimpleMenuFoundation {
+    constructor(handler: any): MDCSimpleMenuFoundation;
+    init(): void;
+    destroy(): void;
+    open(params: any): void;
+    close(): void;
+  }
+}
+
+declare module '@material/menu/util' {
+  declare function getTransformPropertyName(param: any): any;
+}
