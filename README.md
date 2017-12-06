@@ -4,7 +4,7 @@ This is the [React](https://facebook.github.io/react/) integration of [Material 
 
 [Read the Documentation](https://carlitux.github.io/material-toolbox)
 
-This library uses a lot of flowtypes, you can have the [types](./flow-typed/react-mcw.js)
+This library uses a lot of flowtypes, you can have the [types](./flow-typed/material-toolbox.js)
 
 TODO
 ====
@@ -17,5 +17,4 @@ Pending implementation Components
 ----------
 * [ ] Snackbars
 * [ ] Tabs
-* [ ] Toolbars
 * [ ] Inputs and controls

@@ -108,6 +108,46 @@ const temporaryDrawerApp = IS_DEV
   ? ['react-hot-loader/patch', path.resolve('./src/drawer-temporary/index.js')]
   : [path.resolve('./src/drawer-temporary/index.js')];
 
+const defaultToolbarApp = IS_DEV
+  ? ['react-hot-loader/patch', path.resolve('./src/toolbar-default/index.js')]
+  : [path.resolve('./src/toolbar-default/index.js')];
+
+const fixedToolbarApp = IS_DEV
+  ? ['react-hot-loader/patch', path.resolve('./src/toolbar-fixed/index.js')]
+  : [path.resolve('./src/toolbar-fixed/index.js')];
+
+const fixedMenuToolbarApp = IS_DEV
+  ? [
+      'react-hot-loader/patch',
+      path.resolve('./src/toolbar-fixed-menu/index.js'),
+    ]
+  : [path.resolve('./src/toolbar-fixed-menu/index.js')];
+
+const waterfallToolbarApp = IS_DEV
+  ? ['react-hot-loader/patch', path.resolve('./src/toolbar-waterfall/index.js')]
+  : [path.resolve('./src/toolbar-waterfall/index.js')];
+
+const defaultFlexibleToolbarApp = IS_DEV
+  ? [
+      'react-hot-loader/patch',
+      path.resolve('./src/toolbar-default-flexible/index.js'),
+    ]
+  : [path.resolve('./src/toolbar-default-flexible/index.js')];
+
+const waterfallFlexibleToolbarApp = IS_DEV
+  ? [
+      'react-hot-loader/patch',
+      path.resolve('./src/toolbar-waterfall-flexible/index.js'),
+    ]
+  : [path.resolve('./src/toolbar-waterfall-flexible/index.js')];
+
+const lastFlexibleToolbarApp = IS_DEV
+  ? [
+      'react-hot-loader/patch',
+      path.resolve('./src/toolbar-last-flexible/index.js'),
+    ]
+  : [path.resolve('./src/toolbar-last-flexible/index.js')];
+
 module.exports = [
   {
     name: 'js-components',
@@ -119,6 +159,13 @@ module.exports = [
       persistentDrawer: persistentDrawerApp,
       temporaryDrawer: temporaryDrawerApp,
       // Toolbar
+      defaultToolbar: defaultToolbarApp,
+      fixedToolbar: fixedToolbarApp,
+      fixedMenuToolbar: fixedMenuToolbarApp,
+      waterfallToolbar: waterfallToolbarApp,
+      defaultFlexibleToolbar: defaultFlexibleToolbarApp,
+      waterfallFlexibleToolbar: waterfallFlexibleToolbarApp,
+      lastFlexibleToolbar: lastFlexibleToolbarApp,
     },
     output: {
       path: OUT_PATH,

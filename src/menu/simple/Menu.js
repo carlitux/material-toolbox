@@ -119,7 +119,7 @@ export default class SimpleMenu extends React.Component<Props, State> {
         },
       }));
     },
-    getNumberOfItems: () => React.Children.count(this.props.children),
+    getNumberOfItems: () => this.getItems().length,
     registerInteractionHandler: (type, handler) =>
       this.root && this.root.addEventListener(type, handler),
     deregisterInteractionHandler: (type, handler) =>

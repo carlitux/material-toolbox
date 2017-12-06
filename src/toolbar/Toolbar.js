@@ -1,72 +1,80 @@
 // @flow
 import * as React from 'react';
 import classnames from 'classnames';
-import { MDCToolbarFoundation } from '@material/toolbar';
+import MDCToolbarFoundation from '@material/toolbar/foundation';
 import * as util from '@material/toolbar/util';
 
 import ToolbarRow from './Row';
+import { normalizePropToReactStyle } from '../utils';
 
 type Props = {
-  waitFor: number,
-  children: React.ChildrenArray<React.Element<typeof ToolbarRow>>,
+  className: string,
+  children:
+    | React.ChildrenArray<React.Element<typeof ToolbarRow>>
+    | React.Element<typeof ToolbarRow>,
   fixed: boolean,
   waterfall: boolean,
   lastRow: boolean,
   flexible: boolean,
-  flexibleDefault: boolean,
-  onUpdateFixedToolbar: (property: string, value: number) => void,
-  onUpdateTitleStyle: (property: string, value: number) => void,
+  default: boolean,
+  parent: mixed,
+  // parent: { title?: typeof ToolbarTitle, adjust?: typeof ToolbarFixedAdjust },
   onChangeFlexible: (data: {}) => void,
+  style: { [string]: number },
 };
 
 type State = {
-  classes: Set<string>,
+  classes: { [string]: boolean },
   style: { [string]: number },
   firstRowStyle: { [string]: number },
 };
 
-function normalizePropToReactStyle(property: string): string {
-  return property.replace(/(-.)/g, txt => txt.slice(1).toUpperCase());
-}
-
 export default class Toolbar extends React.Component<Props, State> {
-  state = {
-    classes: new Set(),
-    style: {},
-    firstRowStyle: {},
-  };
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      classes: {
+        'mdc-toolbar': true,
+        'mdc-toolbar--fixed': props.fixed,
+        'mdc-toolbar--waterfall': props.fixed && props.waterfall,
+        'mdc-toolbar--flexible': !!props.flexible,
+        'mdc-toolbar--fixed-lastrow-only': props.fixed && props.lastRow,
+        'mdc-toolbar--flexible-default-behavior': !!(
+          props.flexible && props.default
+        ),
+      },
+      style: {},
+      firstRowStyle: {},
+    };
+  }
 
   componentDidMount() {
     // NOTE.- Still not sure if we have to wait for sometime to get computed
     // values of dom element on foundation
-    setTimeout(() => {
-      this.foundation.init();
-    }, this.props.waitFor);
+    if ((this.props.waterfall && this.props.fixed) || this.props.flexible) {
+      setTimeout(() => {
+        this.foundation.init();
+      }, 2000);
+    }
   }
 
   componentWillUnmount() {
     this.foundation.destroy();
   }
 
-  root: ?HTMLHeadingElement;
-  allClasses: Set<string>;
+  root: ?HTMLElement;
 
   foundation = new MDCToolbarFoundation({
     addClass: className =>
-      this.setState(prevState => {
-        prevState.classes.add(className);
-        return {
-          classes: prevState.classes,
-        };
-      }),
+      this.setState(state => ({
+        classes: { ...state.classes, [className]: true },
+      })),
     removeClass: className =>
-      this.setState(prevState => {
-        prevState.classes.delete(className);
-        return {
-          classes: prevState.classes,
-        };
-      }),
-    hasClass: className => this.allClasses.has(className),
+      this.setState(state => ({
+        classes: { ...state.classes, [className]: false },
+      })),
+    hasClass: className => this.state.classes[className],
     registerScrollHandler: handler =>
       window.addEventListener('scroll', handler, util.applyPassive()),
     deregisterScrollHandler: handler =>
@@ -90,72 +98,75 @@ export default class Toolbar extends React.Component<Props, State> {
     }: {
       flexibleExpansionRatio: number,
     }) => {
-      if (this.props.onChangeFlexible) {
+      this.props.onChangeFlexible &&
         this.props.onChangeFlexible({ flexibleExpansionRatio });
-      }
     },
     setStyle: (property: string, value: number) => {
-      this.setState({
+      this.setState(state => ({
         style: {
           ...this.state.style,
           [normalizePropToReactStyle(property)]: value,
         },
-      });
+      }));
     },
     setStyleForTitleElement: (property: string, value: number) => {
-      if (this.props.onUpdateTitleStyle) {
-        this.props.onUpdateTitleStyle(
-          normalizePropToReactStyle(property),
-          value,
-        );
-      }
+      // $FlowFixMe
+      this.props.parent.title.setStyle(
+        normalizePropToReactStyle(property),
+        value,
+      );
     },
     setStyleForFlexibleRowElement: (property: string, value: number) => {
-      this.setState({
+      this.setState(state => ({
         firstRowStyle: {
           ...this.state.firstRowStyle,
           [normalizePropToReactStyle(property)]: value,
         },
-      });
+      }));
     },
     setStyleForFixedAdjustElement: (property: string, value: number) => {
-      if (this.props.onUpdateFixedToolbar) {
-        this.props.onUpdateFixedToolbar(
-          normalizePropToReactStyle(property),
-          value,
-        );
-      }
+      // $FlowFixMe
+      this.props.parent.adjust.setStyle(
+        normalizePropToReactStyle(property),
+        value,
+      );
     },
   });
 
   render() {
-    const className = classnames('mdc-toolbar', ...this.state.classes, {
-      'mdc-toolbar--flexible': this.props.flexible,
-      'mdc-toolbar--flexible-default-behavior':
-        this.props.flexible && this.props.flexibleDefault,
-      'mdc-toolbar--fixed': this.props.fixed,
-      'mdc-toolbar--fixed-lastrow-only': this.props.fixed && this.props.lastRow,
-      'mdc-toolbar--waterfall': this.props.fixed && this.props.waterfall,
-    });
-
-    this.allClasses = new Set(className.split(' '));
+    const {
+      flexible,
+      default: default_,
+      className,
+      fixed,
+      waterfall,
+      parent,
+      style,
+      lastRow,
+      ...rest
+    } = this.props;
+    const rootClassName = classnames(className, this.state.classes);
 
     return (
       <header
-        style={this.state.style}
-        className={className}
+        {...rest}
+        style={{ ...this.props.style, ...this.state.style }}
+        className={rootClassName}
         ref={root => {
           this.root = root;
         }}>
-        {React.Children.map(this.props.children, (child, index) => {
-          if (index === 0) {
-            // $FlowFixMe: Needs to cast
-            return React.cloneElement(child, {
-              style: this.state.firstRowStyle,
-            });
-          }
-          return child;
-        })}
+        {React.Children.map(
+          this.props.children,
+          (child, index) =>
+            index === 0 ? (
+              <child.type
+                {...child.props}
+                style={{ ...child.style, ...this.state.firstRowStyle }}
+              />
+            ) : (
+              child
+            ),
+        )}
       </header>
     );
   }

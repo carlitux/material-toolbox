@@ -38,45 +38,19 @@ import LinearProgressPage from './LinearProgressPage';
 import GridListPage from './GridListPage';
 import RTLPage from './RTLPage';
 import MenuPage from './MenuPage';
+import ToolbarPage from './ToolbarPage';
 // import
 import styles from './styles.scss';
 
-type State = {
-  adjustFixedStyle: { [string]: any },
-  titleStyle: { [string]: any },
-};
-
-export default class App extends React.Component<{}, State> {
-  state = {
-    adjustFixedStyle: {},
-    titleStyle: {},
-  };
-
-  handleUpdateFixedToolbar = (property: string, value: number) => {
-    this.setState({
-      adjustFixedStyle: { ...this.state.adjustFixedStyle, [property]: value },
-    });
-  };
-
-  handleUpdateTitleStyle = (property: string, value: number) => {
-    this.setState({
-      titleStyle: { ...this.state.titleStyle, [property]: value },
-    });
-  };
-
+// eslint-disable-next-line
+export default class App extends React.Component<{}> {
   render() {
     return (
       <div className={styles['demo-body']}>
-        <Toolbar
-          fixed
-          onUpdateTitleStyle={this.handleUpdateTitleStyle}
-          onUpdateFixedToolbar={this.handleUpdateFixedToolbar}>
+        <Toolbar fixed>
           <ToolbarRow>
             <ToolbarSection align="start">
-              <ToolbarTitle
-                label="React Material Component Web"
-                style={this.state.titleStyle}
-              />
+              <ToolbarTitle label="React Material Component Web" />
             </ToolbarSection>
           </ToolbarRow>
         </Toolbar>
@@ -109,6 +83,7 @@ export default class App extends React.Component<{}, State> {
                   <Route path="/grid-lists" component={GridListPage} />
                   <Route path="/rtl" component={RTLPage} />
                   <Route path="/menus" component={MenuPage} />
+                  <Route path="/toolbars" component={ToolbarPage} />
                   <Route
                     path="/linear-progress"
                     component={LinearProgressPage}

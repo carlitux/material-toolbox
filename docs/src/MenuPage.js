@@ -106,6 +106,31 @@ export default class MenuPage extends React.Component<
           </thead>
           <tbody>
             <tr>
+              <td>devider</td>
+              <td>boolean</td>
+              <td />
+              <td />
+              <td>If true will set as devider</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <Text component="p" textStyle="body1">
+          Container component should add the className mdc-menu-anchor
+        </Text>
+
+        <table className={styles['table-doc']}>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
               <td>show</td>
               <td>boolean</td>
               <td />

@@ -4,7 +4,9 @@ import * as React from 'react';
 import ToolbarSection from './Section';
 
 type Props = {
-  children: React.ChildrenArray<React.Element<typeof ToolbarSection>>,
+  children:
+    | React.ChildrenArray<React.Element<typeof ToolbarSection>>
+    | React.Element<typeof ToolbarSection>,
 };
 
 const ToolbarRow = ({ children, ...rest }: Props) => (

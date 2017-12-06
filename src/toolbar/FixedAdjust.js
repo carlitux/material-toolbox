@@ -3,21 +3,37 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 type Props = {
-  children: React.Element<any>,
+  style: { [string]: any },
+  children: React.Node,
   className: string,
 };
 
-const ToolbarFixedAdjust = ({ children, className }: Props) => {
-  const composedClassName = classnames(
-    'mdc-toolbar-fixed-adjust',
-    className,
-    children ? children.props.className : '',
-  );
-
-  return React.cloneElement(children, {
-    ...children.props,
-    className: composedClassName,
-  });
+type State = {
+  styles: { [string]: any },
 };
 
-export default ToolbarFixedAdjust;
+export default class ToolbarFixedAdjust extends React.Component<Props, State> {
+  state = {
+    styles: {},
+  };
+
+  setStyle(style: string, value: any) {
+    this.setState(state => ({
+      styles: { ...state.styles, [style]: value },
+    }));
+  }
+
+  render() {
+    return React.Children.map(this.props.children, child => (
+      <child.type
+        {...child.props}
+        style={{ ...child.style, ...this.state.styles }}
+        className={classnames(
+          'mdc-toolbar-fixed-adjust',
+          this.props.className,
+          child.props.className,
+        )}
+      />
+    ));
+  }
+}

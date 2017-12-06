@@ -1,0 +1,47 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+$mdc-theme-primary: #212121;
+$mdc-theme-secondary: #00b8d4;
+$mdc-theme-background: #fff; // White
+
+@import '@material/theme/mdc-theme';
+@import '@material/typography/mdc-typography';
+@import '@material/toolbar/mdc-toolbar';
+@import '@material/menu/mdc-menu';
+@import '@material/list/mdc-list';
+
+html,
+body {
+  @include mdc-typography-base;
+}
+
+p,
+table,
+code {
+  @include mdc-typography(body1);
+}
+
+.demo-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100%;
+
+  .demo-content {
+    display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.demo-main {
+  padding-left: 16px;
+}
+
+.demo-paragraph {
+  margin: 0px;
+  padding: 20px 28px;
+}

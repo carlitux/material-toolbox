@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 type Props = {
   children: React.Node,
-  align: null | 'start' | 'end',
+  align: 'start' | 'end',
   shrink: boolean,
 };
 
@@ -12,7 +12,7 @@ const BASE = 'mdc-toolbar__section';
 
 const ToolbarSection = ({ children, align, shrink, ...rest }: Props) => {
   const className = classnames(BASE, {
-    [`${BASE}--align-${align || ''}`]: align,
+    [`${BASE}--align-${align}`]: align,
     'mdc-toolbar__section--shrink-to-fit': shrink,
   });
 
@@ -21,11 +21,6 @@ const ToolbarSection = ({ children, align, shrink, ...rest }: Props) => {
       {children}
     </section>
   );
-};
-
-ToolbarSection.defaultProps = {
-  align: null,
-  shrink: false,
 };
 
 export default ToolbarSection;

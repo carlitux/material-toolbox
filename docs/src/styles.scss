@@ -493,3 +493,21 @@ iframe.full-width {
 .demo-grid-tile-content {
   background-image: url(https://material-components-web.appspot.com/images/16-9.jpg);
 }
+
+.toolbar-example {
+  display: inline-block;
+  width: 320px;
+  height: 600px;
+  margin: 24px;
+
+  iframe {
+    border: 1px solid #eee;
+  }
+
+  .demo-container {
+    height: 500px;
+    margin: 0px;
+    font-size: 16px;
+    overflow: scroll;
+  }
+}

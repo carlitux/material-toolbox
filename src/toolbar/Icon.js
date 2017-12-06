@@ -4,23 +4,32 @@ import classnames from 'classnames';
 
 type Props = {
   tag: 'a' | 'span' | 'button',
-  icon: string,
   isMenu: boolean,
+  children: React.Node,
+  className: string,
 };
 
-const ToolbarIcon = ({ tag, icon, isMenu, ...rest }: Props) => {
-  const className = classnames('material-icons', {
+const ToolbarIcon = ({
+  tag: Component,
+  children,
+  isMenu,
+  className,
+  ...rest
+}: Props) => {
+  const cn = classnames(className, {
     'mdc-toolbar__menu-icon': isMenu,
     'mdc-toolbar__icon': !isMenu,
   });
 
-  return React.createElement(tag, { ...rest, className }, icon);
+  return (
+    <Component {...rest} className={cn}>
+      {children}
+    </Component>
+  );
 };
 
 ToolbarIcon.defaultProps = {
-  tag: 'a',
-  icon: 'menu',
-  isMenu: false,
+  tag: 'a', // eslint-disable-line
 };
 
 export default ToolbarIcon;

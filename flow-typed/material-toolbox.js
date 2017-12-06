@@ -313,3 +313,46 @@ declare module 'material-toolbox/menu/simple' {
   }> {}
   declare export class SimpleMenuItem extends React$Component<{}> {}
 }
+
+declare module 'material-toolbox/toolbar' {
+  declare export class ToolbarIcon extends React$Component<{
+    tag?: 'a' | 'span' | 'button',
+    isMenu?: boolean,
+  }> {}
+
+  declare export class ToolbarTitle extends React$Component<{
+    label: string,
+    component?: React$ComponentType<any> | string,
+  }> {}
+
+  declare export class ToolbarSection extends React$Component<{
+    align: 'start' | 'end',
+    shrink?: boolean,
+  }> {}
+
+  declare export class ToolbarRow extends React$Component<{
+    children:
+      | Array<React$Element<typeof ToolbarSection>>
+      | React$Element<typeof ToolbarSection>,
+  }> {}
+
+  declare export class ToolbarFixedAdjust extends React$Component<{}> {}
+
+  declare interface Parent {
+    title: ToolbarTitle;
+    adjust: ToolbarFixedAdjust;
+  }
+
+  declare export class Toolbar extends React$Component<{
+    children:
+      | Array<React$Element<typeof ToolbarRow>>
+      | React$Element<typeof ToolbarRow>,
+    fixed?: boolean,
+    waterfall?: boolean,
+    lastRow?: boolean,
+    flexible?: boolean,
+    default?: boolean,
+    // parent?: Parent,
+    onChangeFlexible?: (data: {}) => void,
+  }> {}
+}
