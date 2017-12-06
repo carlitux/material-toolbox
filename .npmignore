@@ -3,3 +3,14 @@
 flow-typed
 Session.vim
 codeit.sh
+.babelrc
+.editorconfig
+.eslintrc
+.flowconfig
+.gitignore
+.lvimrc
+.npmignore
+.stylelintrc
+.tags
+.tern-port
+.tern-project
