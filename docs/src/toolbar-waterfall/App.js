@@ -16,10 +16,12 @@ import './styles.scss';
 
 // eslint-disable-next-line
 export default class WaterfallToolbarApp extends React.Component<{}> {
+  adjust: ?ToolbarFixedAdjust;
+
   render() {
     return (
       <div>
-        <Toolbar waterfall fixed>
+        <Toolbar parent={this} waterfall fixed>
           <ToolbarRow>
             <ToolbarSection align="start">
               <ToolbarIcon className="material-icons" isMenu>
@@ -49,7 +51,10 @@ export default class WaterfallToolbarApp extends React.Component<{}> {
             </ToolbarSection>
           </ToolbarRow>
         </Toolbar>
-        <ToolbarFixedAdjust>
+        <ToolbarFixedAdjust
+          ref={element => {
+            this.adjust = element;
+          }}>
           <main className="demo-content">
             <Text component="div" textStyle="body1">
               <p className="demo-paragraph">

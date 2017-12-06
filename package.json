@@ -1,6 +1,6 @@
 {
   "name": "material-toolbox",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "React Material Design Components for Web",
   "repository": "https://github.com/carlitux/material-toolbox",
   "author": "Luis Carlos Cruz Carballo",
@@ -70,6 +70,7 @@
     "@material/list": "^0.26.0",
     "@material/menu": "^0.25.0",
     "@material/ripple": "^0.26.0",
+    "@material/snackbar": "^0.25.0",
     "@material/theme": "^0.25.0",
     "@material/toolbar": "^0.25.0",
     "@material/typography": "^0.3.0",

@@ -59,6 +59,28 @@ export default class Toolbar extends React.Component<Props, State> {
     }
   }
 
+  componentWillReceiveProps(props: Props) {
+    if ((this.props.waterfall && this.props.fixed) || this.props.flexible) {
+      this.setState(
+        state => ({
+          classes: {
+            ...state.classes,
+            'mdc-toolbar--fixed': props.fixed,
+            'mdc-toolbar--waterfall': props.fixed && props.waterfall,
+            'mdc-toolbar--flexible': !!props.flexible,
+            'mdc-toolbar--fixed-lastrow-only': props.fixed && props.lastRow,
+            'mdc-toolbar--flexible-default-behavior': !!(
+              props.flexible && props.default
+            ),
+          },
+        }),
+        () => {
+          this.foundation.init();
+        },
+      );
+    }
+  }
+
   componentWillUnmount() {
     this.foundation.destroy();
   }
