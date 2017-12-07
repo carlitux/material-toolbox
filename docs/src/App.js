@@ -39,6 +39,7 @@ import GridListPage from './GridListPage';
 import RTLPage from './RTLPage';
 import MenuPage from './MenuPage';
 import ToolbarPage from './ToolbarPage';
+import SnackbarPage from './SnackbarPage';
 // import
 import styles from './styles.scss';
 
@@ -84,6 +85,7 @@ export default class App extends React.Component<{}> {
                   <Route path="/rtl" component={RTLPage} />
                   <Route path="/menus" component={MenuPage} />
                   <Route path="/toolbars" component={ToolbarPage} />
+                  <Route path="/snackbars" component={SnackbarPage} />
                   <Route
                     path="/linear-progress"
                     component={LinearProgressPage}

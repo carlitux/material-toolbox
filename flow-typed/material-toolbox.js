@@ -356,3 +356,17 @@ declare module 'material-toolbox/toolbar' {
     onChangeFlexible?: (data: {}) => void,
   }> {}
 }
+
+declare module 'material-toolbox/snackbar' {
+  declare export default class Snackbar extends React$Component<{
+    message: string,
+    actionText?: string,
+    align?: boolean,
+    active?: boolean,
+    multiline?: boolean,
+    actionOnBottom?: boolean,
+    dismiss?: boolean,
+    timeout?: number,
+    onActionClick: () => void,
+  }> {}
+}

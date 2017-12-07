@@ -132,3 +132,18 @@ declare module '@material/menu/simple/foundation' {
 declare module '@material/menu/util' {
   declare function getTransformPropertyName(param: any): any;
 }
+
+declare module '@material/snackbar/foundation' {
+  declare export default class MDCSnackbarFoundation {
+    constructor(handler: any): MDCSnackbarFoundation;
+    init(): void;
+    destroy(): void;
+    show(data: any): void;
+    setDismissOnAction(data: boolean): void;
+    hide(): void;
+  }
+}
+
+declare module '@material/animation' {
+  declare export function getCorrectEventName(window: any, n: string): string;
+}

@@ -15,6 +15,10 @@ TODO
 
 Pending implementation Components
 ----------
-* [ ] Snackbars
+* [ ] Checkboxes
+* [ ] Radio Buttons
+* [ ] Select Menus
+* [ ] Slider
+* [ ] Switches
+* [ ] Text Fields
 * [ ] Tabs
-* [ ] Inputs and controls
