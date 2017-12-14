@@ -19,6 +19,4 @@ Pending implementation Components
 * [ ] Radio Buttons
 * [ ] Select Menus
 * [ ] Slider
-* [ ] Switches
-* [ ] Text Fields
 * [ ] Tabs

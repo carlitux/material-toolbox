@@ -21,6 +21,8 @@ $mdc-theme-background: #fff; // White
 @import '@material/grid-list/mdc-grid-list';
 @import '@material/linear-progress/mdc-linear-progress';
 @import '@material/snackbar/mdc-snackbar';
+@import '@material/textfield/mdc-text-field';
+@import '@material/switch/mdc-switch';
 
 html,
 body {
@@ -137,7 +139,11 @@ p code {
 }
 
 .mdc-theme--dark {
-  background-color: #333;
+  background-color: #333 !important;
+
+  .demo-switch-wrapper label {
+    color: white;
+  }
 }
 
 .grey-bg {
@@ -510,5 +516,41 @@ iframe.full-width {
     margin: 0px;
     font-size: 16px;
     overflow: scroll;
+  }
+}
+
+.demo-note {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #f2f2f2;
+}
+
+.custom-text-field-input {
+  width: 300px;
+}
+
+.switches-example {
+  margin-bottom: 0.5rem;
+  margin: 16px;
+  padding: 40px;
+  background-color: #eee;
+
+  .demo-switch-wrapper {
+    display: inline-block;
+    margin-right: 16px;
+  }
+
+  .demo-switch--custom {
+    .mdc-switch__native-control:enabled:checked ~ .mdc-switch__background .mdc-switch__knob {
+      background-color: #f44336;
+    }
+
+    .mdc-switch__native-control:enabled:checked ~ .mdc-switch__background::before {
+      background-color: #f44336;
+    }
+
+    .mdc-switch__native-control:enabled:checked ~ .mdc-switch__background .mdc-switch__knob::before {
+      background-color: #f44336;
+    }
   }
 }

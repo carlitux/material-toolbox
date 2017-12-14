@@ -27,8 +27,11 @@ export default function createAdapter(
 
   // $FlowFixMe
   component.setState(state => ({
-    styles: {},
+    styles: {
+      ...state.styles,
+    },
     classes: {
+      ...state.classes,
       // 'mdc-ripple-surface': true,
       'mdc-ripple-surface--primary': primary,
       'mdc-ripple-surface--accent': accent,

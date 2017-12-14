@@ -370,3 +370,34 @@ declare module 'material-toolbox/snackbar' {
     onActionClick: () => void,
   }> {}
 }
+
+declare module 'material-toolbox/textfield' {
+  declare export class TextFieldIcon extends React$Component<{}> {}
+  declare export class TextField extends React$Component<{
+    id: string,
+    wrapped?: boolean,
+    cssOnly?: boolean,
+    dense?: boolean,
+    hasError?: boolean,
+    multiline?: boolean,
+    fullWidth?: boolean,
+    disabled?: boolean,
+    persistentHelp?: boolean,
+    withBox?: boolean,
+    label?: string,
+    value?: string,
+    help?: string,
+    onIconClick?: () => void,
+    onAnimationEnd?: () => void,
+    children?: React$Element<typeof TextFieldIcon>,
+    icon?: 'leading' | 'trailing',
+    style?: { [string]: any },
+  }> {}
+}
+
+declare module 'material-toolbox/switch' {
+  declare export default class Switch extends React$Component<{
+    id: string,
+    label: string,
+  }> {}
+}

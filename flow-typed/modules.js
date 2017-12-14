@@ -147,3 +147,31 @@ declare module '@material/snackbar/foundation' {
 declare module '@material/animation' {
   declare export function getCorrectEventName(window: any, n: string): string;
 }
+
+declare module '@material/textfield/foundation' {
+  declare export default class MDCTextFieldFoundation {
+    valid: boolean;
+    constructor(handler: any, map: any): MDCTextFieldFoundation;
+    init(): void;
+    destroy(): void;
+  }
+}
+
+declare module '@material/textfield/bottom-line/foundation' {
+  declare export default class MDCTextFieldBottomLineFoundation {
+    static strings: {
+      ANIMATION_END_EVENT: string,
+    };
+    constructor(handler: any): MDCTextFieldBottomLineFoundation;
+    init(): void;
+    destroy(): void;
+  }
+}
+
+declare module '@material/textfield/helper-text/foundation' {
+  declare export default class MDCTextFieldHelperTextFoundation {
+    constructor(handler: any): MDCTextFieldHelperTextFoundation;
+    init(): void;
+    destroy(): void;
+  }
+}

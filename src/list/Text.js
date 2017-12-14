@@ -18,7 +18,7 @@ const ListText = ({
 }: Props) => {
   const classname = classnames(className, {
     'mdc-list-item__text': !secondary,
-    'mdc-list-item__text__secondary': secondary,
+    'mdc-list-item__text-secondary': secondary,
   });
 
   return (

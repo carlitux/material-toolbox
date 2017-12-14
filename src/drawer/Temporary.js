@@ -74,6 +74,8 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
       document.body && document.body.classList.add(className),
     removeBodyClass: className =>
       document.body && document.body.classList.remove(className),
+    eventTargetHasClass: (target, className) =>
+      target.classList.contains(className),
     hasNecessaryDom: () => Boolean(this.drawer),
     registerInteractionHandler: (evt, handler) =>
       this.root &&
