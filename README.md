@@ -18,5 +18,4 @@ Pending implementation Components
 * [ ] Checkboxes
 * [ ] Radio Buttons
 * [ ] Select Menus
-* [ ] Slider
 * [ ] Tabs

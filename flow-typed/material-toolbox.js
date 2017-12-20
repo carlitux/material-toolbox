@@ -401,3 +401,17 @@ declare module 'material-toolbox/switch' {
     label: string,
   }> {}
 }
+
+declare module 'material-toolbox/slider' {
+  declare export default class Slider extends React$Component<{
+    value?: number,
+    min?: number,
+    max?: number,
+    step?: number,
+    discrete?: boolean,
+    showMarkers?: boolean,
+    label?: string,
+    onInput?: (value: number) => void,
+    onChange?: (value: number) => void,
+  }> {}
+}

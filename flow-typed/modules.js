@@ -175,3 +175,21 @@ declare module '@material/textfield/helper-text/foundation' {
     destroy(): void;
   }
 }
+
+declare module '@material/slider/foundation' {
+  declare export default class MDCSliderFoundation {
+    constructor(handler: any): MDCSliderFoundation;
+    init(): void;
+    destroy(): void;
+    getValue(): number;
+    setValue(value: number): void;
+    setStep(value: number): void;
+    setMin(value: number): void;
+    setMax(value: number): void;
+    setDisabled(value: boolean): void;
+  }
+}
+
+declare module '@material/slider/constants' {
+  declare var strings: mixed;
+}

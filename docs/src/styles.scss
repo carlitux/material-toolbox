@@ -23,6 +23,7 @@ $mdc-theme-background: #fff; // White
 @import '@material/snackbar/mdc-snackbar';
 @import '@material/textfield/mdc-text-field';
 @import '@material/switch/mdc-switch';
+@import '@material/slider/mdc-slider';
 
 html,
 body {
@@ -552,5 +553,33 @@ iframe.full-width {
     .mdc-switch__native-control:enabled:checked ~ .mdc-switch__background .mdc-switch__knob::before {
       background-color: #f44336;
     }
+  }
+}
+
+.demo-slider--custom:not(.mdc-slider--disabled) {
+  .mdc-slider__track-container {
+    background-color: #fdd835;
+  }
+
+  .mdc-slider__track {
+    background-color: #d32f2f;
+  }
+
+  .mdc-slider__pin {
+    color: var(--mdc-theme-text-primary-on-dark, white);
+  }
+
+  .mdc-slider__thumb {
+    fill: #ff9800;
+    stroke: #ff9800;
+  }
+
+  .mdc-slider__focus-ring {
+    background-color: #f57f17;
+  }
+
+  .mdc-slider__track-marker::after,
+  .mdc-slider__track-marker-container::after {
+    background-color: white;
   }
 }
