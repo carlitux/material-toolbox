@@ -415,3 +415,13 @@ declare module 'material-toolbox/slider' {
     onChange?: (value: number) => void,
   }> {}
 }
+
+declare module 'material-toolbox/select' {
+  declare export class Select extends React$Component<{
+    size?: string,
+    cssOnly?: boolean,
+    onChange?: (value: string) => void,
+  }> {}
+  declare export class SelectOption extends React$Component<{}> {}
+  declare export class SelectOptGroup extends React$Component<{}> {}
+}

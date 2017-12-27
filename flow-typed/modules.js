@@ -193,3 +193,13 @@ declare module '@material/slider/foundation' {
 declare module '@material/slider/constants' {
   declare var strings: mixed;
 }
+
+declare module '@material/select/foundation' {
+  declare export default class MDCSelectFoundation {
+    constructor(handler: any): MDCSelectFoundation;
+    init(): void;
+    destroy(): void;
+    getValue(): string;
+    setDisabled(value: boolean): void;
+  }
+}

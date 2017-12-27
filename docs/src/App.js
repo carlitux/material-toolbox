@@ -43,6 +43,7 @@ import SnackbarPage from './SnackbarPage';
 import TextFieldPage from './TextFieldPage';
 import SwitchPage from './SwitchPage';
 import SliderPage from './SliderPage';
+import SelectPage from './SelectPage';
 // import
 import styles from './styles.scss';
 
@@ -89,6 +90,10 @@ export default class App extends React.Component<{}> {
                   <Route path="/menus" component={MenuPage} />
                   <Route path="/toolbars" component={ToolbarPage} />
                   <Route path="/snackbars" component={SnackbarPage} />
+                  <Route
+                    path="/inputs-controls/select-menus"
+                    component={SelectPage}
+                  />
                   <Route
                     path="/inputs-controls/sliders"
                     component={SliderPage}

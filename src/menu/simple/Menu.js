@@ -14,6 +14,7 @@ type Props = {
   style: { [string]: any },
   onCancel: () => void,
   onSelect: (index: number, item: HTMLLIElement) => void,
+  role: string,
 };
 
 type State = {
@@ -181,6 +182,11 @@ export default class SimpleMenu extends React.Component<Props, State> {
     getAccurateTime: () => window.performance.now(),
   });
 
+  // Used in select
+  getOffsetHeight() {
+    return this.root && this.root.offsetHeight;
+  }
+
   render() {
     const {
       show,
@@ -189,6 +195,7 @@ export default class SimpleMenu extends React.Component<Props, State> {
       className,
       style,
       children,
+      role,
       ...rest
     } = this.props;
     const rootClassName = classnames(className, this.state.classes);
@@ -207,8 +214,8 @@ export default class SimpleMenu extends React.Component<Props, State> {
           }}
           style={this.state.innerStyles}
           className="mdc-simple-menu__items mdc-list"
-          role="menu"
-          aria-hidden="true">
+          role={role === undefined ? 'menu' : role}
+          aria-hidden={show === false ? 'true' : undefined}>
           {children}
         </ul>
       </div>

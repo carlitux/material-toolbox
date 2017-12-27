@@ -17,5 +17,4 @@ Pending implementation Components
 ----------
 * [ ] Checkboxes
 * [ ] Radio Buttons
-* [ ] Select Menus
 * [ ] Tabs
