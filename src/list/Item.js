@@ -9,7 +9,7 @@ import createAdapter from '../ripple';
 type Props = {
   children: React.Node,
   component: React.ComponentType<any>,
-  devider: boolean,
+  divider: boolean,
   inset: boolean,
   className: string,
   ripple: boolean,
@@ -88,7 +88,7 @@ export default class ListItem extends React.Component<Props, State> {
     const {
       component: Component,
       className,
-      devider,
+      divider,
       inset,
       children,
       ripple,
@@ -101,14 +101,14 @@ export default class ListItem extends React.Component<Props, State> {
     const cn = classnames(
       className,
       {
-        'mdc-list-item': !devider,
-        'mdc-list-divider': devider,
-        'mdc-list-divider--inset': devider && inset,
+        'mdc-list-item': !divider,
+        'mdc-list-divider': divider,
+        'mdc-list-divider--inset': divider && inset,
       },
       this.state.classes,
     );
 
-    if (devider) {
+    if (divider) {
       return <Component {...rest} className={cn} role="separator" />;
     }
 

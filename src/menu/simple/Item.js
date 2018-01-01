@@ -5,16 +5,16 @@ import classnames from 'classnames';
 type Props = {
   children: React.Node,
   className: string,
-  devider: boolean,
+  divider: boolean,
 };
 
-const SimpleMenuItem = ({ devider, children, className, ...rest }: Props) => (
+const SimpleMenuItem = ({ divider, children, className, ...rest }: Props) => (
   <li
     {...rest}
-    role={devider ? 'separator' : 'menuitem'}
+    role={divider ? 'separator' : 'menuitem'}
     className={classnames(className, {
-      'mdc-list-item': !devider,
-      'mdc-list-divider': devider,
+      'mdc-list-item': !divider,
+      'mdc-list-divider': divider,
     })}>
     {children}
   </li>

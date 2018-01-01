@@ -1,6 +1,6 @@
 {
   "name": "material-toolbox",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React Material Design Components for Web",
   "repository": "https://github.com/carlitux/material-toolbox",
   "author": "Luis Carlos Cruz Carballo",
@@ -44,7 +44,7 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
-    "flow-bin": "^0.61.0",
+    "flow-bin": "^0.62.0",
     "flow-typed": "^2.2.3",
     "npm-run-all": "^4.1.2",
     "npm-watch": "^0.3.0",

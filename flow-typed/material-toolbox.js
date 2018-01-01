@@ -79,7 +79,7 @@ declare module 'material-toolbox/list' {
 
   declare type ItemProps = {
     component?: React$ComponentType<any> | string,
-    devider?: boolean,
+    divider?: boolean,
     inset?: boolean,
     ripple?: boolean,
     disabled?: boolean,

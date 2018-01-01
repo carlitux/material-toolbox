@@ -150,7 +150,7 @@ export default class ThemePage extends React.Component<{}> {
               <td>Component type that will be rendered.</td>
             </tr>
             <tr>
-              <td>devider</td>
+              <td>divider</td>
               <td>boolean</td>
               <td>false</td>
               <td />
@@ -1204,7 +1204,7 @@ export default class ThemePage extends React.Component<{}> {
               <ListItem>Single-line item - section 1</ListItem>
               <ListItem>Single-line item - section 1</ListItem>
               <ListItem>Single-line item - section 1</ListItem>
-              <ListItem devider />
+              <ListItem divider />
               <ListItem>Single-line item - section 2</ListItem>
               <ListItem>Single-line item - section 2</ListItem>
             </List>
@@ -1227,7 +1227,7 @@ export default class ThemePage extends React.Component<{}> {
                 <ListDetail component="span" className={styles['grey-bg']} />Single-line
                 item - section 1
               </ListItem>
-              <ListItem devider inset />
+              <ListItem divider inset />
               <ListItem>
                 <ListDetail component="span" className={styles['grey-bg']} />Single-line
                 item - section 2
@@ -1257,7 +1257,7 @@ export default class ThemePage extends React.Component<{}> {
                 <ListItem>Single-line item - section 1</ListItem>
               </List>
 
-              <ListItem component="hr" devider />
+              <ListItem component="hr" divider />
 
               <ListSubheader>List 2</ListSubheader>
               <List>
@@ -1347,7 +1347,7 @@ export default class ThemePage extends React.Component<{}> {
                 </ListItem>
               </List>
 
-              <ListItem component="hr" devider />
+              <ListItem component="hr" divider />
 
               <ListSubheader>Files</ListSubheader>
 
@@ -1487,7 +1487,7 @@ export default class ThemePage extends React.Component<{}> {
                 </ListItem>
               </List>
 
-              <ListItem component="hr" devider />
+              <ListItem component="hr" divider />
 
               <ListSubheader>Files</ListSubheader>
 

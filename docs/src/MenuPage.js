@@ -106,11 +106,11 @@ export default class MenuPage extends React.Component<
           </thead>
           <tbody>
             <tr>
-              <td>devider</td>
+              <td>divider</td>
               <td>boolean</td>
               <td />
               <td />
-              <td>If true will set as devider</td>
+              <td>If true will set as divider</td>
             </tr>
           </tbody>
         </table>

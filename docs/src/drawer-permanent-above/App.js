@@ -71,7 +71,7 @@ export default class PermanentDrawerAboveApp extends React.Component<
                 Drafts
               </ListItem>
             </List>
-            <ListItem devider component="hr" />
+            <ListItem divider component="hr" />
             <List component="nav">
               <ListItem component="a" href="#">
                 <ListDetail className="material-icons" component="i">

@@ -72,7 +72,7 @@ export default class FixedToolbarApp extends React.Component<{}, State> {
                   <SimpleMenuItem>Back</SimpleMenuItem>
                   <SimpleMenuItem>Forward</SimpleMenuItem>
                   <SimpleMenuItem>Reload</SimpleMenuItem>
-                  <SimpleMenuItem devider />
+                  <SimpleMenuItem divider />
                   <SimpleMenuItem>Save As</SimpleMenuItem>
                 </SimpleMenu>
               </div>
