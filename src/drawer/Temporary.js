@@ -50,6 +50,8 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
   componentWillReceiveProps(newProps: Props) {
     if (newProps.open) {
       this.foundation.open();
+    } else {
+      this.foundation.close();
     }
   }
 
