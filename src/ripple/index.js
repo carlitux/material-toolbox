@@ -32,7 +32,7 @@ export default function createAdapter(
     },
     classes: {
       ...state.classes,
-      // 'mdc-ripple-surface': true,
+      'mdc-ripple-surface': true,
       'mdc-ripple-surface--primary': primary,
       'mdc-ripple-surface--accent': accent,
     },
@@ -98,5 +98,19 @@ export default function createAdapter(
       x: window.pageXOffset,
       y: window.pageYOffset,
     }),
+    registerDocumentInteractionHandler: (evtType, handler) =>
+      document.documentElement &&
+      document.documentElement.addEventListener(
+        evtType,
+        handler,
+        util.applyPassive(),
+      ),
+    deregisterDocumentInteractionHandler: (evtType, handler) =>
+      document.documentElement &&
+      document.documentElement.removeEventListener(
+        evtType,
+        handler,
+        util.applyPassive(),
+      ),
   };
 }

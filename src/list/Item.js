@@ -11,11 +11,14 @@ type Props = {
   component: React.ComponentType<any>,
   divider: boolean,
   inset: boolean,
+  padded: boolean,
   className: string,
   ripple: boolean,
   disabled: boolean,
   primary: boolean,
   accent: boolean,
+  activated: boolean,
+  selected: boolean,
   style: { [any]: any },
 };
 
@@ -90,11 +93,14 @@ export default class ListItem extends React.Component<Props, State> {
       className,
       divider,
       inset,
+      padded,
       children,
       ripple,
       primary,
       accent,
       style,
+      activated,
+      selected,
       ...rest
     } = this.props;
 
@@ -104,6 +110,9 @@ export default class ListItem extends React.Component<Props, State> {
         'mdc-list-item': !divider,
         'mdc-list-divider': divider,
         'mdc-list-divider--inset': divider && inset,
+        'mdc-list-divider--padded': divider && padded,
+        'mdc-list-item--selected': selected,
+        'mdc-list-item--activated': activated,
       },
       this.state.classes,
     );
@@ -118,7 +127,7 @@ export default class ListItem extends React.Component<Props, State> {
         style={{ ...style, ...this.state.styles }}
         ref={rippledElement => {
           // eslint-disable-next-line
-					this.ripple = rippledElement;
+          this.ripple = rippledElement;
         }}
         className={cn}>
         {children}

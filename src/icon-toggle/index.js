@@ -9,8 +9,6 @@ import createAdapter from '../ripple';
 type Props = {
   disabled: boolean,
   pressed: boolean,
-  primary: boolean,
-  accent: boolean,
   className: string,
   style: { [string]: any },
   on: { label: string, content?: string, cssClass?: string },
@@ -55,11 +53,7 @@ export default class IconToggle extends React.Component<Props, State> {
   }
 
   componentWillReceiveProps(props: Props) {
-    if (
-      props.disabled !== this.props.disabled ||
-      props.primary !== this.props.primary ||
-      props.accent !== this.props.accent
-    ) {
+    if (props.disabled !== this.props.disabled) {
       this.bootstrapRipple(props);
     }
     if (
@@ -97,8 +91,6 @@ export default class IconToggle extends React.Component<Props, State> {
     if (this.ripple) {
       this.mdcRippleAdapter = Object.assign(
         createAdapter(this, this.ripple, {
-          primary: props.primary,
-          accent: props.accent,
           disabled: props.disabled,
           unbounded: true,
         }),
@@ -180,8 +172,6 @@ export default class IconToggle extends React.Component<Props, State> {
   render() {
     const {
       disabled,
-      primary,
-      accent,
       className,
       style,
       children,
@@ -239,8 +229,6 @@ export default class IconToggle extends React.Component<Props, State> {
       this.state.iconClasses,
       {
         'mdc-icon-toggle--disabled': disabled,
-        'mdc-icon-toggle--primary': primary,
-        'mdc-icon-toggle--accent': accent,
       },
     );
 

@@ -15,6 +15,8 @@ type Props = {
   dismiss: boolean,
   timeout: number,
   onActionClick: () => void,
+  onShow: () => void,
+  onHide: () => void,
 };
 
 type State = {
@@ -129,6 +131,8 @@ export default class Snackbar extends React.Component<Props, State> {
         getCorrectEventName(window, 'transitionend'),
         handler,
       ),
+    notifyShow: () => this.props.onShow && this.props.onShow(),
+      notifyHide: () => this.props.onHide && this.props.onHide(),
   });
 
   render() {

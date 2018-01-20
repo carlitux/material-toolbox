@@ -31,8 +31,8 @@ type State = {
 export default class TemporaryDrawer extends React.Component<Props, State> {
   state = {
     classes: {
-      'mdc-temporary-drawer': true,
-      'mdc-typography': true,
+      'mdc-drawer': true,
+      'mdc-drawer--temporary': true,
     },
     styles: {},
     rootStyles: {},
@@ -160,10 +160,8 @@ export default class TemporaryDrawer extends React.Component<Props, State> {
             this.drawer = drawer;
           }}
           style={this.state.styles}
-          className="mdc-temporary-drawer__drawer">
-          {React.Children.map(this.props.children, child => (
-            <child.type {...child.props} drawerType="temporary" />
-          ))}
+          className="mdc-drawer__drawer">
+          {this.props.children}
         </nav>
       </aside>
     );

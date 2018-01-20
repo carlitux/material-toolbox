@@ -18,7 +18,7 @@ const ListDetail = ({
 }: Props) => {
   const cn = classnames(
     className,
-    `mdc-list-item__${end ? 'end' : 'start'}-detail`,
+    `mdc-list-item__${end ? 'meta' : 'graphic'}`,
   );
 
   return (

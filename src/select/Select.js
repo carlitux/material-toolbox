@@ -171,10 +171,10 @@ export default class Select extends React.Component<Props, State> {
     computeBoundingRect: () =>
       this.surface && this.surface.getBoundingClientRect(),
     registerInteractionHandler: (type, handler) =>
-      this.root && this.root.addEventListener(type, handler),
+      this.surface && this.surface.addEventListener(type, handler),
     deregisterInteractionHandler: (type, handler) =>
-      this.root && this.root.removeEventListener(type, handler),
-    focus: () => this.root && this.root.focus(),
+      this.surface && this.surface.removeEventListener(type, handler),
+    focus: () => this.surface && this.surface.focus(),
     makeTabbable: () => {
       this.setState({ tabIndex: 0 });
     },
@@ -307,7 +307,6 @@ export default class Select extends React.Component<Props, State> {
           this.root = element;
         }}
         className={rootClassName}
-        tabIndex={this.state.tabIndex}
         aria-disabled={disabled ? 'true' : undefined}
         role="listbox">
         <div
@@ -315,6 +314,7 @@ export default class Select extends React.Component<Props, State> {
             this.surface = element;
           }}
           style={this.state.styles}
+          tabIndex={this.state.tabIndex}
           className={surfaceClassName}>
           <div className={labelClasses}>Food Group</div>
           <div className="mdc-select__selected-text">

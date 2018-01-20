@@ -428,6 +428,58 @@ export default class TextFieldPage extends React.Component<
 
         <section>
           <Text component="h3" textStyle="title">
+            Outlined Text Field
+          </Text>
+
+          <TextField
+            id="fullNameOutlined"
+            label="Your Name"
+            help="Must be at least 8 characters"
+            disabled={this.state.fullNameIsDisabled}
+            dense={this.state.fullNameIsDense}
+            outlined
+            required
+          />
+
+          <br />
+
+          <label htmlFor="fullName_disabled">
+            <input
+              type="checkbox"
+              value={this.state.fullNameIsDisabled}
+              id="fullName_disabled"
+              onClick={this.handleFullNameDisabled}
+            />{' '}
+            Disabled
+          </label>
+
+          <br />
+
+          <label htmlFor="email_rtl">
+            <input type="checkbox" id="email_rtl" /> RTL
+          </label>
+
+          <br />
+
+          <label htmlFor="fullName_darktheme">
+            <input type="checkbox" id="edarkthememail_dark_theme" /> Dark Theme
+          </label>
+
+          <br />
+
+          <label htmlFor="fullName_dense">
+            <input
+              type="checkbox"
+              id="fullName_dense"
+              value={this.state.fullNameIsDense}
+              onClick={this.handleFullNameDense}
+            />{' '}
+            Dense
+          </label>
+        </section>
+
+        <section>
+          <Text component="h3" textStyle="title">
             Text Field box
           </Text>
 
@@ -580,6 +632,17 @@ export default class TextFieldPage extends React.Component<
           <label htmlFor="cssYourName">
             Your name:{' '}
             <TextField id="cssYourName" label="Name" cssOnly withBox />
+          </label>
+        </section>
+
+        <section>
+          <Text component="h3" textStyle="title">
+            CSS-Only Outlined Text Field
+          </Text>
+
+          <label htmlFor="cssYourName1">
+            Your name:{' '}
+            <TextField id="cssYourName1" label="Name" cssOnly outlined />
           </label>
         </section>
 

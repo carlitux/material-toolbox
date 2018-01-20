@@ -89,16 +89,13 @@ class RippledDiv extends React.Component<RippleDivProps, RippleDivState> {
   rippledElement: ?HTMLElement;
 
   render() {
-    const className = classnames(
-      this.props.className,
-      'mdc-ripple-surface',
-      this.state.classes,
-    );
+    const className = classnames(this.props.className, this.state.classes);
     const Component = this.props.component;
 
     return (
       <Elevation elevation={this.props.elevation ? 2 : 0}>
         <Component
+          tabIndex="0"
           className={className}
           style={this.state.styles}
           ref={element => {

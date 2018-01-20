@@ -10,6 +10,7 @@ type Props = {
   dense: boolean,
   twoLines: boolean,
   withAvatar: boolean,
+  nonInteractive: boolean,
   component: React.ComponentType<any>,
   className: string,
 };
@@ -22,6 +23,7 @@ const List = ({
   twoLines,
   withAvatar,
   className,
+  nonInteractive,
   ...rest
 }: Props) => {
   const rootClassName = classnames('mdc-list', className, {
@@ -29,6 +31,7 @@ const List = ({
     'mdc-list--dense': dense,
     'mdc-list--two-line': twoLines,
     'mdc-list--avatar-list': withAvatar,
+    'mdc-list--non-interactive': nonInteractive,
   });
 
   return (

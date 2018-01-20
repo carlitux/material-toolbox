@@ -30,8 +30,8 @@ type State = {
 export default class PersistentDrawer extends React.Component<Props, State> {
   state = {
     classes: {
-      'mdc-persistent-drawer': true,
-      'mdc-typography': true,
+      'mdc-drawer': true,
+      'mdc-drawer--persistent': true,
     },
     styles: {},
   };
@@ -146,10 +146,8 @@ export default class PersistentDrawer extends React.Component<Props, State> {
             this.drawer = drawer;
           }}
           style={this.state.styles}
-          className="mdc-persistent-drawer__drawer">
-          {React.Children.map(this.props.children, child => (
-            <child.type {...child.props} drawerType="persistent" />
-          ))}
+          className="mdc-drawer__drawer">
+          {this.props.children}
         </nav>
       </aside>
     );

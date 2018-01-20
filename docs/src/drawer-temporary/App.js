@@ -58,11 +58,8 @@ export default class PermanentDrawerApp extends React.Component<{}, State> {
         </Theme>
         <DrawerContent>
           <ListGroup>
-            <List component="nav">
-              <ListItem
-                component="a"
-                href="#"
-                className="mdc-persistent-drawer--selected">
+            <List component="div">
+              <ListItem component="a" href="#" activated>
                 <ListDetail className="material-icons" component="i">
                   inbox
                 </ListDetail>
@@ -88,7 +85,7 @@ export default class PermanentDrawerApp extends React.Component<{}, State> {
               </ListItem>
             </List>
             <ListItem divider component="hr" />
-            <List component="nav">
+            <List component="div">
               <ListItem component="a" href="#">
                 <ListDetail className="material-icons" component="i">
                   mail

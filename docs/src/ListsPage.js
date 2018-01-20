@@ -82,6 +82,13 @@ export default class ThemePage extends React.Component<{}> {
           </thead>
           <tbody>
             <tr>
+              <td>nonInteractive</td>
+              <td>boolean</td>
+              <td />
+              <td />
+              <td>remove all interactive css</td>
+            </tr>
+            <tr>
               <td>component</td>
               <td>React.ComponentType&lt;any&gt;</td>
               <td>ul</td>
@@ -150,6 +157,26 @@ export default class ThemePage extends React.Component<{}> {
               <td>Component type that will be rendered.</td>
             </tr>
             <tr>
+              <td>selected</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td />
+              <td>
+                is ephemeral and likely to change soon. E.g., selecting one or
+                more photos to share in Google Photos.
+              </td>
+            </tr>
+            <tr>
+              <td>activated</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td />
+              <td>
+                is more permanent. E.g., the currently highlighted navigation
+                destination in a drawer.
+              </td>
+            </tr>
+            <tr>
               <td>divider</td>
               <td>boolean</td>
               <td>false</td>
@@ -162,6 +189,13 @@ export default class ThemePage extends React.Component<{}> {
               <td>false</td>
               <td />
               <td>Render as inset if this is a divider item.</td>
+            </tr>
+            <tr>
+              <td>padded</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td />
+              <td>Render as padded if this is a divider item.</td>
             </tr>
           </tbody>
         </table>

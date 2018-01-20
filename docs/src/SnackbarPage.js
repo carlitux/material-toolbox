@@ -164,10 +164,24 @@ export default class SnackbarPage extends React.Component<
             </tr>
             <tr>
               <td>onActionClick</td>
-              <td>cbSignature</td>
+              <td>{cbSignature}</td>
               <td />
               <td />
               <td>If actionText set needs to set this with a callback</td>
+            </tr>
+            <tr>
+              <td>onShow</td>
+              <td>{cbSignature}</td>
+              <td />
+              <td />
+              <td>Notify snackbar has been shown.</td>
+            </tr>
+            <tr>
+              <td>onHide</td>
+              <td>{cbSignature}</td>
+              <td />
+              <td />
+              <td>Notify snackbar has been hidden.</td>
             </tr>
           </tbody>
         </table>

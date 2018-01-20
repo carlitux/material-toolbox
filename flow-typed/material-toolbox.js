@@ -392,6 +392,9 @@ declare module 'material-toolbox/textfield' {
     children?: React$Element<typeof TextFieldIcon>,
     icon?: 'leading' | 'trailing',
     style?: { [string]: any },
+    outlined?: boolean,
+    multiline?: boolean,
+    required?: boolean,
   }> {}
 }
 

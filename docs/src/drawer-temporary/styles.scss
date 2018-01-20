@@ -31,3 +31,9 @@ code {
 .demo-main {
   padding-left: 16px;
 }
+
+.mdc-drawer__drawer {
+  .mdc-list-group {
+    padding: 0;
+  }
+}

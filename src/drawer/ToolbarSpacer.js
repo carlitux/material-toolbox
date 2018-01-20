@@ -10,10 +10,7 @@ type Props = {
 const DrawerToolbarSpacer = ({ drawerType, className, ...rest }: Props) => (
   <div
     {...rest}
-    className={classnames(
-      className,
-      `mdc-${drawerType}-drawer__toolbar-spacer`,
-    )}
+    className={classnames(className, 'mdc-drawer__toolbar-spacer')}
   />
 );
 

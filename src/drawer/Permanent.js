@@ -15,12 +15,11 @@ type Props = {
 };
 
 const PermanentDrawer = ({ children, ...rest }: Props) => {
-  const className = classnames('mdc-permanent-drawer', 'mdc-typography');
+  const className = classnames('mdc-drawer', 'mdc-drawer--permanent');
+
   return (
     <nav {...rest} className={className}>
-      {React.Children.map(children, child => (
-        <child.type {...child.props} drawerType="permanent" />
-      ))}
+      {children}
     </nav>
   );
 };

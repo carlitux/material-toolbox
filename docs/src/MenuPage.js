@@ -43,6 +43,7 @@ export default class MenuPage extends React.Component<
 
   handleSelect = (index: number, item: HTMLLIElement) => {
     console.log(index, item);
+    this.setState({ show: false });
   };
 
   render() {

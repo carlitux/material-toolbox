@@ -123,16 +123,6 @@ export default class IconTogglePage extends React.Component<
               </td>
             </tr>
             <tr>
-              <td>accent</td>
-              <td>boolean</td>
-              <td />
-              <td />
-              <td>
-                If true will set the secondary color on ripple effect and
-                component
-              </td>
-            </tr>
-            <tr>
               <td>on</td>
               <td>{onOffSignature}</td>
               <td />
@@ -188,30 +178,6 @@ export default class IconTogglePage extends React.Component<
                 className="material-icons"
                 on={{ label: 'Remove from favorites', content: 'favorite' }}
                 off={{ label: 'Add to favorites', content: 'favorite_border' }}
-              />
-            </div>
-          </div>
-
-          <div className="toggle-example">
-            <h2>Primary Colored Icons</h2>
-            <div className="demo-wrapper">
-              <IconToggle
-                className="material-icons"
-                on={{ label: 'Remove from favorites', content: 'favorite' }}
-                off={{ label: 'Add to favorites', content: 'favorite_border' }}
-                primary
-              />
-            </div>
-          </div>
-
-          <div className="toggle-example">
-            <h2>Secondary Colored Icons</h2>
-            <div className="demo-wrapper">
-              <IconToggle
-                className="material-icons"
-                on={{ label: 'Remove from favorites', content: 'favorite' }}
-                off={{ label: 'Add to favorites', content: 'favorite_border' }}
-                accent
               />
             </div>
           </div>

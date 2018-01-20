@@ -2,10 +2,8 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import MDCSimpleMenuFoundation from '@material/menu/simple/foundation';
+import { MDCSimpleMenuFoundation } from '@material/menu/simple/foundation';
 import { getTransformPropertyName } from '@material/menu/util';
-
-import { normalizePropToReactStyle } from '../../utils';
 
 type Props = {
   show: boolean | number,
@@ -62,6 +60,11 @@ export default class SimpleMenu extends React.Component<Props, State> {
       : [];
   }
 
+  // Used in select
+  getOffsetHeight() {
+    return this.root && this.root.offsetHeight;
+  }
+
   itemsContainer: ?HTMLUListElement;
   root: ?HTMLDivElement;
   previousFocus: ?HTMLElement;
@@ -100,26 +103,6 @@ export default class SimpleMenu extends React.Component<Props, State> {
       width: window.innerWidth,
       height: window.innerHeight,
     }),
-    setScale: (x, y) => {
-      this.setState(state => ({
-        rootStyles: {
-          ...state.rootStyles,
-          [normalizePropToReactStyle(
-            getTransformPropertyName(window),
-          )]: `scale(${x}, ${y})`,
-        },
-      }));
-    },
-    setInnerScale: (x, y) => {
-      this.setState(state => ({
-        innerStyles: {
-          ...state.innerStyles,
-          [normalizePropToReactStyle(
-            getTransformPropertyName(window),
-          )]: `scale(${x}, ${y})`,
-        },
-      }));
-    },
     getNumberOfItems: () => this.getItems().length,
     registerInteractionHandler: (type, handler) =>
       this.root && this.root.addEventListener(type, handler),
@@ -133,14 +116,6 @@ export default class SimpleMenu extends React.Component<Props, State> {
       document &&
       document.body &&
       document.body.removeEventListener('click', handler),
-    getYParamsForItemAtIndex: index => {
-      const item = this.getItems()[index];
-      const { offsetTop: top, offsetHeight: height } = item;
-      return { top, height };
-    },
-    setTransitionDelayForItemAtIndex: (index, value) => {
-      this.getItems()[index].style.setProperty('transition-delay', value);
-    },
     getIndexForEventTarget: target => this.getItems().indexOf(target),
     notifySelected: evtData =>
       this.props.onSelect(evtData.index, this.getItems()[evtData.index]),
@@ -179,13 +154,15 @@ export default class SimpleMenu extends React.Component<Props, State> {
         },
       }));
     },
-    getAccurateTime: () => window.performance.now(),
+    setMaxHeight: height => {
+      this.setState(state => ({
+        rootStyles: {
+          ...state.rootStyles,
+          maxHeight: height,
+        },
+      }));
+    },
   });
-
-  // Used in select
-  getOffsetHeight() {
-    return this.root && this.root.offsetHeight;
-  }
 
   render() {
     const {
