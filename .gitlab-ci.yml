@@ -1,0 +1,14 @@
+image: node:latest
+
+cache:
+  paths:
+  - node_modules/
+
+lint:
+  script:
+   - npm run lint
+   
+test:
+  script:
+   - npm run test
+
