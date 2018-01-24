@@ -1,6 +1,5 @@
 stages:
-  - lint
-  - flow
+  - guideline
   - test
 
 image: node:latest
@@ -13,12 +12,12 @@ cache:
   - node_modules/
 
 lint:
-  stage: lint
+  stage: guideline
   script:
    - npm run lint
 
 flow:
-  stage: flow
+  stage: guideline
   script:
    - flow
 
