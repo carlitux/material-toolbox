@@ -7,7 +7,11 @@ cache:
 lint:
   script:
    - npm run lint
-   
+
+flow:
+  script:
+   - flow
+
 test:
   script:
    - npm run test

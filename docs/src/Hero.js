@@ -5,7 +5,6 @@ import * as React from 'react';
 import Theme from 'material-toolbox/theme';
 import { LayoutGrid, LayoutInner, LayoutCell } from 'material-toolbox/layout-grid';
 import { Text } from 'material-toolbox/typography';
-/* eslint-enable */
 
 const Hero = () => (
   <Theme theme="primary" textStyle="primary" textOn="primary">
@@ -33,4 +32,5 @@ const Hero = () => (
   </Theme>
 );
 
+/* eslint-enable */
 export default Hero;

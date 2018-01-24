@@ -330,7 +330,7 @@ export default class Select extends React.Component<Props, State> {
           onCancel={this.onCancel}
           style={this.state.menuStyles}
           show={this.state.show}
-          role={null}
+          role={undefined}
           className="mdc-select__menu">
           {React.Children.map(children, (child, index) => (
             <child.type

@@ -46,6 +46,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "flow-bin": "^0.63.1",
     "flow-typed": "^2.2.3",
+    "jest": "^22.1.4",
     "npm-run-all": "^4.1.2",
     "npm-watch": "^0.3.0",
     "prettier": "^1.10.2",

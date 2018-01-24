@@ -132,7 +132,7 @@ export default class Snackbar extends React.Component<Props, State> {
         handler,
       ),
     notifyShow: () => this.props.onShow && this.props.onShow(),
-      notifyHide: () => this.props.onHide && this.props.onHide(),
+    notifyHide: () => this.props.onHide && this.props.onHide(),
   });
 
   render() {

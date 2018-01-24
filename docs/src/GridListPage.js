@@ -16,7 +16,6 @@ import {
   GridTileContent,
   GridTileIcon,
 } from 'material-toolbox/grid-list';
-/* eslint-enable */
 
 import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
@@ -409,3 +408,4 @@ export default class GridListPage extends React.Component<{}> {
     );
   }
 }
+/* eslint-enable */

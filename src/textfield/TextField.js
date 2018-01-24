@@ -146,7 +146,7 @@ export default class TextField extends React.Component<Props, State> {
 
   root: ?HTMLElement;
   outline: ?HTMLDivElement;
-  pathOutline: ?HTMLElement;
+  pathOutline: ?any;
   idleOutline: ?HTMLDivElement;
   input: ?HTMLInputElement | ?HTMLTextAreaElement;
   label: ?HTMLSpanElement | ?HTMLLabelElement;

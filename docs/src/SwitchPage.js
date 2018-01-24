@@ -13,7 +13,6 @@ import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
 
 const importComponents = `import Switch from 'material-toolbox/switch';`;
-const cbSignature = '() => void';
 
 export default class SwitchPage extends React.Component<{}> {
   componentDidMount() {

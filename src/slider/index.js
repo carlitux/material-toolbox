@@ -3,7 +3,6 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 import MDCSliderFoundation from '@material/slider/foundation';
-import { strings } from '@material/slider/constants';
 
 type Props = {
   value: number,
