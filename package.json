@@ -18,6 +18,7 @@
     "clean": "shx rm -rf lib/",
     "lint": "eslint src docs/src",
     "test": "jest",
+    "flow": "flow",
     "test:watch": "jest --watchAll"
   },
   "devDependencies": {

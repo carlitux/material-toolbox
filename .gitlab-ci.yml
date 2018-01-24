@@ -19,7 +19,7 @@ lint:
 flow:
   stage: guideline
   script:
-   - flow
+   - npm run flow
 
 test:
   stage: test
