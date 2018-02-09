@@ -8,13 +8,13 @@ import { Text } from 'material-toolbox/typography';
 import Theme from 'material-toolbox/theme';
 import { Button } from 'material-toolbox/button';
 import { List, ListItem } from 'material-toolbox/list';
-import { SimpleMenu, SimpleMenuItem } from 'material-toolbox/menu/simple';
+import { Menu, MenuItem } from 'material-toolbox/menu';
 /* eslint-enable */
 
 import ThemedLink from './ThemedLink';
 import styles from './styles.scss';
 
-const importComponents = `import { SimpleMenu, SimpleMenuItem } from 'material-toolbox/menu/simple';`;
+const importComponents = `import { Menu, MenuItem } from 'material-toolbox/menu';`;
 const cancelSignature = '() => void';
 const selectedSignature =
   'onSelect: (index: number, item: HTMLLIElement) => void';
@@ -88,11 +88,11 @@ export default class MenuPage extends React.Component<
         <Highlighter language="javascript">{importComponents}</Highlighter>
 
         <Text component="h3" textStyle="title">
-          SimpleMenuItem
+          MenuItem
         </Text>
 
         <Text component="h3" textStyle="title">
-          SimpleMenu
+          Menu
         </Text>
 
         <table className={styles['table-doc']}>
@@ -159,14 +159,14 @@ export default class MenuPage extends React.Component<
           <Button buttonVariant="raised" onClick={this.handleShowMenu}>
             Reveal Menu
           </Button>
-          <SimpleMenu
+          <Menu
             onCancel={this.handleHideMenu}
             onSelect={this.handleSelect}
             show={this.state.show}
             tabIndex="-1">
-            <SimpleMenuItem tabIndex="0">A Menu Item</SimpleMenuItem>
-            <SimpleMenuItem tabIndex="0">Another Menu Item</SimpleMenuItem>
-          </SimpleMenu>
+            <MenuItem tabIndex="0">A Menu Item</MenuItem>
+            <MenuItem tabIndex="0">Another Menu Item</MenuItem>
+          </Menu>
         </div>
       </LayoutCell>
     );

@@ -8,7 +8,7 @@ import { Text } from 'material-toolbox/typography';
 import Theme from 'material-toolbox/theme';
 import { Button } from 'material-toolbox/button';
 import { List, ListItem } from 'material-toolbox/list';
-import { SimpleMenu, SimpleMenuItem } from 'material-toolbox/menu/simple';
+import { Menu, MenuItem } from 'material-toolbox/menu';
 /* eslint-enable */
 
 import ThemedLink from './ThemedLink';

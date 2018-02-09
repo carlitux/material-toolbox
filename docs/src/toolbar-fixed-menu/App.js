@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { Text } from 'material-toolbox/typography';
-import { SimpleMenu, SimpleMenuItem } from 'material-toolbox/menu/simple';
+import { Menu, MenuItem } from 'material-toolbox/menu';
 import {
   Toolbar,
   ToolbarIcon,
@@ -65,16 +65,16 @@ export default class FixedToolbarApp extends React.Component<{}, State> {
                 more_vert
               </ToolbarIcon>
               <div className="mdc-menu-anchor">
-                <SimpleMenu
+                <Menu
                   onSelect={() => {}}
                   onCancel={this.handleCancel}
                   show={this.state.show}>
-                  <SimpleMenuItem>Back</SimpleMenuItem>
-                  <SimpleMenuItem>Forward</SimpleMenuItem>
-                  <SimpleMenuItem>Reload</SimpleMenuItem>
-                  <SimpleMenuItem divider />
-                  <SimpleMenuItem>Save As</SimpleMenuItem>
-                </SimpleMenu>
+                  <MenuItem>Back</MenuItem>
+                  <MenuItem>Forward</MenuItem>
+                  <MenuItem>Reload</MenuItem>
+                  <MenuItem divider />
+                  <MenuItem>Save As</MenuItem>
+                </Menu>
               </div>
             </ToolbarSection>
           </ToolbarRow>

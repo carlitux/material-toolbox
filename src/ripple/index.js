@@ -73,6 +73,7 @@ export default function createAdapter(
         }));
       }
     },
+    containsEventTarget: target => element.contains(target),
     registerInteractionHandler: (evtType, handler) =>
       element.addEventListener(evtType, handler, util.applyPassive()),
     deregisterInteractionHandler: (evtType, handler) =>

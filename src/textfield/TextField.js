@@ -5,7 +5,6 @@ import classnames from 'classnames';
 
 import MDCRippleFoundation from '@material/ripple/foundation';
 import MDCTextFieldFoundation from '@material/textfield/foundation';
-import MDCTextFieldBottomLineFoundation from '@material/textfield/bottom-line/foundation';
 import MDCTextFieldHelperTextFoundation from '@material/textfield/helper-text/foundation';
 import MDCTextFieldLabelFoundation from '@material/textfield/label/foundation';
 import MDCTextFieldIconFoundation from '@material/textfield/icon/foundation';
@@ -36,14 +35,13 @@ type Props = {
   multiline: boolean,
   fullWidth: boolean,
   required: boolean,
+  className: string,
 };
 
 type State = {
   classes: { [string]: boolean },
   labelClasses: { [string]: boolean },
-  bottomLineClasses: { [string]: boolean },
   helperTextClasses: { [string]: boolean },
-  bottomLineAttr: { [string]: any },
   helpTextAttr: { [string]: any },
   iconAttrs: { [string]: any },
   styles: { [string]: any },
@@ -57,11 +55,9 @@ export default class TextField extends React.Component<Props, State> {
       classes: {},
       styles: {},
       labelClasses: {},
-      bottomLineClasses: {},
       helperTextClasses: {
         'mdc-text-field-helper-text--persistent': !!props.persistentHelp,
       },
-      bottomLineAttr: {},
       helpTextAttr: {},
       iconAttrs: {},
     };
@@ -69,7 +65,9 @@ export default class TextField extends React.Component<Props, State> {
 
   componentDidMount() {
     if (!this.props.cssOnly) {
-      this.init();
+      setTimeout(() => {
+        this.init();
+      }, 1000);
     }
 
     if (this.props.withBox && !this.props.cssOnly) {
@@ -113,7 +111,6 @@ export default class TextField extends React.Component<Props, State> {
   init() {
     this.mdcTextField.init();
     this.mdcHelperText.init();
-    this.mdcBottomLine.init();
     this.mdcLabel.init();
     this.mdcIcon.init();
     if (this.props.outlined) {
@@ -124,7 +121,6 @@ export default class TextField extends React.Component<Props, State> {
   destroy() {
     this.mdcTextField.destroy();
     this.mdcHelperText.destroy();
-    this.mdcBottomLine.destroy();
     this.mdcLabel.destroy();
     this.mdcIcon.destroy();
     if (this.props.outlined) {
@@ -150,50 +146,9 @@ export default class TextField extends React.Component<Props, State> {
   idleOutline: ?HTMLDivElement;
   input: ?HTMLInputElement | ?HTMLTextAreaElement;
   label: ?HTMLSpanElement | ?HTMLLabelElement;
-  bottomLine: ?HTMLDivElement;
   icon: ?TextFieldIcon;
   mdcRipple: MDCRippleFoundation;
   mdcRippleAdapter: { [any]: any };
-
-  mdcBottomLine = new MDCTextFieldBottomLineFoundation({
-    addClass: className =>
-      this.setState(state => ({
-        bottomLineClasses: {
-          ...state.bottomLineClasses,
-          [className]: true,
-        },
-      })),
-    removeClass: className =>
-      this.setState(state => ({
-        bottomLineClasses: {
-          ...state.bottomLineClasses,
-          [className]: false,
-        },
-      })),
-    setAttr: (attr: string, value: string) => {
-      let newValue: string | {} = value;
-
-      if (attr === 'style') {
-        const parsed = value.split(':').map(item => item.trim());
-        newValue = { [normalizePropToReactStyle(parsed[0])]: parsed[1] };
-      }
-
-      this.setState(state => ({
-        bottomLineAttr: { ...state.bottomLineAttr, [attr]: newValue },
-      }));
-    },
-    registerEventHandler: (evtType, handler) =>
-      this.bottomLine && this.bottomLine.addEventListener(evtType, handler),
-    deregisterEventHandler: (evtType, handler) =>
-      this.bottomLine && this.bottomLine.removeEventListener(evtType, handler),
-    notifyAnimationEnd: () => {
-      this.props.onAnimationEnd && this.props.onAnimationEnd();
-      this.emit(
-        MDCTextFieldBottomLineFoundation.strings.ANIMATION_END_EVENT,
-        {},
-      );
-    },
-  });
 
   mdcHelperText = new MDCTextFieldHelperTextFoundation({
     addClass: className =>
@@ -278,6 +233,8 @@ export default class TextField extends React.Component<Props, State> {
     getHeight: () => this.outline && this.outline.offsetHeight,
     setOutlinePathAttr: value =>
       this.pathOutline && this.pathOutline.setAttribute('d', value),
+    // eslint-disable-next-line
+    getIdleOutlineStyleValue: propertyName => console.log(this.idleOutline) || this.idleOutline && window.getComputedStyle(this.idleOutline).getPropertyValue(propertyName),
   });
 
   mdcTextField = new MDCTextFieldFoundation(
@@ -299,11 +256,6 @@ export default class TextField extends React.Component<Props, State> {
         this.input && this.input.addEventListener(evtType, handler),
       deregisterInputInteractionHandler: (evtType, handler) =>
         this.input && this.input.removeEventListener(evtType, handler),
-      registerBottomLineEventHandler: (evtType, handler) =>
-        this.bottomLine && this.bottomLine.addEventListener(evtType, handler),
-      deregisterBottomLineEventHandler: (evtType, handler) =>
-        this.bottomLine &&
-        this.bottomLine.removeEventListener(evtType, handler),
       // TODO: if change values on input is not a good option?
       getNativeInput: () => this.input,
       getIdleOutlineStyleValue: propertyName =>
@@ -317,7 +269,6 @@ export default class TextField extends React.Component<Props, State> {
           'rtl',
     },
     {
-      bottomLine: this.mdcBottomLine,
       helperText: this.mdcHelperText,
       label: this.mdcLabel,
       icon: this.mdcIcon,
@@ -344,8 +295,6 @@ export default class TextField extends React.Component<Props, State> {
       evt = document.createEvent('CustomEvent');
       evt.initCustomEvent(evtType, shouldBubble, false, evtData);
     }
-
-    this.bottomLine && this.bottomLine.dispatchEvent(evt);
   }
 
   render() {
@@ -367,6 +316,7 @@ export default class TextField extends React.Component<Props, State> {
       multiline,
       fullWidth,
       outlined,
+      className,
       ...rest
     } = this.props;
 
@@ -376,16 +326,21 @@ export default class TextField extends React.Component<Props, State> {
     const Input = multiline ? 'textarea' : 'input';
 
     // Root props
-    const rootClassName = classnames('mdc-text-field', this.state.classes, {
-      'mdc-text-field--disabled': disabled,
-      'mdc-text-field--upgraded': value,
-      'mdc-text-field--dense': dense,
-      'mdc-text-field--box': withBox,
-      'mdc-text-field--textarea': multiline,
-      'mdc-text-field--fullwidth': fullWidth,
-      'mdc-text-field--outlined': outlined,
-      [`mdc-text-field--with-${icon}-icon`]: icon,
-    });
+    const rootClassName = classnames(
+      'mdc-text-field',
+      className,
+      this.state.classes,
+      {
+        'mdc-text-field--disabled': disabled,
+        'mdc-text-field--upgraded': value,
+        'mdc-text-field--dense': dense,
+        'mdc-text-field--box': withBox,
+        'mdc-text-field--textarea': multiline,
+        'mdc-text-field--fullwidth': fullWidth,
+        'mdc-text-field--outlined': outlined,
+        [`mdc-text-field--with-${icon}-icon`]: icon,
+      },
+    );
 
     const rootProps = {
       ref: element => {
@@ -417,20 +372,6 @@ export default class TextField extends React.Component<Props, State> {
         'mdc-text-field__label--float-above': value && !cssOnly,
       },
     );
-
-    // BottomLine Props
-    const bottomLineClasses = classnames(
-      'mdc-text-field__bottom-line',
-      this.state.bottomLineClasses,
-    );
-
-    const bottomLineProps = {
-      ...this.state.bottomLineAttr,
-      className: bottomLineClasses,
-      ref: element => {
-        this.bottomLine = element;
-      },
-    };
 
     // HelpText Props
     const helpTextClasses = classnames(
@@ -482,7 +423,6 @@ export default class TextField extends React.Component<Props, State> {
                 }}
               />
             ))}
-          {!(multiline || outlined) && <div {...bottomLineProps} />}
           {outlined &&
             !cssOnly && (
               <div

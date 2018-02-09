@@ -2,7 +2,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import { MDCSimpleMenuFoundation } from '@material/menu/simple/foundation';
+import { MDCSimpleMenuFoundation } from '@material/menu/foundation';
 import { getTransformPropertyName } from '@material/menu/util';
 
 type Props = {
@@ -24,7 +24,7 @@ type State = {
 export default class SimpleMenu extends React.Component<Props, State> {
   state = {
     classes: {
-      'mdc-simple-menu': true,
+      'mdc-menu': true,
     },
     rootStyles: {},
     innerStyles: {},
@@ -82,8 +82,6 @@ export default class SimpleMenu extends React.Component<Props, State> {
     hasNecessaryDom: () => Boolean(this.itemsContainer),
     getAttributeForEventTarget: (target, attributeName) =>
       target.getAttribute(attributeName),
-    eventTargetHasClass: (target, className) =>
-      target.classList.contains(className),
     getInnerDimensions: () =>
       this.itemsContainer
         ? {
@@ -190,7 +188,7 @@ export default class SimpleMenu extends React.Component<Props, State> {
             this.itemsContainer = element;
           }}
           style={this.state.innerStyles}
-          className="mdc-simple-menu__items mdc-list"
+          className="mdc-menu__items mdc-list"
           role={role === undefined ? 'menu' : role}
           aria-hidden={show === false ? 'true' : undefined}>
           {children}

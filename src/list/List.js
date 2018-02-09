@@ -6,7 +6,6 @@ import ListItem from './Item';
 
 type Props = {
   children: React.ChildrenArray<React.Element<typeof ListItem>>,
-  dark: boolean,
   dense: boolean,
   twoLines: boolean,
   withAvatar: boolean,
@@ -18,7 +17,6 @@ type Props = {
 const List = ({
   component: Component,
   children,
-  dark,
   dense,
   twoLines,
   withAvatar,
@@ -27,7 +25,6 @@ const List = ({
   ...rest
 }: Props) => {
   const rootClassName = classnames('mdc-list', className, {
-    'mdc-list--theme-dark': dark,
     'mdc-list--dense': dense,
     'mdc-list--two-line': twoLines,
     'mdc-list--avatar-list': withAvatar,

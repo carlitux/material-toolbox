@@ -6,7 +6,7 @@ import MDCSelectFoundation from '@material/select/foundation';
 import MDCRippleFoundation from '@material/ripple/foundation';
 
 import createAdapter from '../ripple';
-import { SimpleMenu } from '../menu/simple';
+import { Menu } from '../menu';
 import { normalizePropToReactStyle } from '../utils';
 
 type Props = {
@@ -88,7 +88,7 @@ export default class Select extends React.Component<Props, State> {
 
   root: ?HTMLDivElement;
   surface: ?HTMLDivElement;
-  menu: ?SimpleMenu;
+  menu: ?Menu;
   mdcRipple: MDCRippleFoundation;
   mdcRippleAdapter: { [any]: any };
   options: Array<{ [any]: any }>;
@@ -322,7 +322,7 @@ export default class Select extends React.Component<Props, State> {
           </div>
           <div {...this.state.bottomLineAttrs} className={bottomLineClasses} />
         </div>
-        <SimpleMenu
+        <Menu
           ref={element => {
             this.menu = element;
           }}
@@ -344,7 +344,7 @@ export default class Select extends React.Component<Props, State> {
               }
             />
           ))}
-        </SimpleMenu>
+        </Menu>
       </div>
     );
   }
