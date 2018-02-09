@@ -233,8 +233,9 @@ export default class TextField extends React.Component<Props, State> {
     getHeight: () => this.outline && this.outline.offsetHeight,
     setOutlinePathAttr: value =>
       this.pathOutline && this.pathOutline.setAttribute('d', value),
-    // eslint-disable-next-line
-    getIdleOutlineStyleValue: propertyName => console.log(this.idleOutline) || this.idleOutline && window.getComputedStyle(this.idleOutline).getPropertyValue(propertyName),
+    getIdleOutlineStyleValue: propertyName =>
+      this.idleOutline &&
+      window.getComputedStyle(this.idleOutline).getPropertyValue(propertyName),
   });
 
   mdcTextField = new MDCTextFieldFoundation(
