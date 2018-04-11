@@ -37,6 +37,7 @@ deploy:
   script:
     - npm run build:docs
     - npm run coverage
+    - cp -R static public
     - mv coverage public
   only:
     - master

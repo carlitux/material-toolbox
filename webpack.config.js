@@ -90,7 +90,7 @@ module.exports = {
     app: appEntry,
   },
   output: {
-    path: path.join(path.resolve('./'), 'public'),
+    path: path.join(path.resolve('./'), 'static'),
     publicPath: '/',
     filename: `mt.[name].js`,
   },
