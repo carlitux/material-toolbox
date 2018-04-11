@@ -60,7 +60,7 @@ const createCssLoaderConfig = () =>
 const createCssExtractTextPlugin = () =>
   new ExtractTextPlugin(
     {
-      filename: 'mt-[name].css',
+      filename: 'mt.[name].css',
       disable: false,
       allChunks: true,
       } // eslint-disable-line
