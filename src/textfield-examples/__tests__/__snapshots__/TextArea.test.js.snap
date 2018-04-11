@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::TextArea Should match snapshoot 1`] = `
+<div>
+  <Example
+    source="import TextField from 'material-toolbox/textfield/TextField';
+import FormField from 'material-toolbox/form-field';
+
+export default class TextArea extends React.Component {
+  state = {
+    disabled: false,
+    rtl: false,
+    required: false,
+    alternateColor: false,
+  };
+
+  handleChange = (evt) => {
+    const { name } = evt.currentTarget;
+    this.setState(state => ({
+      [name]: !state[name],
+    }));
+  };
+
+  render() {
+    return (
+      <div>
+        <div dir={this.state.rtl ? 'rtl' : undefined}>
+          <TextField
+            label=\\"Textarea Label\\"
+            className={
+              this.state.alternateColor
+                ? 'demo-text-field-custom-colors demo-text-field-custom-error-colors'
+                : undefined
+            }
+            disabled={this.state.disabled}
+            required={this.state.required}
+            aria-controls=\\"multiline-helper-text\\"
+            rows=\\"8\\"
+            cols=\\"40\\"
+            multiline
+          />
+        </div>
+
+        <div>
+          <FormField label=\\"Disabled\\" htmlFor=\\"multiline-disabled\\">
+            <input
+              id=\\"multiline-disabled\\"
+              type=\\"checkbox\\"
+              name=\\"disabled\\"
+              checked={this.state.disabled}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"RTL\\" htmlFor=\\"multiline-rtl\\">
+            <input
+              id=\\"multiline-rtl\\"
+              type=\\"checkbox\\"
+              name=\\"rtl\\"
+              checked={this.state.rtl}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"Required\\" htmlFor=\\"multiline-required\\">
+            <input
+              id=\\"multiline-required\\"
+              type=\\"checkbox\\"
+              name=\\"required\\"
+              checked={this.state.required}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"Alternate Colors\\" htmlFor=\\"multiline-alternate\\">
+            <input
+              id=\\"multiline-alternate\\"
+              type=\\"checkbox\\"
+              name=\\"alternateColor\\"
+              checked={this.state.alternateColor}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+      </div>
+    );
+  }
+}
+"
+    title="Textarea"
+  >
+    <div>
+      <TextField
+        aria-controls="multiline-helper-text"
+        box={false}
+        cols="40"
+        cssOnly={false}
+        dense={false}
+        disabled={false}
+        fullWidth={false}
+        invalid={false}
+        label="Textarea Label"
+        multiline={true}
+        outlined={false}
+        persistentHelperText={false}
+        required={false}
+        rows="8"
+        validationHelperText={false}
+      />
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="multiline-disabled"
+        label="Disabled"
+      >
+        <input
+          checked={false}
+          id="multiline-disabled"
+          name="disabled"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="multiline-rtl"
+        label="RTL"
+      >
+        <input
+          checked={false}
+          id="multiline-rtl"
+          name="rtl"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="multiline-required"
+        label="Required"
+      >
+        <input
+          checked={false}
+          id="multiline-required"
+          name="required"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="multiline-alternate"
+        label="Alternate Colors"
+      >
+        <input
+          checked={false}
+          id="multiline-alternate"
+          name="alternateColor"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+  </Example>
+</div>
+`;

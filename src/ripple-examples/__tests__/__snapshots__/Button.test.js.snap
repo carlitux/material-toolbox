@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::ButtonRipple Should match snapshoot 1`] = `
+<Inner>
+  <Cell
+    desktop={6}
+  >
+    <Example
+      source="import Ripple from 'material-toolbox/ripple';
+import Elevation from 'material-toolbox/elevation';
+
+const component = (
+<Elevation depth={2}>
+  <Ripple>
+    <button type=\\"button\\" className=\\"ripple-demo-surface\\">
+      button
+    </button>
+  </Ripple>
+</Elevation>
+)"
+      title="Applied to <button> element"
+    >
+      <Elevation
+        depth={2}
+        transition={false}
+      >
+        <Ripple
+          accent={false}
+          cssOnly={false}
+          disabled={false}
+          primary={false}
+          unbounded={false}
+        >
+          <button
+            className="ripple-demo-surface"
+            type="button"
+          >
+            button
+          </button>
+        </Ripple>
+      </Elevation>
+    </Example>
+  </Cell>
+  <Cell
+    desktop={6}
+  >
+    <Example
+      source="import Ripple from 'material-toolbox/ripple';
+import Elevation from 'material-toolbox/elevation';
+
+const component = (
+<Elevation depth={2}>
+  <Ripple cssOnly>
+    <button type=\\"button\\" className=\\"ripple-demo-surface\\">
+      button
+    </button>
+  </Ripple>
+</Elevation>
+)"
+      title="Applied to <button> element - CSS Only"
+    >
+      <Elevation
+        depth={2}
+        transition={false}
+      >
+        <Ripple
+          accent={false}
+          cssOnly={true}
+          disabled={false}
+          primary={false}
+          unbounded={false}
+        >
+          <button
+            className="ripple-demo-surface"
+            type="button"
+          >
+            button
+          </button>
+        </Ripple>
+      </Elevation>
+    </Example>
+  </Cell>
+</Inner>
+`;

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Ripple Should match snapshoot 1`] = `
+<Ripple
+  accent={false}
+  cssOnly={false}
+  disabled={false}
+  primary={false}
+  unbounded={false}
+>
+  <div
+    className="mdc-ripple-surface"
+    key=".0"
+    style={Object {}}
+  >
+    Ripple
+  </div>
+</Ripple>
+`;
+
+exports[`component::Ripple Should match snapshoot accent 1`] = `
+<Ripple
+  accent={true}
+  cssOnly={false}
+  disabled={false}
+  primary={false}
+  unbounded={false}
+>
+  <div
+    className="mdc-ripple-surface mdc-ripple-surface--accent"
+    key=".0"
+    style={Object {}}
+  >
+    Ripple
+  </div>
+</Ripple>
+`;
+
+exports[`component::Ripple Should match snapshoot cssOnly 1`] = `
+Array [
+  <div
+    className="mdc-ripple-surface"
+    key=".0"
+    style={Object {}}
+  />,
+]
+`;
+
+exports[`component::Ripple Should match snapshoot primary 1`] = `
+<Ripple
+  accent={false}
+  cssOnly={false}
+  disabled={false}
+  primary={true}
+  unbounded={false}
+>
+  <div
+    className="mdc-ripple-surface mdc-ripple-surface--primary"
+    key=".0"
+    style={Object {}}
+  >
+    Ripple
+  </div>
+</Ripple>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::TextFieldIcon Should match snapshoot 1`] = `
+<i
+  className="mdc-text-field__icon"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  tabIndex="-1"
+/>
+`;
+
+exports[`component::TextFieldIcon Should match snapshoot cssOnly 1`] = `
+<i
+  className="mdc-text-field__icon"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  tabIndex="-1"
+/>
+`;

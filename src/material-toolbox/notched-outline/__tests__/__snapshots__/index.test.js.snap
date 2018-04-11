@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::NotchedOutline Should match snapshoot 1`] = `
+<React.Fragment>
+  <div
+    className="mdc-notched-outline"
+  >
+    <svg>
+      <path
+        className="mdc-notched-outline__path"
+      />
+    </svg>
+  </div>
+  <div
+    className="mdc-notched-outline__idle"
+  />
+</React.Fragment>
+`;
+
+exports[`component::NotchedOutline Should match snapshoot cssOnly 1`] = `
+<React.Fragment>
+  <div
+    className="mdc-notched-outline"
+  >
+    <svg>
+      <path
+        className="mdc-notched-outline__path"
+      />
+    </svg>
+  </div>
+  <div
+    className="mdc-notched-outline__idle"
+  />
+</React.Fragment>
+`;

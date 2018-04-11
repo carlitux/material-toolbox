@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::ThemedRipple Should match snapshoot 1`] = `
+<Inner>
+  <Cell
+    desktop={6}
+  >
+    <Example
+      source="import Ripple from 'material-toolbox/ripple';
+import Elevation from 'material-toolbox/elevation';
+import Theme from 'material-toolbox/theme';
+
+const component = (
+  <div>
+    <Theme textStyle=\\"primary\\">
+      <Elevation depth={2}>
+        <Ripple primary>
+          <div
+            tabIndex=\\"0\\"
+            className=\\"ripple-demo-surface\\">
+            Primary
+          </div>
+        </Ripple>
+      </Elevation>
+    </Theme>
+
+    <Theme textStyle=\\"secondary\\">
+      <Elevation depth={2}>
+        <Ripple accent>
+          <div
+            tabIndex=\\"0\\"
+            className=\\"ripple-demo-surface\\">
+            Secondary
+          </div>
+        </Ripple>
+      </Elevation>
+    </Theme>
+  </div>
+)"
+      title="Theme Styles"
+    >
+      <Theme
+        textStyle="primary"
+      >
+        <Elevation
+          depth={2}
+          transition={false}
+        >
+          <Ripple
+            accent={false}
+            cssOnly={false}
+            disabled={false}
+            primary={true}
+            unbounded={false}
+          >
+            <div
+              className="ripple-demo-surface"
+              tabIndex="0"
+            >
+              Primary
+            </div>
+          </Ripple>
+        </Elevation>
+      </Theme>
+      <Theme
+        textStyle="secondary"
+      >
+        <Elevation
+          depth={2}
+          transition={false}
+        >
+          <Ripple
+            accent={true}
+            cssOnly={false}
+            disabled={false}
+            primary={false}
+            unbounded={false}
+          >
+            <div
+              className="ripple-demo-surface"
+              tabIndex="0"
+            >
+              Secondary
+            </div>
+          </Ripple>
+        </Elevation>
+      </Theme>
+    </Example>
+  </Cell>
+  <Cell
+    desktop={6}
+  >
+    <Example
+      source="import Ripple from 'material-toolbox/ripple';
+import Elevation from 'material-toolbox/elevation';
+import Theme from 'material-toolbox/theme';
+
+const component = (
+  <div>
+    <Theme textStyle=\\"primary\\">
+      <Elevation depth={2}>
+        <Ripple primary cssOnly>
+          <div
+            tabIndex=\\"0\\"
+            className=\\"ripple-demo-surface\\">
+            Primary
+          </div>
+        </Ripple>
+      </Elevation>
+    </Theme>
+
+    <Theme textStyle=\\"secondary\\">
+      <Elevation depth={2}>
+        <Ripple accent cssOnly>
+          <div
+            tabIndex=\\"0\\"
+            className=\\"ripple-demo-surface\\">
+            Secondary
+          </div>
+        </Ripple>
+      </Elevation>
+    </Theme>
+  </div>
+)"
+      title="Theme Styles - CSS Only"
+    >
+      <Theme
+        textStyle="primary"
+      >
+        <Elevation
+          depth={2}
+          transition={false}
+        >
+          <Ripple
+            accent={false}
+            cssOnly={true}
+            disabled={false}
+            primary={true}
+            unbounded={false}
+          >
+            <div
+              className="ripple-demo-surface"
+              tabIndex="0"
+            >
+              Primary
+            </div>
+          </Ripple>
+        </Elevation>
+      </Theme>
+      <Theme
+        textStyle="secondary"
+      >
+        <Elevation
+          depth={2}
+          transition={false}
+        >
+          <Ripple
+            accent={true}
+            cssOnly={true}
+            disabled={false}
+            primary={false}
+            unbounded={false}
+          >
+            <div
+              className="ripple-demo-surface"
+              tabIndex="0"
+            >
+              Secondary
+            </div>
+          </Ripple>
+        </Elevation>
+      </Theme>
+    </Example>
+  </Cell>
+</Inner>
+`;

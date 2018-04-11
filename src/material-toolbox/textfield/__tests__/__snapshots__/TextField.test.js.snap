@@ -1,0 +1,463 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::TextField Should match snapshoot 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot aria-controls 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      aria-controls="test"
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot box 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--box"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot cssOnly 1`] = `
+<React.Fragment>
+  <div
+    className="mdc-text-field"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder="test"
+    />
+    <FloatingLabel
+      cssOnly={true}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={true}
+    />
+  </div>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot dense 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--dense"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot disabled 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--disabled"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={true}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot fullWidth 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--fullwidth"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder="test"
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot helperText 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      aria-controls="test"
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+  <TextFieldHelperText
+    cssOnly={false}
+    id="test"
+    persistent={false}
+    text="this is a helper text"
+    validation={false}
+  />
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot icon leading 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--box mdc-text-field--with-leading-icon"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <TextFieldIcon
+      className="material-icons"
+      clickable={false}
+      cssOnly={false}
+      disabled={false}
+    >
+      delete
+    </TextFieldIcon>
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot icon trailing 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--outlined mdc-text-field--with-trailing-icon"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <TextFieldIcon
+      className="material-icons"
+      clickable={false}
+      cssOnly={false}
+      disabled={false}
+    >
+      delete
+    </TextFieldIcon>
+    <NotchedOutline
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot invalid 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot multiline 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--textarea"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <textarea
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot outlined 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--outlined"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <NotchedOutline
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot persistentHelperText 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      aria-controls="test"
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+  <TextFieldHelperText
+    cssOnly={false}
+    id="test"
+    persistent={true}
+    text="this is a helper text"
+    validation={false}
+  />
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot validationHelperText 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+  <TextFieldHelperText
+    cssOnly={false}
+    persistent={false}
+    text="this is a helper text"
+    validation={true}
+  />
+</React.Fragment>
+`;
+
+exports[`component::TextField Should match snapshoot value 1`] = `
+<React.Fragment>
+  <label
+    className="mdc-text-field mdc-text-field--upgraded mdc-text-field--upgraded"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    style={Object {}}
+  >
+    <input
+      className="mdc-text-field__input"
+      disabled={false}
+      placeholder={null}
+      value="test"
+    />
+    <FloatingLabel
+      cssOnly={false}
+      float={false}
+      label="test"
+      preFilled={false}
+      shake={false}
+    />
+    <LineRipple
+      cssOnly={false}
+    />
+  </label>
+</React.Fragment>
+`;

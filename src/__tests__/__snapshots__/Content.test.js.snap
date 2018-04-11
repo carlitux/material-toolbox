@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Content Should match snapshoot 1`] = `
+<React.Fragment>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Grid
+    fixed={false}
+  >
+    <Inner>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/animation"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/input-controls/checkboxes"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/input-controls/form-fields"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/input-controls/text-fields"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/ripples"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/snackbar"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/tabs"
+      />
+    </Inner>
+  </Grid>
+</React.Fragment>
+`;

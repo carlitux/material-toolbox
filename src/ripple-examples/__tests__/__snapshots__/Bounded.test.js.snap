@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::BoundedRipple Should match snapshoot 1`] = `
+<Inner>
+  <Cell
+    desktop={6}
+  >
+    <Example
+      source="import Ripple from 'material-toolbox/ripple';
+import Elevation from 'material-toolbox/elevation';
+
+const component = (
+<Elevation depth={2}>
+  <Ripple>
+    <div
+      tabIndex=\\"0\\"
+      className=\\"ripple-demo-surface\\">
+      Interact with me!
+    </div>
+  </Ripple>
+</Elevation>
+)"
+      title="Bounded"
+    >
+      <Elevation
+        depth={2}
+        transition={false}
+      >
+        <Ripple
+          accent={false}
+          cssOnly={false}
+          disabled={false}
+          primary={false}
+          unbounded={false}
+        >
+          <div
+            className="ripple-demo-surface"
+            tabIndex="0"
+          >
+            Interact with me!
+          </div>
+        </Ripple>
+      </Elevation>
+    </Example>
+  </Cell>
+  <Cell
+    desktop={6}
+  >
+    <Example
+      source="import Ripple from 'material-toolbox/ripple';
+import Elevation from 'material-toolbox/elevation';
+
+const component = (
+<Elevation depth={2}>
+  <Ripple cssOnly>
+    <div
+      tabIndex=\\"0\\"
+      className=\\"ripple-demo-surface\\">
+      Interact with me!
+    </div>
+  </Ripple>
+</Elevation>
+)"
+      title="Bounded - CSS Only"
+    >
+      <Elevation
+        depth={2}
+        transition={false}
+      >
+        <Ripple
+          accent={false}
+          cssOnly={true}
+          disabled={false}
+          primary={false}
+          unbounded={false}
+        >
+          <div
+            className="ripple-demo-surface"
+            tabIndex="0"
+          >
+            Interact with me!
+          </div>
+        </Ripple>
+      </Elevation>
+    </Example>
+  </Cell>
+</Inner>
+`;

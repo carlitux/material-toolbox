@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Bar Should match snapshoot 1`] = `
+<nav
+  className="extra-class mdc-tab-bar mdc-tab-bar-upgraded"
+  role="tablist"
+>
+  <Tab
+    active={false}
+    cssOnly_={false}
+    key=".0"
+    onNotify_={[Function]}
+  >
+    Tab 1
+  </Tab>
+  <Tab
+    active={true}
+    cssOnly_={false}
+    key=".1"
+    onNotify_={[Function]}
+  >
+    Tab 2
+  </Tab>
+  <span
+    className="mdc-tab-bar__indicator"
+    style={Object {}}
+  />
+</nav>
+`;
+
+exports[`component::Bar Should match snapshoot with cssOnly 1`] = `
+<nav
+  className="mdc-tab-bar"
+  role="tablist"
+>
+  <Tab
+    active={false}
+    cssOnly_={true}
+    key=".0"
+    onNotify_={[Function]}
+  >
+    Tab 1
+  </Tab>
+  <Tab
+    active={true}
+    cssOnly_={true}
+    key=".1"
+    onNotify_={[Function]}
+  >
+    Tab 2
+  </Tab>
+</nav>
+`;

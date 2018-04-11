@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::App Should match snapshoot 1`] = `
+<div
+  className="layout"
+>
+  <Toolbar
+    fixed={true}
+  >
+    <ToolbarRow>
+      <ToolbarSection
+        align="start"
+        shrink={false}
+      >
+        <ToolbarTitle
+          component="span"
+          label="Material Component Web for React - Material Toolbox"
+        />
+      </ToolbarSection>
+    </ToolbarRow>
+  </Toolbar>
+  <ToolbarFixedAdjust>
+    <main
+      className="main"
+    >
+      <PermanentDrawer>
+        <DrawerContent>
+          <MainNav />
+        </DrawerContent>
+      </PermanentDrawer>
+      <div>
+        <Content />
+      </div>
+    </main>
+  </ToolbarFixedAdjust>
+</div>
+`;

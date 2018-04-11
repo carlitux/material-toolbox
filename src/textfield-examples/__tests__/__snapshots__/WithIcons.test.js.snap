@@ -1,0 +1,464 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::WithIcons Should match snapshoot 1`] = `
+<div>
+  <Example
+    source="import TextField from 'material-toolbox/textfield/TextField';
+import FormField from 'material-toolbox/form-field';
+import TextFieldIcon from 'aterial-toolbox/textfield/Icon';
+
+export default class WithIcons extends React.Component {
+  state = {
+    hasError: { name1: false, name2: false, name3: false, name4: false },
+    rtl: false,
+    dense: false,
+    required: false,
+    disabled: false,
+    alternateColor: false,
+    minLimit: false,
+    unclickable: false,
+  };
+
+  handleChange = (evt) => {
+    const { name } = evt.currentTarget;
+    this.setState(state => ({
+      [name]: !state[name],
+    }));
+  };
+
+  handleChangeInput = (evt) => {
+    const { value, name } = evt.currentTarget;
+
+    this.setState(state => ({
+      hasError: {
+        ...state.hasError,
+        [name]: this.state.minLimit && value.length < 8 && value.length > 0,
+      },
+    }));
+  };
+
+  render() {
+    return (
+      <div>
+        <div dir={this.state.rtl ? 'rtl' : undefined}>
+          <TextField
+            label=\\"Your Name\\"
+            name=\\"name1\\"
+            onChange={this.handleChangeInput}
+            className={
+              this.state.alternateColor
+                ? 'demo-text-field-custom-colors demo-text-field-custom-error-colors'
+                : undefined
+            }
+            dense={this.state.dense}
+            required={this.state.required}
+            aria-controls=\\"with-icons-helper-text\\"
+            invalid={this.state.hasError.name1}
+            disabled={this.state.disabled}
+            icon=\\"leading\\"
+            box>
+            <TextFieldIcon
+              className=\\"material-icons\\"
+              clickable={!this.state.unclickable}>
+              event
+            </TextFieldIcon>
+          </TextField>
+
+          <br />
+
+          <TextField
+            label=\\"Your other name\\"
+            name=\\"name2\\"
+            onChange={this.handleChangeInput}
+            className={
+              this.state.alternateColor
+                ? 'demo-text-field-custom-colors demo-text-field-custom-error-colors'
+                : undefined
+            }
+            dense={this.state.dense}
+            required={this.state.required}
+            aria-controls=\\"with-icons-helper-text\\"
+            invalid={this.state.hasError.name2}
+            disabled={this.state.disabled}
+            icon=\\"trailing\\"
+            box>
+            <TextFieldIcon
+              className=\\"material-icons\\"
+              clickable={!this.state.unclickable}>
+              delete
+            </TextFieldIcon>
+          </TextField>
+
+          <br />
+
+          <TextField
+            label=\\"Your other name\\"
+            name=\\"name3\\"
+            onChange={this.handleChangeInput}
+            className={
+              this.state.alternateColor
+                ? 'demo-text-field-custom-colors demo-text-field-custom-error-colors'
+                : undefined
+            }
+            dense={this.state.dense}
+            required={this.state.required}
+            aria-controls=\\"with-icons-helper-text\\"
+            invalid={this.state.hasError.name3}
+            disabled={this.state.disabled}
+            icon=\\"leading\\"
+            outlined>
+            <TextFieldIcon
+              className=\\"material-icons\\"
+              clickable={!this.state.unclickable}>
+              event
+            </TextFieldIcon>
+          </TextField>
+
+          <br />
+
+          <TextField
+            label=\\"Your other name\\"
+            name=\\"name4\\"
+            onChange={this.handleChangeInput}
+            className={
+              this.state.alternateColor
+                ? 'demo-text-field-custom-colors demo-text-field-custom-error-colors'
+                : undefined
+            }
+            dense={this.state.dense}
+            required={this.state.required}
+            aria-controls=\\"with-icons-helper-text\\"
+            invalid={this.state.hasError.name4}
+            disabled={this.state.disabled}
+            icon=\\"trailing\\"
+            outlined>
+            <TextFieldIcon
+              className=\\"material-icons\\"
+              clickable={!this.state.unclickable}>
+              delete
+            </TextFieldIcon>
+          </TextField>
+        </div>
+
+        <div>
+          <FormField label=\\"Disabled\\" htmlFor=\\"with-icons-required\\">
+            <input
+              id=\\"with-icons-required\\"
+              type=\\"checkbox\\"
+              name=\\"disabled\\"
+              checked={this.state.disabled}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"RTL\\" htmlFor=\\"with-icons-rtl\\">
+            <input
+              id=\\"with-icons-rtl\\"
+              type=\\"checkbox\\"
+              name=\\"rtl\\"
+              checked={this.state.rtl}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"Dense\\" htmlFor=\\"with-icons-dense\\">
+            <input
+              id=\\"with-icons-dense\\"
+              type=\\"checkbox\\"
+              name=\\"dense\\"
+              checked={this.state.dense}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField
+            label=\\"Unclickable icons\\"
+            htmlFor=\\"with-icons-unclickable\\">
+            <input
+              id=\\"with-icons-unclickable\\"
+              type=\\"checkbox\\"
+              name=\\"unclickable\\"
+              checked={this.state.unclickable}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"Alternate Colors\\" htmlFor=\\"with-icons-alternate\\">
+            <input
+              id=\\"with-icons-alternate\\"
+              type=\\"checkbox\\"
+              name=\\"alternateColor\\"
+              checked={this.state.alternateColor}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"Required\\" htmlFor=\\"with-icons-required\\">
+            <input
+              id=\\"with-icons-required\\"
+              type=\\"checkbox\\"
+              name=\\"required\\"
+              checked={this.state.required}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField
+            label=\\"Must be at least 8 characters\\"
+            htmlFor=\\"with-icons-helper-max-limit\\">
+            <input
+              id=\\"with-icons-helper-max-limit\\"
+              type=\\"checkbox\\"
+              name=\\"minLimit\\"
+              checked={this.state.minLimit}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+      </div>
+    );
+  }
+}
+"
+    title="Text Field - Leading/Trailing icons"
+  >
+    <div>
+      <TextField
+        aria-controls="with-icons-helper-text"
+        box={true}
+        cssOnly={false}
+        dense={false}
+        disabled={false}
+        fullWidth={false}
+        icon="leading"
+        invalid={false}
+        label="Your Name"
+        multiline={false}
+        name="name1"
+        onChange={[Function]}
+        outlined={false}
+        persistentHelperText={false}
+        required={false}
+        validationHelperText={false}
+      >
+        <TextFieldIcon
+          className="material-icons"
+          clickable={true}
+          cssOnly={false}
+          disabled={false}
+        >
+          event
+        </TextFieldIcon>
+      </TextField>
+      <br />
+      <TextField
+        aria-controls="with-icons-helper-text"
+        box={true}
+        cssOnly={false}
+        dense={false}
+        disabled={false}
+        fullWidth={false}
+        icon="trailing"
+        invalid={false}
+        label="Your other name"
+        multiline={false}
+        name="name2"
+        onChange={[Function]}
+        outlined={false}
+        persistentHelperText={false}
+        required={false}
+        validationHelperText={false}
+      >
+        <TextFieldIcon
+          className="material-icons"
+          clickable={true}
+          cssOnly={false}
+          disabled={false}
+        >
+          delete
+        </TextFieldIcon>
+      </TextField>
+      <br />
+      <TextField
+        aria-controls="with-icons-helper-text"
+        box={false}
+        cssOnly={false}
+        dense={false}
+        disabled={false}
+        fullWidth={false}
+        icon="leading"
+        invalid={false}
+        label="Your other name"
+        multiline={false}
+        name="name3"
+        onChange={[Function]}
+        outlined={true}
+        persistentHelperText={false}
+        required={false}
+        validationHelperText={false}
+      >
+        <TextFieldIcon
+          className="material-icons"
+          clickable={true}
+          cssOnly={false}
+          disabled={false}
+        >
+          event
+        </TextFieldIcon>
+      </TextField>
+      <br />
+      <TextField
+        aria-controls="with-icons-helper-text"
+        box={false}
+        cssOnly={false}
+        dense={false}
+        disabled={false}
+        fullWidth={false}
+        icon="trailing"
+        invalid={false}
+        label="Your other name"
+        multiline={false}
+        name="name4"
+        onChange={[Function]}
+        outlined={true}
+        persistentHelperText={false}
+        required={false}
+        validationHelperText={false}
+      >
+        <TextFieldIcon
+          className="material-icons"
+          clickable={true}
+          cssOnly={false}
+          disabled={false}
+        >
+          delete
+        </TextFieldIcon>
+      </TextField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="with-icons-required"
+        label="Disabled"
+      >
+        <input
+          checked={false}
+          id="with-icons-required"
+          name="disabled"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="with-icons-rtl"
+        label="RTL"
+      >
+        <input
+          checked={false}
+          id="with-icons-rtl"
+          name="rtl"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="with-icons-dense"
+        label="Dense"
+      >
+        <input
+          checked={false}
+          id="with-icons-dense"
+          name="dense"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="with-icons-unclickable"
+        label="Unclickable icons"
+      >
+        <input
+          checked={false}
+          id="with-icons-unclickable"
+          name="unclickable"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="with-icons-alternate"
+        label="Alternate Colors"
+      >
+        <input
+          checked={false}
+          id="with-icons-alternate"
+          name="alternateColor"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="with-icons-required"
+        label="Required"
+      >
+        <input
+          checked={false}
+          id="with-icons-required"
+          name="required"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="with-icons-helper-max-limit"
+        label="Must be at least 8 characters"
+      >
+        <input
+          checked={false}
+          id="with-icons-helper-max-limit"
+          name="minLimit"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+  </Example>
+</div>
+`;

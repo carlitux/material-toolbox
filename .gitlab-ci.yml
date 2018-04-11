@@ -11,10 +11,10 @@ cache:
   paths:
   - node_modules/
 
-lint:
-  stage: guideline
-  script:
-   - npm run lint
+# lint:
+#   stage: guideline
+#   script:
+#    - npm run lint
 
 flow:
   stage: guideline

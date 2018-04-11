@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Hero Should match snapshoot 1`] = `
+<Theme
+  textOn="primary"
+  textStyle="primary"
+  theme="primary"
+>
+  <header>
+    <Grid
+      fixed={false}
+    >
+      <Inner>
+        <Cell
+          align="bottom"
+          span={12}
+        >
+          <Text
+            adjustMargin={false}
+            component="h1"
+            textStyle="display2"
+          >
+            React Material Components for the Web
+          </Text>
+          <Text
+            adjustMargin={true}
+            component="span"
+            textStyle="headline"
+          >
+            Create beautiful apps with modular and customizable UI components using React wrapper of Google's Material Components for the Web.
+          </Text>
+          <Text
+            adjustMargin={false}
+            component="p"
+            textStyle="body2"
+          >
+            Note.- This library is as simple as Material Web Components is, Tries to follow the guide lines as much as possible. The library do not do any assumptions on components or tags to be used unless the Material Components guide does.
+          </Text>
+        </Cell>
+      </Inner>
+    </Grid>
+  </header>
+</Theme>
+`;

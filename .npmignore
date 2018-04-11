@@ -1,6 +1,6 @@
 /src
 /docs
-flow-typed
+/flow-typed
 Session.vim
 codeit.sh
 .babelrc
@@ -14,3 +14,5 @@ codeit.sh
 .tags
 .tern-port
 .tern-project
+webpack.config.js
+package-lock.json

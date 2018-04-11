@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::PreFilled Should match snapshoot 1`] = `
+<Example
+  source="import TextField from 'material-toolbox/textfield/TextField';
+
+const PreFilled = () => (
+  <TextField defaultValue=\\"Pre-filled value\\" label=\\"Label floating above\\" />
+);
+
+export default PreFilled;
+"
+  title="Preventing FOUC"
+>
+  <TextField
+    box={false}
+    cssOnly={false}
+    defaultValue="Pre-filled value"
+    dense={false}
+    disabled={false}
+    fullWidth={false}
+    invalid={false}
+    label="Label floating above"
+    multiline={false}
+    outlined={false}
+    persistentHelperText={false}
+    validationHelperText={false}
+  />
+</Example>
+`;

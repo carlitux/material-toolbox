@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page::FormFieldsPage Should match snapshoot 1`] = `
+<Cell
+  align="bottom"
+  span={12}
+>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    Form Fields
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="headline"
+  >
+    Form Field component is a React wrapper of mdc-form-field component.
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h3"
+    textStyle="title"
+  >
+    Design & API Documentation
+  </Text>
+  <p>
+    <ThemedLink
+      component="a"
+      target="_blank"
+      to="https://material.io/components/web/catalog/input-controls/form-fields/"
+    >
+      Material Components Web Css and Scss customization
+    </ThemedLink>
+  </p>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    React Components
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="title"
+  >
+    Form Field
+  </Text>
+  <p>
+    Any prop that is not listed in next table will be passed to a label element
+  </p>
+  <table
+    className="table-props"
+  >
+    <thead>
+      <tr>
+        <th>
+          Property
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Default
+        </th>
+        <th>
+          Required
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          label
+        </td>
+        <td>
+          string
+        </td>
+        <td />
+        <td>
+          ✔
+        </td>
+        <td>
+          Label that will be set into label input
+        </td>
+      </tr>
+      <tr>
+        <td>
+          alignEnd
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Change label before component
+        </td>
+      </tr>
+      <tr>
+        <td>
+          cssOnly
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Disable all dynamic behaviour
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    Examples
+  </Text>
+  <p>
+    Many examples can be found in
+     
+    <ThemedLink
+      component={[Function]}
+      to="/input-controls/checkboxes"
+    >
+      Checkboxes Page
+    </ThemedLink>
+     
+    and in
+     
+    <ThemedLink
+      component={[Function]}
+      to="/input-controls/radio-buttons"
+    >
+      Radio Buttons
+    </ThemedLink>
+  </p>
+</Cell>
+`;

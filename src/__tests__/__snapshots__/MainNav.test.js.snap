@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::MainNav Should match snapshoot 1`] = `
+<List
+  component="nav"
+  dense={false}
+  nonInteractive={false}
+  twoLines={false}
+  withAvatar={false}
+>
+  <NavItem
+    label="Home"
+    to="/"
+  />
+  <NavItem
+    label="Animation"
+    to="/animation"
+  />
+  <ListItem
+    component={[Function]}
+    to="/input-controls/form-fields"
+  >
+    Inputs and Controls
+  </ListItem>
+  <NavItem
+    label="Checkboxes"
+    to="/input-controls/checkboxes"
+  >
+    <ListDetail
+      component="span"
+      end={false}
+    />
+  </NavItem>
+  <NavItem
+    label="Form Fields"
+    to="/input-controls/form-fields"
+  >
+    <ListDetail
+      component="span"
+      end={false}
+    />
+  </NavItem>
+  <NavItem
+    label="Text Field"
+    to="/input-controls/text-fields"
+  >
+    <ListDetail
+      component="span"
+      end={false}
+    />
+  </NavItem>
+  <NavItem
+    label="Ripples"
+    to="/ripples"
+  />
+  <NavItem
+    label="Snackbar"
+    to="/snackbar"
+  />
+  <NavItem
+    label="Tabs"
+    to="/tabs"
+  />
+</List>
+`;

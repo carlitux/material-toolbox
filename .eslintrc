@@ -1,15 +1,15 @@
 {
   "extends": [
     "airbnb",
-    "standard",
+    "plugin:jest/recommended",
     "plugin:flowtype/recommended",
     "plugin:react/recommended",
     "prettier",
     "prettier/flowtype",
-    "prettier/react",
-    "prettier/standard"
+    "prettier/react"
   ],
   "env": {
+    "jest/globals": true,
     "browser": true,
     "node": true,
     "mocha": true
@@ -25,22 +25,21 @@
       // "bracketSpacing": false,
       "jsxBracketSameLine": true,
     }],
-    "jsx-a11y/label-has-for": [ 2, {
-      "components": ["Label", "label"],
-      "required": {
-        "some": [ "nesting", "id" ]
-      },
-      "allowChildren": false,
-    }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-underscore-dangle": [0],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
+    "react/default-props-match-prop-types": [2, { "allowRequiredDefaults": true }]
   },
   "plugins": [
-    "import",
     "flowtype",
     "react",
-    "prettier",
-    "standard"
+    "jsx-a11y",
+    "import",
+    "jest",
+    "prettier"
   ],
   "settings": {
     "ecmascript": 7,
@@ -58,10 +57,9 @@
     "__DISABLE_SSR__": true,
     "__DEVTOOLS__": true,
     "socket": true,
-    "mixpanel": true,
+    "amplitude": true,
     "Raven": true,
     "isCallback": true,
-    "returnsPromise": true,
-    "webpackIsomorphicTools": true
+    "returnsPromise": true
   }
 }

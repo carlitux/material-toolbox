@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page::TabsPage Should match snapshoot 1`] = `
+<Cell
+  span={12}
+>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    Tabs
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="headline"
+  >
+    Tabs components is a React wrapper of mdc-tabs component.
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h3"
+    textStyle="title"
+  >
+    Design & API Documentation
+  </Text>
+  <p>
+    <ThemedLink
+      component="a"
+      target="_blank"
+      to="https://material.io/guidelines/components/snackbars-toasts.html"
+    >
+      Material Design guidelines: Snackbars & toasts
+    </ThemedLink>
+  </p>
+  <p>
+    <ThemedLink
+      component="a"
+      target="_blank"
+      to="https://material.io/components/web/catalog/snackbars/"
+    >
+      Material Components Web Css and Scss customization
+    </ThemedLink>
+  </p>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    React components
+  </Text>
+  <BasicTabBar />
+</Cell>
+`;

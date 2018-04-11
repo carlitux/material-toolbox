@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Elevation Should match snapshoot elevation-1 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z1"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-2 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z2"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-3 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z3"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-4 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z4"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-5 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z5"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-6 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z6"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-7 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z7"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-8 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z8"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-9 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z9"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-10 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z10"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-11 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z11"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-12 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z12"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-13 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z13"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-14 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z14"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-15 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z15"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-16 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z16"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-17 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z17"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-18 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z18"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-19 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z19"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-20 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z20"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-21 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z21"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-22 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z22"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-23 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z23"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot elevation-24 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z24"
+    key=".0"
+  />,
+]
+`;
+
+exports[`component::Elevation Should match snapshoot transition with elevation 1 1`] = `
+Array [
+  <div
+    className="test mdc-elevation--z1 mdc-elevation-transition"
+    key=".0"
+  />,
+]
+`;

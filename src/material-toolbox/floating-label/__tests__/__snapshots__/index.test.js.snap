@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::FloatingLabel Should match snapshoot 1`] = `
+<span
+  className="mdc-floating-label"
+>
+  test
+</span>
+`;
+
+exports[`component::FloatingLabel Should match snapshoot cssOnly 1`] = `
+<span
+  className="mdc-floating-label"
+>
+  test
+</span>
+`;
+
+exports[`component::FloatingLabel Should match snapshoot with preFilled 1`] = `
+<span
+  className="mdc-floating-label mdc-floating-label--float-above"
+>
+  test
+</span>
+`;

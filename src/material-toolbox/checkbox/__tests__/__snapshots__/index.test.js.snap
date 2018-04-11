@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::BoundedRipple Should match snapshoot 1`] = `
+<div
+  className="mdc-checkbox mdc-checkbox--upgraded"
+  style={Object {}}
+>
+  <input
+    className="mdc-checkbox__native-control"
+    disabled={false}
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <div
+    className="mdc-checkbox__background"
+  >
+    <svg
+      className="mdc-checkbox__checkmark"
+      viewBox="0 0 24 24"
+    >
+      <path
+        className="mdc-checkbox__checkmark-path"
+        d="M1.73,12.91 8.1,19.28 22.79,4.59"
+        fill="none"
+        stroke="white"
+      />
+    </svg>
+    <div
+      className="mdc-checkbox__mixedmark"
+    />
+  </div>
+</div>
+`;
+
+exports[`component::BoundedRipple Should match snapshoot cssOnly 1`] = `
+<div
+  className="mdc-checkbox"
+  style={Object {}}
+>
+  <input
+    className="mdc-checkbox__native-control"
+    disabled={false}
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <div
+    className="mdc-checkbox__background"
+  >
+    <svg
+      className="mdc-checkbox__checkmark"
+      viewBox="0 0 24 24"
+    >
+      <path
+        className="mdc-checkbox__checkmark-path"
+        d="M1.73,12.91 8.1,19.28 22.79,4.59"
+        fill="none"
+        stroke="white"
+      />
+    </svg>
+    <div
+      className="mdc-checkbox__mixedmark"
+    />
+  </div>
+</div>
+`;
+
+exports[`component::BoundedRipple Should match snapshoot indeterminate 1`] = `
+<Checkbox
+  cssOnly={false}
+  disabled={false}
+  indeterminate={true}
+>
+  <div
+    className="mdc-checkbox mdc-checkbox--upgraded"
+    style={Object {}}
+  >
+    <input
+      className="mdc-checkbox__native-control"
+      disabled={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="mdc-checkbox__background"
+    >
+      <svg
+        className="mdc-checkbox__checkmark"
+        viewBox="0 0 24 24"
+      >
+        <path
+          className="mdc-checkbox__checkmark-path"
+          d="M1.73,12.91 8.1,19.28 22.79,4.59"
+          fill="none"
+          stroke="white"
+        />
+      </svg>
+      <div
+        className="mdc-checkbox__mixedmark"
+      />
+    </div>
+  </div>
+</Checkbox>
+`;

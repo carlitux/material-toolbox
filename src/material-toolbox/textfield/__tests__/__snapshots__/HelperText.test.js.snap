@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::HelperText Should match snapshoot 1`] = `
+<p
+  aria-hidden={true}
+  className="mdc-text-field-helper-text"
+>
+  test
+</p>
+`;

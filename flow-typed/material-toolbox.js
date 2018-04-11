@@ -19,7 +19,7 @@ declare type ThemeProps = {
 declare class Theme extends React$Component<ThemeProps> {}
 
 declare module 'material-toolbox/ripple' {
-  declare export default function createAdapter(
+  declare export function createAdapter(
     component: React$Component<any, any>,
     element: HTMLElement | Text | Element,
     options: {
@@ -90,7 +90,8 @@ declare module 'material-toolbox/list' {
   declare export class ListItem extends React$Component<ItemProps> {}
 
   declare type ListProps = {
-    children: Array<React$Element<typeof ListItem>>,
+    // children: Array<React$Element<typeof ListItem>> | React$Element<typeof ListItem>| React$Element<typeof Theme>,
+    children: React.Node,
     dark?: boolean,
     dense?: boolean,
     twoLines?: boolean,
@@ -305,13 +306,13 @@ declare module 'material-toolbox/grid-list' {
   }> {}
 }
 
-declare module 'material-toolbox/menu/simple' {
-  declare export class SimpleMenu extends React$Component<{
+declare module 'material-toolbox/menu' {
+  declare export class Menu extends React$Component<{
     show?: boolean,
     onCancel: () => void,
     onSelect: (index: number, item: HTMLLIElement) => void,
   }> {}
-  declare export class SimpleMenuItem extends React$Component<{}> {}
+  declare export class MenuItem extends React$Component<{}> {}
 }
 
 declare module 'material-toolbox/toolbar' {
@@ -392,9 +393,6 @@ declare module 'material-toolbox/textfield' {
     children?: React$Element<typeof TextFieldIcon>,
     icon?: 'leading' | 'trailing',
     style?: { [string]: any },
-    outlined?: boolean,
-    multiline?: boolean,
-    required?: boolean,
   }> {}
 }
 
@@ -427,4 +425,12 @@ declare module 'material-toolbox/select' {
   }> {}
   declare export class SelectOption extends React$Component<{}> {}
   declare export class SelectOptGroup extends React$Component<{}> {}
+}
+
+declare module 'material-toolbox/linear-progress' {
+  declare module.exports: any;
+}
+
+declare module '@material/textfield/label/foundation' {
+  declare module.exports: any;
 }

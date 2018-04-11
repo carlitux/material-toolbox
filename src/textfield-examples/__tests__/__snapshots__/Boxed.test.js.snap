@@ -1,0 +1,360 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::BoxedTextField Should match snapshoot 1`] = `
+<div>
+  <Example
+    source="import TextField from 'material-toolbox/textfield/TextField';
+import FormField from 'material-toolbox/form-field';
+
+export default class BoxedTextField extends React.Component {
+  state = {
+    hasError: false,
+    value: '',
+    disabled: false,
+    rtl: false,
+    dense: false,
+    required: false,
+    alternateColor: false,
+    minLimit: false,
+    useHelperText: false,
+    useHelperTextPersistent: false,
+    useHelperTextValidation: false,
+  };
+
+  handleChange = (evt) => {
+    const { name } = evt.currentTarget;
+    this.setState(state => ({
+      [name]: !state[name],
+    }));
+  };
+
+  handleChangeInput = (evt) => {
+    const { value } = evt.currentTarget;
+
+    this.setState({
+      value,
+      hasError: this.state.minLimit && value.length < 8 && value.length > 0,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Example title=\\"Text Field box\\" source={source}>
+          <div dir={this.state.rtl ? 'rtl' : undefined}>
+            <TextField
+              label=\\"Email address\\"
+              value={this.state.value}
+              onChange={this.handleChangeInput}
+              className={
+                this.state.alternateColor
+                  ? 'demo-text-field-custom-colors demo-text-field-custom-error-colors'
+                  : undefined
+              }
+              disabled={this.state.disabled}
+              dense={this.state.dense}
+              required={this.state.required}
+              helperText={
+                this.state.useHelperText
+                  ? 'Must be at least 8 characters'
+                  : undefined
+              }
+              persistentHelperText={this.state.useHelperTextPersistent}
+              validationHelperText={this.state.useHelperTextValidation}
+              aria-controls=\\"boxed-helper-text\\"
+              invalid={this.state.hasError}
+              box
+            />
+          </div>
+
+          <div>
+            <FormField label=\\"Disabled\\" htmlFor=\\"boxed-disabled\\">
+              <input
+                id=\\"boxed-disabled\\"
+                type=\\"checkbox\\"
+                name=\\"disabled\\"
+                checked={this.state.disabled}
+                onChange={this.handleChange}
+              />
+            </FormField>
+          </div>
+
+          <div>
+            <FormField label=\\"RTL\\" htmlFor=\\"boxed-rtl\\">
+              <input
+                id=\\"boxed-rtl\\"
+                type=\\"checkbox\\"
+                name=\\"rtl\\"
+                checked={this.state.rtl}
+                onChange={this.handleChange}
+              />
+            </FormField>
+          </div>
+
+          <div>
+            <FormField label=\\"Dense\\" htmlFor=\\"boxed-dense\\">
+              <input
+                id=\\"boxed-dense\\"
+                type=\\"checkbox\\"
+                name=\\"dense\\"
+                checked={this.state.dense}
+                onChange={this.handleChange}
+              />
+            </FormField>
+          </div>
+
+          <div>
+            <FormField label=\\"Required\\" htmlFor=\\"boxed-required\\">
+              <input
+                id=\\"boxed-required\\"
+                type=\\"checkbox\\"
+                name=\\"required\\"
+                checked={this.state.required}
+                onChange={this.handleChange}
+              />
+            </FormField>
+          </div>
+
+          <div>
+            <FormField label=\\"Alternate Colors\\" htmlFor=\\"boxed-alternate\\">
+              <input
+                id=\\"boxed-alternate\\"
+                type=\\"checkbox\\"
+                name=\\"alternateColor\\"
+                checked={this.state.alternateColor}
+                onChange={this.handleChange}
+              />
+            </FormField>
+          </div>
+
+          <div>
+            <FormField
+              label=\\"Must be at least 8 characters\\"
+              htmlFor=\\"boxed-helper-max-limit\\">
+              <input
+                id=\\"boxed-helper-max-limit\\"
+                type=\\"checkbox\\"
+                name=\\"minLimit\\"
+                checked={this.state.minLimit}
+                onChange={this.handleChange}
+              />
+            </FormField>
+          </div>
+
+          <div>
+            <FormField label=\\"Use Helper Text\\" htmlFor=\\"boxed-helper-text\\">
+              <input
+                id=\\"boxed-helper-text\\"
+                type=\\"checkbox\\"
+                name=\\"useHelperText\\"
+                checked={this.state.useHelperText}
+                onChange={this.handleChange}
+              />
+            </FormField>
+          </div>
+
+          <div>
+            <FormField
+              label=\\"Make helper text persistent\\"
+              htmlFor=\\"boxed-helper-text-persistent\\">
+              <input
+                id=\\"boxed-helper-text-persistent\\"
+                type=\\"checkbox\\"
+                name=\\"useHelperTextPersistent\\"
+                checked={this.state.useHelperTextPersistent}
+                onChange={this.handleChange}
+                disabled={!this.state.useHelperText}
+              />
+            </FormField>
+          </div>
+
+          <div>
+            <FormField
+              label=\\"Use helper text as validation message\\"
+              htmlFor=\\"boxed-helper-text-validation\\">
+              <input
+                id=\\"boxed-helper-text-validation\\"
+                type=\\"checkbox\\"
+                name=\\"useHelperTextValidation\\"
+                checked={this.state.useHelperTextValidation}
+                onChange={this.handleChange}
+                disabled={!this.state.useHelperText}
+              />
+            </FormField>
+          </div>
+        </Example>
+      </div>
+    );
+  }
+}
+"
+    title="Text Field box"
+  >
+    <div>
+      <TextField
+        aria-controls="boxed-helper-text"
+        box={true}
+        cssOnly={false}
+        dense={false}
+        disabled={false}
+        fullWidth={false}
+        invalid={false}
+        label="Email address"
+        multiline={false}
+        onChange={[Function]}
+        outlined={false}
+        persistentHelperText={false}
+        required={false}
+        validationHelperText={false}
+        value=""
+      />
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-disabled"
+        label="Disabled"
+      >
+        <input
+          checked={false}
+          id="boxed-disabled"
+          name="disabled"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-rtl"
+        label="RTL"
+      >
+        <input
+          checked={false}
+          id="boxed-rtl"
+          name="rtl"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-dense"
+        label="Dense"
+      >
+        <input
+          checked={false}
+          id="boxed-dense"
+          name="dense"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-required"
+        label="Required"
+      >
+        <input
+          checked={false}
+          id="boxed-required"
+          name="required"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-alternate"
+        label="Alternate Colors"
+      >
+        <input
+          checked={false}
+          id="boxed-alternate"
+          name="alternateColor"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-helper-max-limit"
+        label="Must be at least 8 characters"
+      >
+        <input
+          checked={false}
+          id="boxed-helper-max-limit"
+          name="minLimit"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-helper-text"
+        label="Use Helper Text"
+      >
+        <input
+          checked={false}
+          id="boxed-helper-text"
+          name="useHelperText"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-helper-text-persistent"
+        label="Make helper text persistent"
+      >
+        <input
+          checked={false}
+          disabled={true}
+          id="boxed-helper-text-persistent"
+          name="useHelperTextPersistent"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="boxed-helper-text-validation"
+        label="Use helper text as validation message"
+      >
+        <input
+          checked={false}
+          disabled={true}
+          id="boxed-helper-text-validation"
+          name="useHelperTextValidation"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+  </Example>
+</div>
+`;

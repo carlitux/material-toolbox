@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::UnboundedRipple Should match snapshoot 1`] = `
+<Inner>
+  <Cell
+    desktop={6}
+  >
+    <Example
+      source="import Ripple from 'material-toolbox/ripple';
+
+const component = (
+  <Ripple unbounded>
+    <div
+      tabIndex=\\"0\\"
+      className=\\"ripple-demo-surface material-icons ripple-demo-surface--icon\\">
+      favorite
+    </div>
+  </Ripple>
+)"
+      title="Unbounded"
+    >
+      <Ripple
+        accent={false}
+        cssOnly={false}
+        disabled={false}
+        primary={false}
+        unbounded={true}
+      >
+        <div
+          className="ripple-demo-surface material-icons ripple-demo-surface--icon"
+          tabIndex="0"
+        >
+          favorite
+        </div>
+      </Ripple>
+    </Example>
+  </Cell>
+  <Cell
+    desktop={6}
+  >
+    <Example
+      source="import Ripple from 'material-toolbox/ripple';
+
+const component = (
+  <Ripple unbounded cssOnly>
+    <div
+      tabIndex=\\"0\\"
+      className=\\"ripple-demo-surface material-icons ripple-demo-surface--icon\\">
+      favorite
+    </div>
+  </Ripple>
+)"
+      title="Unbounded - CSS Only"
+    >
+      <Ripple
+        accent={false}
+        cssOnly={true}
+        disabled={false}
+        primary={false}
+        unbounded={true}
+      >
+        <div
+          className="ripple-demo-surface material-icons ripple-demo-surface--icon"
+          tabIndex="0"
+        >
+          favorite
+        </div>
+      </Ripple>
+    </Example>
+  </Cell>
+</Inner>
+`;

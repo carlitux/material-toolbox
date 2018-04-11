@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::ThemedLink Should match snapshoot 1`] = `
+<Theme
+  textStyle="primary"
+>
+  <a />
+</Theme>
+`;

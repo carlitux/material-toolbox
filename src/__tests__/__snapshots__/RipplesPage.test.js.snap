@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page::RipplesPage Should match snapshoot 1`] = `
+<Cell
+  align="bottom"
+  span={12}
+>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    Ripple
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="headline"
+  >
+    Ripple component is a React wrapper of mdc-ripple component.
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h3"
+    textStyle="title"
+  >
+    Design & API Documentation
+  </Text>
+  <p>
+    <ThemedLink
+      component="a"
+      target="_blank"
+      to="https://material.io/guidelines/motion/choreography.html#choreography-radial-reaction"
+    >
+      Material Design guidelines: Choreography
+    </ThemedLink>
+  </p>
+  <p>
+    <ThemedLink
+      component="a"
+      target="_blank"
+      to="https://material.io/components/web/catalog/ripples/"
+    >
+      Material Components Web Css and Scss customization
+    </ThemedLink>
+  </p>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    Create Adapter function
+  </Text>
+  <p>
+    Function that create adapter this is used for more advanced use. You can see source of Checkbox component.
+  </p>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    React Components
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="title"
+  >
+    Ripple
+  </Text>
+  <table
+    className="table-props"
+  >
+    <thead>
+      <tr>
+        <th>
+          Property
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Default
+        </th>
+        <th>
+          Required
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          primary
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Sets primary color to ripple effect.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          accent
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Sets secondary color to ripple effect.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          unbounded
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Unbound to ripple effect from element.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          cssOnly
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Disable all dynamic behaviour
+        </td>
+      </tr>
+      <tr>
+        <td>
+          disabled
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Disable ripple effect
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    Examples
+  </Text>
+  <BoundedRipple />
+  <UnboundedRipple />
+  <ThemedRipple />
+  <BoundedRipple />
+</Cell>
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Tab Should match snapshoot 1`] = `
+<a
+  className="extra-class mdc-tab"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="tab"
+  tabIndex="0"
+>
+  This is a Tab
+</a>
+`;
+
+exports[`component::Tab Should match snapshoot with cssOnly 1`] = `
+<a
+  className="mdc-tab"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="tab"
+  tabIndex="0"
+>
+  This is a Tab
+  <span
+    className="mdc-tab__indicator"
+  />
+</a>
+`;

@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Snackbar Should match snapshoot 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={true}
+  aria-live="assertive"
+  className="mdc-snackbar"
+>
+  <div
+    className="mdc-snackbar__text"
+  />
+  <div
+    className="mdc-snackbar__action-wrapper"
+  >
+    <button
+      aria-hidden={true}
+      className="mdc-snackbar__action-button"
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`component::Snackbar Should match snapshoot actionOnBottom 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={true}
+  aria-live="assertive"
+  className="mdc-snackbar"
+>
+  <div
+    className="mdc-snackbar__text"
+  />
+  <div
+    className="mdc-snackbar__action-wrapper"
+  >
+    <button
+      aria-hidden={true}
+      className="mdc-snackbar__action-button"
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`component::Snackbar Should match snapshoot align 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={true}
+  aria-live="assertive"
+  className="mdc-snackbar mdc-snackbar--align-start"
+>
+  <div
+    className="mdc-snackbar__text"
+  />
+  <div
+    className="mdc-snackbar__action-wrapper"
+  >
+    <button
+      aria-hidden={true}
+      className="mdc-snackbar__action-button"
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`component::Snackbar Should match snapshoot multiline 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={true}
+  aria-live="assertive"
+  className="mdc-snackbar"
+>
+  <div
+    className="mdc-snackbar__text"
+  />
+  <div
+    className="mdc-snackbar__action-wrapper"
+  >
+    <button
+      aria-hidden={true}
+      className="mdc-snackbar__action-button"
+      type="button"
+    />
+  </div>
+</div>
+`;

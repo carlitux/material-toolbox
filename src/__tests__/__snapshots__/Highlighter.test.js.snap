@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Highlighter Should match snapshoot 1`] = `
+<SyntaxHighlighter
+  language="bash"
+  showLineNumbers={true}
+  style={
+    Object {
+      "hljs": Object {
+        "background": "#23241f",
+        "color": "#f8f8f2",
+        "display": "block",
+        "overflowX": "auto",
+        "padding": "0.5em",
+      },
+      "hljs-addition": Object {
+        "color": "#e6db74",
+      },
+      "hljs-attr": Object {
+        "color": "#f92672",
+      },
+      "hljs-attribute": Object {
+        "color": "#66d9ef",
+      },
+      "hljs-built_in": Object {
+        "color": "#e6db74",
+      },
+      "hljs-builtin-name": Object {
+        "color": "#e6db74",
+      },
+      "hljs-bullet": Object {
+        "color": "#ae81ff",
+      },
+      "hljs-class .hljs-title": Object {
+        "color": "#f8f8f2",
+      },
+      "hljs-code": Object {
+        "color": "#a6e22e",
+      },
+      "hljs-comment": Object {
+        "color": "#75715e",
+      },
+      "hljs-deletion": Object {
+        "color": "#75715e",
+      },
+      "hljs-emphasis": Object {
+        "color": "#a8a8a2",
+        "fontStyle": "italic",
+      },
+      "hljs-keyword": Object {
+        "color": "#f92672",
+      },
+      "hljs-link": Object {
+        "color": "#ae81ff",
+      },
+      "hljs-literal": Object {
+        "color": "#ae81ff",
+      },
+      "hljs-meta": Object {
+        "color": "#75715e",
+      },
+      "hljs-name": Object {
+        "color": "#f92672",
+      },
+      "hljs-number": Object {
+        "color": "#ae81ff",
+      },
+      "hljs-params": Object {
+        "color": "#f8f8f2",
+      },
+      "hljs-quote": Object {
+        "color": "#ae81ff",
+      },
+      "hljs-regexp": Object {
+        "color": "#ae81ff",
+      },
+      "hljs-section": Object {
+        "color": "#a6e22e",
+      },
+      "hljs-selector-attr": Object {
+        "color": "#e6db74",
+      },
+      "hljs-selector-class": Object {
+        "color": "#a6e22e",
+      },
+      "hljs-selector-id": Object {
+        "color": "#e6db74",
+      },
+      "hljs-selector-pseudo": Object {
+        "color": "#e6db74",
+      },
+      "hljs-selector-tag": Object {
+        "color": "#f92672",
+      },
+      "hljs-string": Object {
+        "color": "#e6db74",
+      },
+      "hljs-strong": Object {
+        "color": "#a8a8a2",
+        "fontWeight": "bold",
+      },
+      "hljs-subst": Object {
+        "color": "#f8f8f2",
+      },
+      "hljs-symbol": Object {
+        "color": "#66d9ef",
+      },
+      "hljs-tag": Object {
+        "color": "#f8f8f2",
+      },
+      "hljs-template-variable": Object {
+        "color": "#e6db74",
+      },
+      "hljs-title": Object {
+        "color": "#a6e22e",
+      },
+      "hljs-type": Object {
+        "color": "#e6db74",
+      },
+      "hljs-variable": Object {
+        "color": "#e6db74",
+      },
+    }
+  }
+/>
+`;

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Ripple Should match snapshoot 1`] = `
+<div
+  className="mdc-form-field"
+>
+  <input
+    key=".0"
+    type="button"
+  />
+  <label
+    onClick={[Function]}
+  >
+    Should render label
+  </label>
+</div>
+`;
+
+exports[`component::Ripple Should match snapshoot alignEnd 1`] = `
+<div
+  className="mdc-form-field mdc-form-field--align-end"
+>
+  <input
+    key=".0"
+    type="button"
+  />
+  <label
+    onClick={[Function]}
+  >
+    Should render label
+  </label>
+</div>
+`;
+
+exports[`component::Ripple Should match snapshoot cssOnly 1`] = `
+<div
+  className="mdc-form-field"
+>
+  <input
+    key=".0"
+    type="button"
+  />
+  <label
+    onClick={[Function]}
+  >
+    Should render label
+  </label>
+</div>
+`;

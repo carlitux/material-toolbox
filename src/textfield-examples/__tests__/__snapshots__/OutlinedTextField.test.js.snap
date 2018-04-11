@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example::OutlinedTextField Should match snapshoot 1`] = `
+<div>
+  <Example
+    source="import TextField from 'material-toolbox/textfield/TextField';
+import FormField from 'material-toolbox/form-field';
+
+export default class OutlinedTextField extends React.Component {
+  state = {
+    disabled: false,
+    rtl: false,
+    dense: false,
+    required: false,
+    alternateColor: false,
+    outlinedMaxLimit: false,
+    outlinedMinLimit: false,
+    value: '',
+    message: ' ',
+  };
+
+  handleChange = (evt) => {
+    const { name } = evt.currentTarget;
+    this.setState(state => {
+      let message = ' ';
+
+      if (name === 'outlinedMaxLimit' && this.state.value) {
+        if (!this.state.outlinedMaxLimit && this.state.value.length < 8) {
+          message = 'Must be at least 8 characters';
+        }
+
+        if (!this.state.outlinedMinLimit && this.state.value.length > 10) {
+          message = 'Must not exceed 10 characters';
+        }
+      }
+
+      return {
+        [name]: !state[name],
+        message,
+      };
+    });
+  };
+
+  handleChangeInput = (evt) => {
+    const { value } = evt.currentTarget;
+    let message = ' ';
+
+    if (value.length > 0) {
+      if (this.state.outlinedMaxLimit && value.length < 8) {
+        message = 'Must be at least 8 characters';
+      }
+
+      if (this.state.outlinedMinLimit && value.length > 10) {
+        message = 'Must not exceed 10 characters';
+      }
+    }
+
+    this.setState({
+      value,
+      message,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <div dir={this.state.rtl ? 'rtl' : undefined}>
+          <TextField
+            label=\\"Your Name\\"
+            value={this.state.value}
+            className={
+              this.state.alternateColor
+                ? 'demo-text-field-custom-colors demo-text-field-custom-error-colors'
+                : undefined
+            }
+            disabled={this.state.disabled}
+            dense={this.state.dense}
+            required={this.state.required}
+            helperText={this.state.message}
+            validationHelperText={!!this.state.message}
+            invalid={this.state.message.length > 1}
+            aria-controls=\\"outlined-helper-text\\"
+            onChange={this.handleChangeInput}
+            outlined
+          />
+        </div>
+
+        <div>
+          <FormField label=\\"Disabled\\" htmlFor=\\"outlined-disabled\\">
+            <input
+              id=\\"outlined-disabled\\"
+              type=\\"checkbox\\"
+              name=\\"disabled\\"
+              checked={this.state.disabled}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"RTL\\" htmlFor=\\"outlined-rtl\\">
+            <input
+              id=\\"outlined-rtl\\"
+              type=\\"checkbox\\"
+              name=\\"rtl\\"
+              checked={this.state.rtl}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"Dense\\" htmlFor=\\"outlined-dense\\">
+            <input
+              id=\\"outlined-dense\\"
+              type=\\"checkbox\\"
+              name=\\"dense\\"
+              checked={this.state.dense}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"Required\\" htmlFor=\\"outlined-required\\">
+            <input
+              id=\\"outlined-required\\"
+              type=\\"checkbox\\"
+              name=\\"required\\"
+              checked={this.state.required}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField label=\\"Alternate Colors\\" htmlFor=\\"outlined-alternate\\">
+            <input
+              id=\\"outlined-alternate\\"
+              type=\\"checkbox\\"
+              name=\\"alternateColor\\"
+              checked={this.state.alternateColor}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField
+            label=\\"Must be at least 8 characters\\"
+            htmlFor=\\"outlined-helper-max-limit\\">
+            <input
+              id=\\"outlined-helper-max-limit\\"
+              type=\\"checkbox\\"
+              name=\\"outlinedMaxLimit\\"
+              checked={this.state.outlinedMaxLimit}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+
+        <div>
+          <FormField
+            label=\\"Must not exceed 10 characters\\"
+            htmlFor=\\"outlined-helper-min-limit\\">
+            <input
+              id=\\"outlined-helper-min-limit\\"
+              type=\\"checkbox\\"
+              name=\\"outlinedMinLimit\\"
+              checked={this.state.outlinedMinLimit}
+              onChange={this.handleChange}
+            />
+          </FormField>
+        </div>
+      </div>
+    );
+  }
+}
+"
+    title="Outlined Text Field"
+  >
+    <div>
+      <TextField
+        aria-controls="outlined-helper-text"
+        box={false}
+        cssOnly={false}
+        dense={false}
+        disabled={false}
+        fullWidth={false}
+        helperText=" "
+        invalid={false}
+        label="Your Name"
+        multiline={false}
+        onChange={[Function]}
+        outlined={true}
+        persistentHelperText={false}
+        required={false}
+        validationHelperText={true}
+        value=""
+      />
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="outlined-disabled"
+        label="Disabled"
+      >
+        <input
+          checked={false}
+          id="outlined-disabled"
+          name="disabled"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="outlined-rtl"
+        label="RTL"
+      >
+        <input
+          checked={false}
+          id="outlined-rtl"
+          name="rtl"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="outlined-dense"
+        label="Dense"
+      >
+        <input
+          checked={false}
+          id="outlined-dense"
+          name="dense"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="outlined-required"
+        label="Required"
+      >
+        <input
+          checked={false}
+          id="outlined-required"
+          name="required"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="outlined-alternate"
+        label="Alternate Colors"
+      >
+        <input
+          checked={false}
+          id="outlined-alternate"
+          name="alternateColor"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="outlined-helper-max-limit"
+        label="Must be at least 8 characters"
+      >
+        <input
+          checked={false}
+          id="outlined-helper-max-limit"
+          name="outlinedMaxLimit"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+    <div>
+      <FormField
+        alignEnd={false}
+        cssOnly={false}
+        htmlFor="outlined-helper-min-limit"
+        label="Must not exceed 10 characters"
+      >
+        <input
+          checked={false}
+          id="outlined-helper-min-limit"
+          name="outlinedMinLimit"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </FormField>
+    </div>
+  </Example>
+</div>
+`;

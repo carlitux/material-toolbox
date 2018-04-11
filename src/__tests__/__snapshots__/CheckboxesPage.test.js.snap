@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page::CheckboxesPage Should match snapshoot 1`] = `
+<Cell
+  align="bottom"
+  span={12}
+>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    Checkboxes
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="headline"
+  >
+    Checkbox component is a React wrapper of mdc-checkbox component.
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h3"
+    textStyle="title"
+  >
+    Design & API Documentation
+  </Text>
+  <p>
+    <ThemedLink
+      component="a"
+      target="_blank"
+      to="https://material.io/guidelines/components/selection-controls.html#selection-controls-checkbox"
+    >
+      Material Design guidelines: Selection Controls – Checkbox
+    </ThemedLink>
+  </p>
+  <p>
+    <ThemedLink
+      component="a"
+      target="_blank"
+      to="https://material.io/components/web/catalog/input-controls/checkboxes/"
+    >
+      Material Components Web Css and Scss customization
+    </ThemedLink>
+  </p>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    React Components
+  </Text>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="title"
+  >
+    Checkbox
+  </Text>
+  <table
+    className="table-props"
+  >
+    <thead>
+      <tr>
+        <th>
+          Property
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Default
+        </th>
+        <th>
+          Required
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          indeterminate
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Sets to an indeterminate state.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          cssOnly
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+        <td />
+        <td>
+          Disable all dynamic behaviour
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <Text
+    adjustMargin={false}
+    component="h1"
+    textStyle="display1"
+  >
+    Examples
+  </Text>
+  <CssOnly />
+  <WithJavascript />
+</Cell>
+`;

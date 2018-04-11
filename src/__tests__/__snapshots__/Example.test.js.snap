@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::Example Should match snapshoot 1`] = `
+<div
+  className="example"
+>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="title"
+  >
+    Example title
+  </Text>
+  <TabBar
+    cssOnly={false}
+    onChange={[Function]}
+    refreshAt={1800}
+  >
+    <Tab
+      active={false}
+      cssOnly_={false}
+    >
+      Example
+    </Tab>
+    <Tab
+      active={false}
+      cssOnly_={false}
+    >
+      Source
+    </Tab>
+  </TabBar>
+  <section
+    className=""
+  >
+    source code
+  </section>
+  <section
+    className="hide"
+  >
+    <Highlighter
+      language="jsx"
+    >
+      source code
+    </Highlighter>
+  </section>
+</div>
+`;
+
+exports[`component::Example Should match snapshoot scss 1`] = `
+<div
+  className="example"
+>
+  <Text
+    adjustMargin={false}
+    component="h2"
+    textStyle="title"
+  >
+    Example title
+  </Text>
+  <TabBar
+    cssOnly={false}
+    onChange={[Function]}
+    refreshAt={1800}
+  >
+    <Tab
+      active={false}
+      cssOnly_={false}
+    >
+      Example
+    </Tab>
+    <Tab
+      active={false}
+      cssOnly_={false}
+    >
+      Source
+    </Tab>
+  </TabBar>
+  <section
+    className=""
+  >
+    source code
+  </section>
+  <section
+    className="hide"
+  >
+    <Highlighter
+      language="jsx"
+    >
+      source code
+    </Highlighter>
+    <Highlighter
+      language="scss"
+    >
+      scss code
+    </Highlighter>
+  </section>
+</div>
+`;

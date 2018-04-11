@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component::LineRipple Should match snapshoot 1`] = `
+<div
+  className="mdc-line-ripple"
+  style={Object {}}
+/>
+`;
