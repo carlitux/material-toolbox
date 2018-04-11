@@ -25,23 +25,22 @@ flow:
 test:
   stage: test
   script:
-   - npm run test
+   - npm test
 
-publish_doc:
+deploy:
   stage: deploy
   environment: docs
   artifacts:
     paths:
       - public
   script:
-    - npm run build
+    - npm run build:docs
     - npm run coverage
     - mv coverage public
   only:
     - master
-  when: manual
 
-deploy:
+publish:
   stage: deploy
   environment: production
   script:
