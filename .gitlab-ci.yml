@@ -1,6 +1,7 @@
 stages:
   - guideline
   - test
+  - publish
 
 image: node:latest
 
@@ -26,3 +27,15 @@ test:
   script:
    - npm run test
 
+publish:
+  stage: publish
+  artifacts:
+    paths:
+    - public
+  script:
+    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+    - cat ~/.npmrc
+    - npm run build
+    - npm publish
+  only:
+    - master

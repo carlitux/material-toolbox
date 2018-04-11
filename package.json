@@ -1,6 +1,6 @@
 {
   "name": "material-toolbox",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "React Material Design Components for Web",
   "repository": "https://gitlab.com/lcruzc/material-toolbox",
   "author": "Luis Carlos Cruz Carballo",
@@ -12,7 +12,7 @@
     "flow": "flow check",
     "test": "jest",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --inline --hot --host 0.0.0.0 --content-base docs/",
-    "build:lib": "babel -d . src/material-toolbox --ignore '**/__tests__/**'",
+    "build:lib": "NODE_ENV=production babel -d . src/material-toolbox --ignore '**/__tests__/**'",
     "build:flow": "flow-copy-source -v -i '**/__tests__/**' src/material-toolbox .",
     "build:docs": "cross-env NODE_ENV=production webpack -p --progress --colors",
     "build": "npm run build:lib && npm run build:flow && npm run build:docs",
