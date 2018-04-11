@@ -1,7 +1,7 @@
 stages:
   - guideline
   - test
-  - publish
+  - deploy
 
 image: node:latest
 
@@ -27,11 +27,23 @@ test:
   script:
    - npm run test
 
-publish:
-  stage: publish
+publish_doc:
+  stage: deploy
+  environment: docs
   artifacts:
     paths:
       - public
+  script:
+    - npm run build
+    - npm run coverage
+    - mv coverage public
+  only:
+    - master
+  when: manual
+
+deploy:
+  stage: deploy
+  environment: production
   script:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
     - npm run build
