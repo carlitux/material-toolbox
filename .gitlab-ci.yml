@@ -31,11 +31,11 @@ publish:
   stage: publish
   artifacts:
     paths:
-    - public
+      - public
   script:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-    - cat ~/.npmrc
     - npm run build
     - npm publish
   only:
     - master
+  when: manual

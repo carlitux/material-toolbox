@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "flow": "flow check",
     "test": "jest",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --inline --hot --host 0.0.0.0 --content-base docs/",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --inline --hot --host 0.0.0.0 --content-base public/",
     "build:lib": "NODE_ENV=production babel -d . src/material-toolbox --ignore '**/__tests__/**'",
     "build:flow": "flow-copy-source -v -i '**/__tests__/**' src/material-toolbox .",
     "build:docs": "cross-env NODE_ENV=production webpack -p --progress --colors",
