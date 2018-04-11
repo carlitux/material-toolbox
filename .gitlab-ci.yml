@@ -1,6 +1,7 @@
 stages:
   - guideline
   - test
+  - doc
   - deploy
 
 image: node:latest
@@ -25,10 +26,10 @@ flow:
 test:
   stage: test
   script:
-   - npm test
+   - npm run coverage
 
 deploy:
-  stage: deploy
+  stage: doc
   environment: docs
   artifacts:
     paths:
